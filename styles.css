@@ -23,3 +23,9 @@ body {
     position: absolute;
     background-color: blue;
 }
+
+.handsUp{
+    position: absolute;
+    background-image: url(Images/raise-hand.png);
+    background-size: cover;
+}

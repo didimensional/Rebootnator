@@ -10,6 +10,8 @@ let enemiesSpawnInterval
 
 let enemy
 
+let handsUp
+
 function startGame() {
     newPlayer()
     newEnemies()
@@ -29,6 +31,11 @@ function newEnemies() {
         enemy.insert()
         enemies.push(enemy)
     }, 1000)
+}
+
+function fireHandsUp(){
+    handsUp = new HandsUp()
+    handsUp.insert()
 }
 
 window.addEventListener('keydown', function (event) {
@@ -66,7 +73,7 @@ window.addEventListener('keydown', function (event) {
             break;
 
         case ' ':
-            //Aqui falta linkar con el metodo de disparar
+            fireHandsUp()
             break;
     
     }
@@ -78,4 +85,6 @@ window.addEventListener('keyup', function (event){
 
 
 startGame()
+
+
 
