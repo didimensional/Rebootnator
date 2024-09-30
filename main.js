@@ -18,6 +18,7 @@ function startGame() {
 
     enemy = new Enemy()
     enemy.insert()
+    enemy.move()
 }                  
 
 
@@ -70,4 +71,3 @@ window.addEventListener('keyup', function (event){
 
 startGame()
 
-console.log(boardGame)

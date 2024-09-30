@@ -7,7 +7,7 @@ class Enemy {
         this.directionY = 1   // Si es 1 es der ; Si es -1 es izq
         this.speed = 2
         this.sprite = document.createElement('div')
-        // this.interval = setInterval(this.move.bind(this), 10)
+        this.interval = setInterval(this.move.bind(this), 10)
     }
 
     insert(){
@@ -17,6 +17,18 @@ class Enemy {
         this.sprite.style.top = this.y + 'px'
         this.sprite.style.left = this.x + 'px'
         boardGame.appendChild(this.sprite)
+    }
+
+    move(){
+        let newY = this.y + this.speed * this.directionY
+        //this.checkCollision()
+        if (newY >= 0 && newY <= 800 - this.height){
+            this.y = newY
+            this.sprite.style.top = this.y + 'px'
+        } /*else {
+            enemies.shift()
+            this.remove()
+        }*/
     }
 
 }
