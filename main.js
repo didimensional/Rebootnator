@@ -16,7 +16,10 @@ function startGame() {
     rebootnator.move()
     },10)
 
-}                                                                                                                   
+    enemy = new Enemy()
+    enemy.insert()
+}                  
+
 
 
 window.addEventListener('keydown', function (event) {

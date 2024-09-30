@@ -18,3 +18,8 @@ body {
     position: absolute;
     background-color: red;
 }
+
+.enemies {
+    position: absolute;
+    background-color: blue;
+}
