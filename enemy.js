@@ -28,7 +28,7 @@ class Enemy {
         } /*else {
             enemies.shift()
             this.remove()
-        }*/
+        } */
     }
 
 }

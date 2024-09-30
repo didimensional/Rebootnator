@@ -4,6 +4,10 @@ let rebootnator
 
 let moveRebootnatorInterval
 
+let enemies = []
+
+let enemiesSpawn
+
 let enemy
 
 function startGame() {
