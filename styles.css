@@ -12,3 +12,9 @@ body {
     margin-top: 70px;
 
 }
+
+
+#rebootnator{
+    position: absolute;
+    background-color: red;
+}
