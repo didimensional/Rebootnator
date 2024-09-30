@@ -4,17 +4,24 @@ let rebootnator
 
 let moveRebootnatorInterval
 
+let handsUp
+
 let enemies = []
 
 let enemiesSpawnInterval
 
 let enemy
 
-let handsUp
+let goodie
+
+let goodies = []
+
+let goodieSpawnInterval
 
 function startGame() {
     newPlayer()
     newEnemies()
+    newGoodies()
 }
 
 function newPlayer() {
@@ -30,7 +37,15 @@ function newEnemies() {
         enemy = new Enemy()
         enemy.insert()
         enemies.push(enemy)
-    }, 1000)
+    }, 500)
+}
+
+function newGoodies() {
+    goodieSpawnInterval = setInterval(function () {
+        goodie = new Goodies()
+        goodie.insert()
+        goodies.push(goodie)
+    }, 10000)
 }
 
 function fireHandsUp() {
@@ -82,7 +97,6 @@ window.addEventListener('keydown', function (event) {
 window.addEventListener('keyup', function (event) {
     rebootnator.directionX = 0
 })
-
 
 startGame()
 

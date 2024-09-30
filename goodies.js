@@ -3,7 +3,7 @@ class Goodies {
         this.height = 50
         this.width = 50
         this.y = 0
-        this.x = Math.floor(Math.random()) * (700 - this.width)
+        this.x = Math.floor(Math.random() * (700 - this.width))
         this.directionY = 1
         this.speed = 1
         this.sprite = document.createElement('div')
