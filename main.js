@@ -4,6 +4,8 @@ let rebootnator
 
 let moveRebootnatorInterval
 
+let enemy
+
 function startGame() {
     rebootnator = new Rebootnator(300, 700)
     rebootnator.insert()
