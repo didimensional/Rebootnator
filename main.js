@@ -2,18 +2,19 @@ let boardGame = document.getElementById("boardGame")
 
 let rebootnator 
 
+let moveRebootnatorInterval
 
-function starGame() {
+function startGame() {
     rebootnator = new Rebootnator(300, 700)
     rebootnator.insert()
 
+    //rebootnator.move()
+
+    moveRebootnatorInterval = setInterval(function(){
     rebootnator.move()
+    },10)
 
 }                                                                                                                   
-
-starGame()
-
-console.log(boardGame)
 
 
 window.addEventListener('keydown', function (event) {
@@ -54,5 +55,14 @@ window.addEventListener('keydown', function (event) {
             //Aqui falta linkar con el metodo de disparar
             break;
     
-    } console.log(event)
+    }
 })
+
+window.addEventListener('keyup', function (event){
+    rebootnator.directionX = 0
+})
+
+
+startGame()
+
+console.log(boardGame)
