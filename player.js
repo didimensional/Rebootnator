@@ -21,10 +21,17 @@ class Rebootnator{
         boardGame.appendChild(this.sprite)
  
     }
+    
 
     move() {
+        let newX = this.x + this.speed * this.directionX
 
-    }
+        if (newX >= 0 && newX <= 700 -this.width){
+            this.x = newX
+            this.sprite.style.left = this.x + 'px'
+        }  
+
+    }   
 
 }
 
