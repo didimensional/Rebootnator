@@ -26,14 +26,27 @@ class Enemy {
 
     move(){
         let newY = this.y + this.speed * this.directionY
-        //this.checkCollision()
+        this.checkCollision()
         if (newY >= 0 && newY <= 800 - this.height){
             this.y = newY
             this.sprite.style.top = this.y + 'px'
         } else {
-            // enemies.shift()
+            enemies.shift()
             this.remove()
         } 
+    }
+
+    checkCollision() {
+        enemies.forEach(function(enemy, index){
+            if (enemy.x < rebootnator.x + rebootnator.width && 
+                enemy.y < rebootnator.y + rebootnator.height &&
+                enemy.x + enemy.width > rebootnator.x &&
+                enemy.y + enemy.height > rebootnator.y) {
+                    enemy.remove()
+                    enemies.splice(index, 1)
+                    rebootnator.lives -= 1
+                }    
+        })
     }
 
 }
