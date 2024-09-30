@@ -6,26 +6,30 @@ let moveRebootnatorInterval
 
 let enemies = []
 
-let enemiesSpawn
+let enemiesSpawnInterval
 
 let enemy
 
 function startGame() {
-    rebootnator = new Rebootnator(300, 700)
-    rebootnator.insert()
-
-    //rebootnator.move()
-
-    moveRebootnatorInterval = setInterval(function(){
-    rebootnator.move()
-    },10)
-
-    enemy = new Enemy()
-    enemy.insert()
-    enemy.move()
+    newPlayer()
+    newEnemies()
 }                  
 
+function newPlayer() {
+    rebootnator = new Rebootnator(300, 700)
+    rebootnator.insert()
+    moveRebootnatorInterval = setInterval(function () {
+        rebootnator.move()
+    }, 10)
+}
 
+function newEnemies() {
+    enemiesSpawnInterval = setInterval(function(){
+        enemy = new Enemy()
+        enemy.insert()
+        enemies.push(enemy)
+    }, 1000)
+}
 
 window.addEventListener('keydown', function (event) {
 

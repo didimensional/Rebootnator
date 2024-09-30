@@ -19,16 +19,21 @@ class Enemy {
         boardGame.appendChild(this.sprite)
     }
 
+    remove() {
+        boardGame.removeChild(this.sprite)
+        clearInterval(this.interval)
+    }
+
     move(){
         let newY = this.y + this.speed * this.directionY
         //this.checkCollision()
         if (newY >= 0 && newY <= 800 - this.height){
             this.y = newY
             this.sprite.style.top = this.y + 'px'
-        } /*else {
-            enemies.shift()
+        } else {
+            // enemies.shift()
             this.remove()
-        } */
+        } 
     }
 
 }
