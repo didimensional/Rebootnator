@@ -39,7 +39,7 @@ class Goodies {
         this.sprite.style.height = this.height + 'px'
         this.sprite.style.top = this.y + 'px'
         this.sprite.style.left = this.x + 'px'
-        // Asignar el color al div
+        // Asignar color al div
         this.sprite.style.backgroundColor = this.color
         //
         boardGame.appendChild(this.sprite)
@@ -49,7 +49,7 @@ class Goodies {
         boardGame.removeChild(this.sprite)
         clearInterval(this.interval)
 }
-    // checkTypeGoodies () {}
+
     move() {
         let newY = this.y + this.speed * this.directionY
         this.checkCollision()
@@ -62,10 +62,15 @@ class Goodies {
 }
 
     effect() {
+        const originWidth = rebootnator.width
+        const originHeight = rebootnator.height
+        const originSpeed = rebootnator.speed
+
         switch (this.type) {
             case 'slimSalad':
                 rebootnator.width = 50
                 rebootnator.sprite.style.width = rebootnator.width + 'px' // Actualizar el estilo
+                setTimeout
                 break;
             case 'speedCoffee':
                 rebootnator.speed = 10
@@ -75,15 +80,26 @@ class Goodies {
                 rebootnator.sprite.style.height = rebootnator.height + 'px' // Actualizar el estilo
                 break;
         }
-    }
+
+        //timeout para devolver al jugador a su estado original pasados 5s
+        setTimeout(function () {
+            rebootnator.width = originWidth
+            rebootnator.sprite.style.width = rebootnator.width + 'px'
+
+            rebootnator.height = originHeight;
+            rebootnator.sprite.style.height = rebootnator.height + 'px'
+    
+            rebootnator.speed = originSpeed
+        }, 5000)
+}
 
     checkCollision() {
         if (this.x < rebootnator.x + rebootnator.width &&
             this.y < rebootnator.y + rebootnator.height &&
             this.x + this.width > rebootnator.x &&
             this.y + this.height > rebootnator.y) {
-            this.effect() // Llamar a effect al detectar la colisión
+            this.effect() // Llamamos a los effect al detectar la colisión
             this.remove()
         }
-    }
+}
 }
