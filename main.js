@@ -1,6 +1,6 @@
 let boardGame = document.getElementById("boardGame")
 
-let rebootnator 
+let rebootnator
 
 let moveRebootnatorInterval
 
@@ -15,7 +15,7 @@ let handsUp
 function startGame() {
     newPlayer()
     newEnemies()
-}                  
+}
 
 function newPlayer() {
     rebootnator = new Rebootnator(300, 700)
@@ -26,14 +26,14 @@ function newPlayer() {
 }
 
 function newEnemies() {
-    enemiesSpawnInterval = setInterval(function(){
+    enemiesSpawnInterval = setInterval(function () {
         enemy = new Enemy()
         enemy.insert()
         enemies.push(enemy)
     }, 1000)
 }
 
-function fireHandsUp(){
+function fireHandsUp() {
     handsUp = new HandsUp()
     handsUp.insert()
 }
@@ -46,7 +46,7 @@ window.addEventListener('keydown', function (event) {
             rebootnator.directionX = -1
             rebootnator.move()
             break;
-        
+
         case 'd':
             rebootnator.directionX = 1
             rebootnator.move()
@@ -66,7 +66,7 @@ window.addEventListener('keydown', function (event) {
             rebootnator.directionX = -1
             rebootnator.move()
             break;
-            
+
         case 'ArrowRight':
             rebootnator.directionX = 1
             rebootnator.move()
@@ -75,11 +75,11 @@ window.addEventListener('keydown', function (event) {
         case ' ':
             fireHandsUp()
             break;
-    
+
     }
 })
 
-window.addEventListener('keyup', function (event){
+window.addEventListener('keyup', function (event) {
     rebootnator.directionX = 0
 })
 
