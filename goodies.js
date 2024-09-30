@@ -47,3 +47,14 @@ class Goodies {
             }
         }
 }
+
+class SpeedCoffee extends Goodies {
+    constructor() {
+        super()
+        this.sprite.setAttribute('class', 'speedCoffee')
+    }
+
+    effect() {
+        rebootnator.speed *= 2
+    }
+}
