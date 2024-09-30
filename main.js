@@ -39,7 +39,18 @@ function newEnemies() {
         enemies.push(enemy)
     }, 500)
 }
-
+// NUEVO newGoodies! --------------------------
+function newGoodies() {
+    goodieSpawnInterval = setInterval(function () {
+        const types = ['slimSalad', 'speedCoffee', 'flatEgg']
+        const randomType = types[Math.floor(Math.random() * types.length)] // Seleccionar un tipo al azar
+        let goodie = new Goodies(randomType)
+        goodie.insert()
+        goodies.push(goodie)
+    }, 6000)
+}
+//--------------------------------------------
+/*-------------------------------
 function newGoodies() {
     goodieSpawnInterval = setInterval(function () {
         goodie = new Goodies()
@@ -47,7 +58,7 @@ function newGoodies() {
         goodies.push(goodie)
     }, 10000)
 }
-
+------------------------------ */
 function fireHandsUp() {
     handsUp = new HandsUp()
     handsUp.insert()

@@ -30,7 +30,24 @@ body {
     background-size: cover;
 }
 
+
+/* ¡TODO ESTO ESTÁ OBSOLETO! A PARTIR DE AHORA LO AÑADIMOS AL DOM VIA GOODIES.JS */
 .goodies{
     position: absolute;
     background-color: rgb(24, 121, 21);
+} 
+
+.speedCoffee{
+    position: absolute;
+    background-color: brown;
+}
+
+.slimSalad{
+    position: absolute;
+    background-color: greenyellow;
+}
+
+.flatEgg{
+    position: absolute;
+    background-color: purple;
 }

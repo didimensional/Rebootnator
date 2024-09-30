@@ -1,5 +1,8 @@
 class Goodies {
-    constructor() {
+    constructor(type) {
+        // declarar type
+        this.type = type
+        //
         this.height = 50
         this.width = 50
         this.y = 0
@@ -8,14 +11,37 @@ class Goodies {
         this.speed = 1
         this.sprite = document.createElement('div')
         this.interval = setInterval(this.move.bind(this), 20)
+        // Asignar color basandonos en el goodie type
+        this.color = this.getColorByType(type)
+        //
 }
+    // NUEVO Añadir metodo > switch para asignar un color a cada goodie type
+    getColorByType(type) {
+        switch (type) {
+            case 'slimSalad':
+                return 'greenyellow'
+            case 'speedCoffee':
+                return 'brown'
+            case 'flatEgg':
+                return 'purple'
+            default:
+                return 'green'
+        }
+    }
+
+    //------------------------------------------------------------
 
     insert() {
-        this.sprite.setAttribute('class', 'goodies')
+        // Clase CSS basada en el tipo
+        this.sprite.setAttribute('class', this.type)
+        //
         this.sprite.style.width = this.width + 'px'
         this.sprite.style.height = this.height + 'px'
         this.sprite.style.top = this.y + 'px'
         this.sprite.style.left = this.x + 'px'
+        // Asignar el color al div
+        this.sprite.style.backgroundColor = this.color
+        //
         boardGame.appendChild(this.sprite)
 }
 
@@ -23,9 +49,7 @@ class Goodies {
         boardGame.removeChild(this.sprite)
         clearInterval(this.interval)
 }
-
     // checkTypeGoodies () {}
-    
     move() {
         let newY = this.y + this.speed * this.directionY
         this.checkCollision()
@@ -37,24 +61,29 @@ class Goodies {
         }
 }
 
-    checkCollision() {
-            if (this.x < rebootnator.x + rebootnator.width &&
-                this.y < rebootnator.y + rebootnator.height &&
-                this.x + this.width > rebootnator.x &&
-                this.y + this.height > rebootnator.y) {
-                this.remove()
-                // HACE FALTA METER UN COMPORTAMIENTO PARA QUE LE AUMENTE LA VIDA
-            }
+    effect() {
+        switch (this.type) {
+            case 'slimSalad':
+                rebootnator.width = 50
+                rebootnator.sprite.style.width = rebootnator.width + 'px' // Actualizar el estilo
+                break;
+            case 'speedCoffee':
+                rebootnator.speed = 10
+                break;
+            case 'flatEgg':
+                rebootnator.height = 50
+                rebootnator.sprite.style.height = rebootnator.height + 'px' // Actualizar el estilo
+                break;
         }
-}
-
-class SpeedCoffee extends Goodies {
-    constructor() {
-        super()
-        this.sprite.setAttribute('class', 'speedCoffee')
     }
 
-    effect() {
-        rebootnator.speed *= 2
+    checkCollision() {
+        if (this.x < rebootnator.x + rebootnator.width &&
+            this.y < rebootnator.y + rebootnator.height &&
+            this.x + this.width > rebootnator.x &&
+            this.y + this.height > rebootnator.y) {
+            this.effect() // Llamar a effect al detectar la colisión
+            this.remove()
+        }
     }
 }
