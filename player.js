@@ -3,8 +3,8 @@ class Rebootnator {
     constructor(x, y) {
         this.x = x
         this.y = y
-        this.health = 3
         this.lives = 3
+        this.health = 3
         this.width = 100
         this.height = 100
         this.directionX = 0   // Si es 1 es der ; Si es -1 es izq

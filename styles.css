@@ -51,3 +51,8 @@ body {
     position: absolute;
     background-color: purple;
 }
+
+#lives {
+    color: white;
+    font-size: large;
+}

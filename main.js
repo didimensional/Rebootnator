@@ -1,7 +1,7 @@
 let boardGame = document.getElementById("boardGame")
 let startView = document.getElementById('start')
 let restartView = document.getElementById('restart')
-let score = document.getElementById('score')
+let scorePanel = document.getElementById('score')
 
 let buttonStart = document.getElementById('btn-start')
 let buttonEnd = document.getElementById('btn-end')
@@ -29,29 +29,31 @@ function startGame() {
 
 
 function gameWorking (){
-
+    
     if (reebootnator.lives > 0){
         rebootnator.move()
-
+        
     } else { 
         endGame() } 
-}
-
-
-
+    }
+    
+    
+    
 function newPlayer() {
     rebootnator = new Rebootnator(300, 700)
     rebootnator.insert()
     moveRebootnatorInterval = setInterval(function () {
     rebootnator.move()
     }, 5)
-}
+    livesPanel.innerText = 'LIVES: ' + rebootnator.lives
 
-function newEnemies() {
-    enemiesSpawnInterval = setInterval(function () {
-        enemy = new Enemy()
-        enemy.insert()
-        enemies.push(enemy)
+}
+    
+    function newEnemies() {
+        enemiesSpawnInterval = setInterval(function () {
+            enemy = new Enemy()
+            enemy.insert()
+            enemies.push(enemy)
     }, 500)
 }
 
@@ -145,9 +147,10 @@ function endGame () {
         goodie.remove()
     })
 
-
     goodies = []
     enemies = []
+
+    console.log('FIN DE JUEGO')
     
 }
 
