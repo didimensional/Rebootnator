@@ -86,15 +86,15 @@ class Goodies {
 }
 
     checkCollision() {
-        goodies.forEach(function (element, index) {
-            if (element.x < rebootnator.x + rebootnator.width &&
-                element.y < rebootnator.y + rebootnator.height &&
-                element.x + element.width > rebootnator.x &&
-                element.y + element.height > rebootnator.y) {
+        goodies.forEach(function (goodie, index) {
+            if (goodie.x < rebootnator.x + rebootnator.width &&
+                goodie.y < rebootnator.y + rebootnator.height &&
+                goodie.x + goodie.width > rebootnator.x &&
+                goodie.y + goodie.height > rebootnator.y) {
 
-                this.effect() // Llamamos a los effect al detectar la colisión
-                goodies.splice(index, 1)
-                this.remove()
+                    goodie.effect() // Llamamos a los effect al detectar la colisión
+                    goodie.remove()
+                    goodies.splice(index, 1)
             }    
         })
 }
