@@ -3,7 +3,6 @@ class Rebootnator {
     constructor(x, y) {
         this.x = x
         this.y = y
-        this.health = 3
         this.lives = 3
         this.width = 134
         this.height = 164

@@ -107,6 +107,48 @@ body {
   background-size: contain;
 }
 
+.thickBurger{
+    position: absolute;
+    background-color: purple;
+}
+
+#lives {
+    color: white;
+    font-size: large;
+}
+
+#score {
+    color: white;
+    display: inline-block;
+}
+
+#health {
+    color: white;
+    display: inline-block;
+}
+
+/*
+.js {
+    position: absolute;
+    background-image: url(Images/enemies/js.png);
+    background-size: cover;
+}
+
+
+
+.html {
+    position: absolute;
+    background-image: url(Images/enemies/html.png);
+    background-size: cover;
+}
+
+
+.css {
+    position: absolute;
+    background-image: url(Images/enemies/css.png);
+    background-size: cover;
+}
+*7
 #scoreBoard {
   position: absolute;
   margin-top: -50px;

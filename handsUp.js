@@ -46,6 +46,7 @@ class HandsUp {
                 enemy.remove()
                 enemies.splice(index, 1)
                 Rebootnator.score += 1
+                score.innerText = "SCORE: " + Rebootnator.score
                 self.remove()
                 console.log(Rebootnator.score)
             }

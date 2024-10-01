@@ -1,8 +1,13 @@
 let boardGame = document.getElementById("boardGame")
-let buttonStartGame = document.getElementById('btn-start')
-let startState = document.getElementById('start')
+let startView = document.getElementById('start')
 let restartView = document.getElementById('restart')
 let score = document.getElementById('score')
+
+let heartCounter = document.getElementById('health')
+
+
+let buttonStart = document.getElementById('btn-start')
+let buttonEnd = document.getElementById('btn-end')
 
 
 let rebootnator
@@ -10,16 +15,15 @@ let moveRebootnatorInterval
 
 
 let enemy
-let enemies = []
 let enemiesSpawnInterval
 
 let goodie
+let enemies = []
 let goodies = []
 let goodieSpawnInterval
 
 let handsUp
-
-enemiesSpawnInterval
+    
 function startGame() {
     newPlayer()
     newEnemies()
@@ -28,47 +32,48 @@ function startGame() {
 
 
 function gameWorking (){
-
-    if (reenemiesSpawnIntervalbootnator.lives > 0){
+    
+    if (rebootnator.lives > 0){
         rebootnator.move()
+        console.log('asdasd')
+        
+    } else { 
+        endGame() } 
+    }
 
-    } else { endGame() } enemiesSpawnInterval
-}
-
-
-
-enemiesSpawnInterval
+    
+    
 function newPlayer() {
     rebootnator = new Rebootnator(300, 700)
-    reboolet goodies = []
-tnator.insert()
+    rebootnator.insert()
     moveRebootnatorInterval = setInterval(function () {
-        rebootnator.move()
-    }, 10)
+    gameWorking()
+    }, 5)
 }
-
-function let goodies = []
-newEnemies() {
-    enemiesSpawnInterval = setInterval(function () {
-        enemy = new Enemy()
-        enemy.insert()
-        enemies.push(enemy)
+    
+    function newEnemies() {
+        enemiesSpawnInterval = setInterval(function () {
+            enemy = new Enemy()
+            /*
+            const enemyTypes = ['js', 'html', 'css']
+            const decider = enemyTypes[Math.floor(Math.random() * enemyTypes)] 
+            */
+            enemy.insert()
+            enemies.push(enemy)
     }, 500)
 }
 
 function newGoodies() {
     goodieSpawnInterval = setInterval(function () {
-        const types = ['slimSalad', 'speedCoffee', 'flatEgg']
+        const types = ['slimSalad', 'speedCoffee', 'thickBurger']
         const randomType = types[Math.floor(Math.random() * types.length)] 
-        let goodie = new Goodies(randomType)
+        goodie = new Goodies(randomType)
         goodie.insert()
         goodies.push(goodie)
     }, 6000)
 
-    //PENDIENTE: añadir un pop / shift al array para borrar (ver enemies.js) -> A LA COLISION
 
 }
-
 
 function fireHandsUp() {
     handsUp = new HandsUp()
@@ -99,7 +104,7 @@ window.addEventListener('keydown', function (event) {
             rebootnator.move()
             break;
 
-        case 'ArrowLefgoodieSpawnIntervalt':
+        case 'ArrowLeft':
             rebootnator.directionX = -1
             rebootnator.move()
             break;
@@ -121,11 +126,14 @@ window.addEventListener('keyup', function (event) {
     rebootnator.directionX = 0
 })
 
-buttonStartGame.addEvegoodieSpawnIntervalntListener('click', function(event){
 
+buttonStart.addEventListener('click' , function (event) {
+    startGame()
 })
 
-startGame()
+buttonEnd.addEventListener('click', function (event) {
+    endGame()
+})
 
 
 
@@ -134,16 +142,21 @@ function endGame () {
     clearInterval(goodieSpawnInterval)
     clearInterval(enemiesSpawnInterval)
     
-    player.remove()
+    rebootnator.remove()
 
-    enemies.forEach(element,index){
-        element.remove()
-    }
-    goodies.forEach(element, index){
-        element.remove()
-    }
+    enemies.forEach(function(enemy,index){
+        enemy.remove()
+    })
 
-    boardGame.style.display = 'none'
-    restartView.style.display ='block'
+    goodies.forEach(function(goodie, index){
+        goodie.remove()
+    })
+
+    goodies = []
+    enemies = []
+
+    console.log('FIN DE JUEGO')
     
 }
+
+
