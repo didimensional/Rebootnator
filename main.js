@@ -115,4 +115,10 @@ window.addEventListener('keyup', function (event) {
 startGame()
 
 
+// utilizaremos Reboonator.score
 
+// let score = document.createElement('h1')
+// score.setAttribute('id', 'score')
+// score.innerText
+// score.style.color = 'white'
+// body.appendChild(score)

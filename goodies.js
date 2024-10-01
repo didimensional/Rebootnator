@@ -79,8 +79,6 @@ class Goodies {
                 break;
         }
 
-//METER FLATEGG COMO BURGUER, Y HACER QUE SEA UN "GOODIE" NEGATIVO (modificar solo width)
-
         //timeout para devolver al jugador a su estado original pasados 5s
         setTimeout(function () {
             rebootnator.width = originWidth
