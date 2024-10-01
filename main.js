@@ -30,7 +30,7 @@ function startGame() {
 }
 
 // function gameWorking (){
-//     if (rebootnator.lives > 0) {
+//     if (Rebootnator.lives > 0) {
 //         rebootnator.move
 //     } else {
 //         endGame ()
