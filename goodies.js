@@ -1,8 +1,6 @@
 class Goodies {
     constructor(type) {
-        // declarar type
         this.type = type
-        //
         this.height = 50
         this.width = 50
         this.y = 0
@@ -11,11 +9,9 @@ class Goodies {
         this.speed = 1
         this.sprite = document.createElement('div')
         this.interval = setInterval(this.move.bind(this), 20)
-        // Asignar color basandonos en el goodie type
         this.color = this.getColorByType(type)
-        //
+        
 }
-    // NUEVO Añadir metodo > switch para asignar un color a cada goodie type
     getColorByType(type) {
         switch (type) {
             case 'slimSalad':
@@ -28,20 +24,15 @@ class Goodies {
                 return 'green'
         }
     }
-
-    //------------------------------------------------------------
+    
 
     insert() {
-        // Clase CSS basada en el tipo
         this.sprite.setAttribute('class', this.type)
-        //
         this.sprite.style.width = this.width + 'px'
         this.sprite.style.height = this.height + 'px'
         this.sprite.style.top = this.y + 'px'
         this.sprite.style.left = this.x + 'px'
-        // Asignar color al div
         this.sprite.style.backgroundColor = this.color
-        //
         boardGame.appendChild(this.sprite)
 }
 
@@ -57,6 +48,7 @@ class Goodies {
             this.y = newY
             this.sprite.style.top = this.y + 'px'
         } else {
+            goodies.shift()
             this.remove()
         }
 }
@@ -80,7 +72,6 @@ class Goodies {
                 break;
         }
 
-//METER FLATEGG COMO BURGUER, Y HACER QUE SEA UN "GOODIE" NEGATIVO (modificar solo width)
 
         //timeout para devolver al jugador a su estado original pasados 5s
         setTimeout(function () {
@@ -95,12 +86,16 @@ class Goodies {
 }
 
     checkCollision() {
-        if (this.x < rebootnator.x + rebootnator.width &&
-            this.y < rebootnator.y + rebootnator.height &&
-            this.x + this.width > rebootnator.x &&
-            this.y + this.height > rebootnator.y) {
-            this.effect() // Llamamos a los effect al detectar la colisión
-            this.remove()
-        }
+        goodies.forEach(function (element, index) {
+            if (element.x < rebootnator.x + rebootnator.width &&
+                element.y < rebootnator.y + rebootnator.height &&
+                element.x + element.width > rebootnator.x &&
+                element.y + element.height > rebootnator.y) {
+
+                this.effect() // Llamamos a los effect al detectar la colisión
+                goodies.splice(index, 1)
+                this.remove()
+            }    
+        })
 }
 }

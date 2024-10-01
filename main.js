@@ -27,7 +27,7 @@ function startGame() {
     newGoodies()
 }
 
-/*
+
 function gameWorking (){
 
     if (reebootnator.lives > 0){
@@ -36,16 +36,15 @@ function gameWorking (){
     } else { 
         endGame() } 
 }
-*/
+
 
 
 function newPlayer() {
     rebootnator = new Rebootnator(300, 700)
-    rebootnator.goodies = []
     rebootnator.insert()
     moveRebootnatorInterval = setInterval(function () {
-        rebootnator.move()
-    }, 10)
+    rebootnator.move()
+    }, 5)
 }
 
 function newEnemies() {
@@ -60,7 +59,7 @@ function newGoodies() {
     goodieSpawnInterval = setInterval(function () {
         const types = ['slimSalad', 'speedCoffee', 'flatEgg']
         const randomType = types[Math.floor(Math.random() * types.length)] 
-        let goodie = new Goodies(randomType)
+        goodie = new Goodies(randomType)
         goodie.insert()
         goodies.push(goodie)
     }, 6000)
@@ -117,7 +116,7 @@ window.addEventListener('keydown', function (event) {
 })
 
 window.addEventListener('keyup', function (event) {
-    rebootnator.directionX= 0
+    rebootnator.directionX = 0
 })
 
 
@@ -138,12 +137,12 @@ function endGame () {
     
     rebootnator.remove()
 
-    enemies.forEach(function(element,index){
-        element.remove()
+    enemies.forEach(function(enemy,index){
+        enemy.remove()
     })
 
-    goodies.forEach(function(element, index){
-        element.remove()
+    goodies.forEach(function(goodie, index){
+        goodie.remove()
     })
     
 }
