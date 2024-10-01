@@ -119,6 +119,7 @@ body {
         margin-top: 110px;
         background-size: cover;
         background-position: -50px;
+        border: 4px solid white;
 
 }
 
@@ -135,44 +136,25 @@ body {
     position: absolute;
     margin-top:90px;
     margin-left: 220px;
-}
-.startButton{
-    position:absolute;
-    display: inline;
-    font-family: "VT323", system-ui;
     width: 250px;
     height: 70px;
-    font-size: 70px;
-    font-weight: 600;
+    background-image: url(Images/startButton.png);
+    background-size: cover;
 }
-.buttonStartText{
-    position:absolute;
-    margin-left: 65px;
-    display: inline;
-    font-size: 60px;
-    margin-top: 6px;
+#buttonStart:hover{
+    scale: 110%;
 }
 
+#buttonCredits:hover {
+    scale: 110%;
+}
 #buttonCredits {
-    margin-left: 220px;
-    margin-top:180px;
-    
-}
-
-.creditsButton {
     position: absolute;
-    display: inline;
-    font-family: "VT323", system-ui;
+    margin-top: 180px;
+    margin-left: 220px;
     width: 250px;
     height: 70px;
-    font-size: 70px;
-    font-weight: 600;
+    background-image: url(Images/creditsButton.png);
+    background-size: cover;
 }
 
-.buttonCreditsText {
-    position: absolute;
-    margin-left: 40px;
-    display: inline;
-    font-size: 60px;
-    margin-top: 6px;
-}
