@@ -34,7 +34,6 @@ class Rebootnator {
 
     remove() {
         boardGame.removeChild(this.sprite)
-        clearInterval(this.interval)
     }
 
 }

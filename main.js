@@ -30,7 +30,6 @@ function startGame() {
 function gameWorking() {
   if (rebootnator.lives > 0) {
     rebootnator.move();
-    console.log("asdasd");
   } else {
     endGame();
   }
@@ -39,9 +38,7 @@ function gameWorking() {
 function newPlayer() {
   rebootnator = new Rebootnator(300, 700);
   rebootnator.insert();
-  moveRebootnatorInterval = setInterval(function () {
-    gameWorking();
-  }, 5);
+  moveRebootnatorInterval = setInterval(gameWorking, 5);
 }
 
 function newEnemies() {
@@ -135,6 +132,8 @@ function endGame() {
   goodies.forEach(function (goodie, index) {
     goodie.remove();
   });
+
+  
 
   goodies = [];
   enemies = [];

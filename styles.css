@@ -113,17 +113,17 @@ body {
 }
 
 #lives {
-    color: white;
+    color: black;
     font-size: large;
 }
 
 #score {
-    color: white;
+    color: black;
     display: inline-block;
 }
 
 #health {
-    color: white;
+    color: black;
     display: inline-block;
 }
 
