@@ -32,9 +32,11 @@ class Enemy {
             this.y = newY
             this.sprite.style.top = this.y + 'px'
         } else {
+            Rebootnator.score -= 1
+            score.innerText = "SCORE: " + Rebootnator.score
             enemies.shift()
             this.remove()
-        } 
+        }
     }
 
     checkCollision() {
@@ -46,6 +48,7 @@ class Enemy {
                     enemy.remove()
                     enemies.splice(index, 1)
                     rebootnator.lives -= 1
+                    heartCounter.innerText = "LIVES: " + rebootnator.lives
                 }
         })
     }

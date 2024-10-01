@@ -57,6 +57,16 @@ body {
     font-size: large;
 }
 
+#score {
+    color: white;
+    display: inline-block;
+}
+
+#health {
+    color: white;
+    display: inline-block;
+}
+
 /*
 .js {
     position: absolute;
