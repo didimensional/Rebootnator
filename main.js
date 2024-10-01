@@ -12,10 +12,10 @@ let moveRebootnatorInterval
 
 
 let enemy
-let enemies = []
 let enemiesSpawnInterval
 
 let goodie
+let enemies = []
 let goodies = []
 let goodieSpawnInterval
 
@@ -144,6 +144,10 @@ function endGame () {
     goodies.forEach(function(goodie, index){
         goodie.remove()
     })
+
+
+    goodies = []
+    enemies = []
     
 }
 
