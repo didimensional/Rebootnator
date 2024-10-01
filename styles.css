@@ -24,9 +24,29 @@ body {
   /* display: none; */
 }
 
-#rebootnator {
+.rebootnator {
   position: absolute;
-  background-image: url("./Images/sprites/sprites_quiet_front.png");
+  background-image: url("Images/sprites/machangoFront.gif");
+  background-size: cover;
+}
+.rebootnatorLeft {
+position: absolute;
+  background-image: url("Images/sprites/machangoLeft.gif");
+  background-size: cover;
+}
+.rebootnatorRight{
+position: absolute;
+  background-image: url("Images/sprites/machangoRight.gif");
+  background-size: cover;
+}
+.rebootnatorThin{
+ background-image: url(Images/sprites/machangoThin.png);
+ background-size: cover;
+}
+.rebootnatorFat {
+   background-image: url(Images/sprites/machangoFat.png);
+ background-size: cover;
+
 }
 
 /* FUNCIONES COMENTADAS PORSIACA
@@ -61,7 +81,7 @@ body {
   }
 
   100% {
-    background-position: -534px;
+    background-position: 185px;
   }
 }
 
@@ -427,6 +447,7 @@ body {
   height: 500px;
   background-size: cover;
   margin-left: 125px;
+  margin-top: 50px;
 }
 
 .kahootLogo {
