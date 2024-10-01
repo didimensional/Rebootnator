@@ -1,50 +1,110 @@
 body {
-    background-color: rgb(0, 0, 0);
-
+  background-image: url(Images/backgrounds/wallpaper.png);
+  background-size: cover;
+  font-family: "VT323", system-ui;
+}
+.vt323-regular {
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
 }
 
-#boardGame{
-    position: relative;
-    height:  800px;
-    width: 700px;
-    background-color: aliceblue;
-    margin: 0 auto;
-    margin-top: 70px;
+/* BOARD GAME STYLES */
 
+#boardGame {
+  position: relative;
+  height: 800px;
+  width: 700px;
+  background-image: url(Images/backgrounds/wholeClassBackgroundextended.png);
+  margin: 0 auto;
+  margin-top: 110px;
+  background-size: cover;
+  background-position: -50px;
+  /* display: none; */
 }
 
+#rebootnator {
+  position: absolute;    
+  background-image: url(/Rebootnator/Images/sprites/sprites_quiet_front.png);
+    
+    
+}
 
-#rebootnator{
+/* FUNCIONES COMENTADAS PORSIACA
+
+
+    #rebootnatorLeft {
     position: absolute;
-    background-color: red;
+    background-image: url(/Rebootnator/Images/sprites/sprites_move_left.png);
+    animation: animationLeft 2s steps(4)infinite;
+
+}
+
+#rebootnatorRight {
+    position: absolute;
+    background-image: url(/Rebootnator/Images/sprites/sprites_move_right.png);
+    animation: animationLeft 2s steps(4)infinite;
+
+}
+
+#rebootnatorShoot {
+    position: absolute;
+    background-image: url(/Rebootnator/Images/sprites/sprites_attack.png);
+}
+
+    */
+
+/* Esta está ok */
+
+@keyframes animationLeft { 
+    0%  {background-position: 0px}
+
+    100% {background-position: -534px}
+}
+
+/* Esta hay que probarla */
+@keyframes animationRight {
+    0% {
+        background-position: 0px
+    }
+
+    100% {
+        background-position: -534px
+    }
 }
 
 .enemies {
-    position: absolute;
-    background-color: blue;
+  position: absolute;
+  background-color: blue;
 }
 
 .handsUp{
     position: absolute;
-    background-image: url(Images/raise-hand.png);
+    background-image: url(Images/hand.png);
     background-size: cover;
 }
 
-
-/* ¡TODO ESTO ESTÁ OBSOLETO! A PARTIR DE AHORA LO AÑADIMOS AL DOM VIA GOODIES.JS */
-.goodies{
-    position: absolute;
-    background-color: rgb(24, 121, 21);
-} 
-
-.speedCoffee{
-    position: absolute;
-    background-color: brown;
+.goodies {
+  position: absolute;
+  background-color: rgb(24, 121, 21);
 }
 
-.slimSalad{
-    position: absolute;
-    background-color: greenyellow;
+.speedCoffee {
+  position: absolute;
+  background-image: url(Images/goodies/coffee-cup.png);
+  background-size: cover;
+}
+
+.slimSalad {
+  position: absolute;
+  background-image: url(Images/goodies/output-onlinepngtools.png);
+  background-size: cover;
+}
+
+.flatEgg {
+  position: absolute;
+  background-image: url(Images/enemies/burger.png);
+  background-size: contain;
 }
 
 .thickBurger{
@@ -89,3 +149,147 @@ body {
     background-size: cover;
 }
 *7
+#scoreBoard {
+  position: absolute;
+  margin-top: -50px;
+  position: absolute;
+  background-color: black;
+  height: 50px;
+  width: 700px;
+}
+.scoreText {
+  position: absolute;
+  color: white;
+  font-size: 40px;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+.scoreNumber {
+  position: absolute;
+  color: white;
+  font-size: 35px;
+  margin-left: 110px;
+  margin-top: 8px;
+}
+
+.live1 {
+  width: 35px;
+}
+.live2 {
+  width: 35px;
+}
+.live3 {
+  width: 35px;
+}
+
+#livesContainer {
+  display: inline-block;
+  margin-left: 560px;
+  margin-top: 8px;
+}
+
+/* START GAME SCREEN*/
+
+.startScreenContainer {
+  position: relative;
+  height: 800px;
+  width: 700px;
+  background-image: url(Images/backgrounds/pixelatedBackgroundStart.png);
+  margin: 0 auto;
+  margin-top: 110px;
+  background-size: cover;
+  background-position: -50px;
+  border: 4px solid white;
+   display: none;
+}
+
+.insertCoin {
+  width: 250px;
+  margin-left: 450px;
+}
+.logoStart {
+  margin-top: 100px;
+  margin-left: 65px;
+}
+
+#buttonStart {
+  position: absolute;
+  margin-top: 90px;
+  margin-left: 220px;
+  width: 250px;
+  height: 70px;
+  background-image: url(Images/startButton.png);
+  background-size: cover;
+}
+#buttonStart:hover {
+  scale: 110%;
+}
+
+#buttonCredits:hover {
+  scale: 110%;
+}
+#buttonCredits {
+  position: absolute;
+  margin-top: 180px;
+  margin-left: 220px;
+  width: 250px;
+  height: 70px;
+  background-image: url(Images/creditsButton.png);
+  background-size: cover;
+}
+
+
+
+/* GAME OVER SCREEN*/
+
+.gameOverScreenContainer {
+  position: relative;
+  height: 800px;
+  width: 700px;
+  background-image: url(Images/backgrounds/pixelatedBackgroundStart.png);
+  margin: 0 auto;
+  margin-top: 110px;
+  background-size: cover;
+  background-position: -50px;
+  border: 4px solid white;
+  /* display: none; */
+}
+.laptop {
+  height: 160px;
+  margin-left: 260px;
+  margin-top: 50px
+}
+
+.gameOverTitle{
+  width: 650px;
+  margin-top: -193px;
+  margin-left: 20px;
+}
+
+.lang {
+  width: 40px;
+  margin-right: 20px;
+}
+
+.gameOverPicContainer{
+margin-left: 240px;
+margin-top: -180px;
+
+}
+
+.gameOverSentence {
+  margin-top: 70px;
+  color:rgb(9, 229, 236);
+  width: 500px;
+  text-align: center;
+  font-weight:bold;
+  margin-left: 100px;
+  font-size: 50px;
+  font-stretch: ultra-expanded;
+
+}
+.logoGameOver {
+  width: 500px;
+  margin-left: 100px;
+  margin-top: -30px;
+}

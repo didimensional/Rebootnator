@@ -32,7 +32,6 @@ class Goodies {
         this.sprite.style.height = this.height + 'px'
         this.sprite.style.top = this.y + 'px'
         this.sprite.style.left = this.x + 'px'
-        this.sprite.style.backgroundColor = this.color
         boardGame.appendChild(this.sprite)
 }
 
