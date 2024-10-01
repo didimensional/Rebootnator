@@ -28,15 +28,15 @@ function startGame() {
 }
 
 function gameWorking() {
-  if (rebootnator.lives > 0) {
+  // if (rebootnator.lives > 0) {
     rebootnator.move();
-  } else {
-    endGame();
-  }
+  // } else {
+  //   endGame();
+  // }
 }
 
 function newPlayer() {
-  rebootnator = new Rebootnator(300, 700);
+  rebootnator = new Rebootnator(300, 630);
   rebootnator.insert();
   moveRebootnatorInterval = setInterval(gameWorking, 5);
 }
@@ -73,31 +73,49 @@ window.addEventListener("keydown", function (event) {
     case "a":
       rebootnator.directionX = -1;
       rebootnator.move();
+      rebootnator.sprite.classList.remove("rebootnator");
+      rebootnator.sprite.classList.remove("rebootnatorRight");
+      rebootnator.sprite.classList.add("rebootnatorLeft");
       break;
 
     case "d":
       rebootnator.directionX = 1;
       rebootnator.move();
+      rebootnator.sprite.classList.remove("rebootnator");
+      rebootnator.sprite.classList.remove("rebootnatorLeft");
+      rebootnator.sprite.classList.add("rebootnatorRight");
       break;
 
     case "A":
       rebootnator.directionX = -1;
       rebootnator.move();
+      rebootnator.sprite.classList.remove("rebootnator");
+      rebootnator.sprite.classList.remove("rebootnatorRight");
+      rebootnator.sprite.classList.add("rebootnatorLeft");
       break;
 
     case "D":
       rebootnator.directionX = 1;
       rebootnator.move();
+      rebootnator.sprite.classList.remove("rebootnator");
+      rebootnator.sprite.classList.remove("rebootnatorLeft");
+      rebootnator.sprite.classList.add("rebootnatorRight");
       break;
 
     case "ArrowLeft":
       rebootnator.directionX = -1;
       rebootnator.move();
+      rebootnator.sprite.classList.remove("rebootnator")
+      rebootnator.sprite.classList.remove("rebootnatorRight");
+      rebootnator.sprite.classList.add("rebootnatorLeft");
       break;
 
     case "ArrowRight":
       rebootnator.directionX = 1;
       rebootnator.move();
+      rebootnator.sprite.classList.remove("rebootnator");
+      rebootnator.sprite.classList.remove("rebootnatorLeft");
+      rebootnator.sprite.classList.add("rebootnatorRight");
       break;
 
     case " ":
@@ -108,6 +126,10 @@ window.addEventListener("keydown", function (event) {
 
 window.addEventListener("keyup", function (event) {
   rebootnator.directionX = 0;
+  rebootnator.sprite.classList.remove("rebootnatorRight");
+  rebootnator.sprite.classList.remove("rebootnatorLeft");
+  rebootnator.sprite.classList.add("rebootnator");
+
 });
 
 buttonStart.addEventListener("click", function (event) {

@@ -4,15 +4,15 @@ class Rebootnator {
         this.x = x
         this.y = y
         this.lives = 3
-        this.width = 134
-        this.height = 164
+        this.width = 110
+        this.height = 150
         this.directionX = 0   // Si es 1 es der ; Si es -1 es izq
         this.speed = 5
         this.sprite = document.createElement('div')
     }
 
     insert() {
-        this.sprite.setAttribute('id', 'rebootnator')
+        this.sprite.setAttribute('class', 'rebootnator')
         this.sprite.style.width = this.width + 'px'
         this.sprite.style.height = this.height + 'px'
         this.sprite.style.top = this.y + 'px'
