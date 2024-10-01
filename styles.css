@@ -200,7 +200,7 @@ body {
   background-size: cover;
   background-position: -50px;
   border: 4px solid white;
-   display: none;
+   /* display: none; */
 }
 
 .insertCoin {
@@ -252,7 +252,7 @@ body {
   background-size: cover;
   background-position: -50px;
   border: 4px solid white;
-  display: none;
+  /* display: none; */
 }
 .laptop {
   height: 160px;
@@ -292,4 +292,15 @@ margin-top: -180px;
   width: 500px;
   margin-left: 100px;
   margin-top: -30px;
+}
+
+.restartButton{
+  width: 250px;
+  height: 70px;
+  margin-top: 30px;
+  margin-left: 220px;
+}
+
+.restartButton:hover {
+  scale: 110%;
 }
