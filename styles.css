@@ -1,16 +1,27 @@
 body {
-    background-color: rgb(0, 0, 0);
-
+    background-image: url(Images/backgrounds/wallpaper.png);
+    background-size: cover;
+    font-family: "VT323", system-ui;
+    
 }
+.vt323-regular {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* BOARD GAME STYLES */
 
 #boardGame{
     position: relative;
     height:  800px;
     width: 700px;
-    background-color: aliceblue;
+    background-image: url(Images/backgrounds/wholeClassBackgroundextended.png);
     margin: 0 auto;
-    margin-top: 70px;
-
+    margin-top: 110px;
+    background-size: cover;
+    background-position: -50px;
+    display:none;
 }
 
 
@@ -30,8 +41,6 @@ body {
     background-size: cover;
 }
 
-
-/* ¡TODO ESTO ESTÁ OBSOLETO! A PARTIR DE AHORA LO AÑADIMOS AL DOM VIA GOODIES.JS */
 .goodies{
     position: absolute;
     background-color: rgb(24, 121, 21);
@@ -39,15 +48,131 @@ body {
 
 .speedCoffee{
     position: absolute;
-    background-color: brown;
+    background-image: url(Images/goodies/coffee-cup.png);
+    background-size: cover;
 }
 
 .slimSalad{
     position: absolute;
-    background-color: greenyellow;
+    background-image: url(Images/goodies/output-onlinepngtools.png);
+    background-size: cover;
 }
 
 .flatEgg{
     position: absolute;
-    background-color: purple;
+    background-image: url(Images/enemies/burger.png);
+    background-size: contain;
+}
+
+#scoreBoard {
+    position: absolute;
+    margin-top:-50px;
+    position: absolute;
+    background-color: black;
+    height: 50px;
+    width: 700px;
+
+    
+
+}
+.scoreText {
+    position: absolute;
+    color:white;
+    font-size: 40px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.scoreNumber {
+    position: absolute;
+    color: white;
+    font-size: 35px;
+    margin-left: 110px;
+    margin-top: 8px;
+}
+
+.live1{
+
+   width: 35px; 
+}
+.live2 {
+    width: 35px;
+}
+.live3 {
+    width: 35px;
+}
+
+#livesContainer {
+    display: inline-block;
+    margin-left: 560px;
+    margin-top:8px;
+}
+
+
+/* START GAME SCREEN*/
+
+.startScreenContainer{
+    position: relative;
+        height: 800px;
+        width: 700px;
+        background-image: url(Images/backgrounds/pixelatedBackgroundStart.png);
+        margin: 0 auto;
+        margin-top: 110px;
+        background-size: cover;
+        background-position: -50px;
+
+}
+
+.insertCoin{
+    width: 250px;
+    margin-left: 450px
+}
+.logoStart{
+    margin-top:100px;
+    margin-left: 65px;
+}
+
+#buttonStart{
+    position: absolute;
+    margin-top:90px;
+    margin-left: 220px;
+}
+.startButton{
+    position:absolute;
+    display: inline;
+    font-family: "VT323", system-ui;
+    width: 250px;
+    height: 70px;
+    font-size: 70px;
+    font-weight: 600;
+}
+.buttonStartText{
+    position:absolute;
+    margin-left: 65px;
+    display: inline;
+    font-size: 60px;
+    margin-top: 6px;
+}
+
+#buttonCredits {
+    margin-left: 220px;
+    margin-top:180px;
+    
+}
+
+.creditsButton {
+    position: absolute;
+    display: inline;
+    font-family: "VT323", system-ui;
+    width: 250px;
+    height: 70px;
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.buttonCreditsText {
+    position: absolute;
+    margin-left: 40px;
+    display: inline;
+    font-size: 60px;
+    margin-top: 6px;
 }
