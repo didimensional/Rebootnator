@@ -42,7 +42,7 @@ function newEnemies() {
 // NUEVO newGoodies! --------------------------
 function newGoodies() {
     goodieSpawnInterval = setInterval(function () {
-        const types = ['slimSalad', 'speedCoffee', 'flatEgg']
+        const types = ['slimSalad', 'speedCoffee', 'thickBurger']
         const randomType = types[Math.floor(Math.random() * types.length)] // Seleccionar un tipo al azar
         let goodie = new Goodies(randomType)
         goodie.insert()
