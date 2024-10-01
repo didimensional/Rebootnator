@@ -98,7 +98,7 @@ window.addEventListener('keydown', function (event) {
             rebootnator.move()
             break;
 
-        case 'ArrowLefgoodieSpawnIntervalt':
+        case 'ArrowLeft':
             rebootnator.directionX = -1
             rebootnator.move()
             break;
@@ -117,7 +117,7 @@ window.addEventListener('keydown', function (event) {
 })
 
 window.addEventListener('keyup', function (event) {
-    rebootnator.directionX = 0
+    rebootnator.directionX= 0
 })
 
 
@@ -125,8 +125,9 @@ buttonStart.addEventListener('click' , function (event) {
     startGame()
 })
 
-
-
+buttonEnd.addEventListener('click', function (event) {
+    endGame()
+})
 
 
 
@@ -135,7 +136,7 @@ function endGame () {
     clearInterval(goodieSpawnInterval)
     clearInterval(enemiesSpawnInterval)
     
-    player.remove()
+    rebootnator.remove()
 
     enemies.forEach(function(element,index){
         element.remove()
@@ -148,4 +149,3 @@ function endGame () {
 }
 
 
-console.log(buttonStart)
