@@ -1,8 +1,10 @@
 let boardGame = document.getElementById("boardGame")
-let buttonStartGame = document.getElementById('btn-start')
-let startState = document.getElementById('start')
+let startView = document.getElementById('start')
 let restartView = document.getElementById('restart')
 let score = document.getElementById('score')
+
+let buttonStart = document.getElementById('btn-start')
+let buttonEnd = document.getElementById('btn-end')
 
 
 let rebootnator
@@ -19,36 +21,34 @@ let goodieSpawnInterval
 
 let handsUp
 
-enemiesSpawnInterval
 function startGame() {
     newPlayer()
     newEnemies()
     newGoodies()
 }
 
-
+/*
 function gameWorking (){
 
-    if (reenemiesSpawnIntervalbootnator.lives > 0){
+    if (reebootnator.lives > 0){
         rebootnator.move()
 
-    } else { endGame() } enemiesSpawnInterval
+    } else { 
+        endGame() } 
 }
+*/
 
 
-
-enemiesSpawnInterval
 function newPlayer() {
     rebootnator = new Rebootnator(300, 700)
-    reboolet goodies = []
-tnator.insert()
+    rebootnator.goodies = []
+    rebootnator.insert()
     moveRebootnatorInterval = setInterval(function () {
         rebootnator.move()
     }, 10)
 }
 
-function let goodies = []
-newEnemies() {
+function newEnemies() {
     enemiesSpawnInterval = setInterval(function () {
         enemy = new Enemy()
         enemy.insert()
@@ -68,7 +68,6 @@ function newGoodies() {
     //PENDIENTE: añadir un pop / shift al array para borrar (ver enemies.js) -> A LA COLISION
 
 }
-
 
 function fireHandsUp() {
     handsUp = new HandsUp()
@@ -121,11 +120,13 @@ window.addEventListener('keyup', function (event) {
     rebootnator.directionX = 0
 })
 
-buttonStartGame.addEvegoodieSpawnIntervalntListener('click', function(event){
 
+buttonStart.addEventListener('click' , function (event) {
+    startGame()
 })
 
-startGame()
+
+
 
 
 
@@ -136,14 +137,15 @@ function endGame () {
     
     player.remove()
 
-    enemies.forEach(element,index){
+    enemies.forEach(function(element,index){
         element.remove()
-    }
-    goodies.forEach(element, index){
-        element.remove()
-    }
+    })
 
-    boardGame.style.display = 'none'
-    restartView.style.display ='block'
+    goodies.forEach(function(element, index){
+        element.remove()
+    })
     
 }
+
+
+console.log(buttonStart)
