@@ -45,8 +45,7 @@ class Enemy {
                     enemy.remove()
                     enemies.splice(index, 1)
                     rebootnator.lives -= 1
-
-                }    
+                }
         })
     }
 

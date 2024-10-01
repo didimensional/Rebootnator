@@ -45,8 +45,6 @@ function newPlayer() {
     moveRebootnatorInterval = setInterval(function () {
     rebootnator.move()
     }, 5)
-    livesPanel.innerText = 'LIVES: ' + rebootnator.lives
-
 }
     
     function newEnemies() {
