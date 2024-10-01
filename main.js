@@ -20,7 +20,8 @@ let goodieSpawnInterval
 
 let score = document.getElementById('score')
 
-const heartCounter = document.getElementById('health')
+const heartCounter = document.getElementById('health') // <-----------
+
 // const hearts = document.getElementsByClassName('heartBox')
 
 function startGame() {
