@@ -1,7 +1,10 @@
 let boardGame = document.getElementById("boardGame")
 let startView = document.getElementById('start')
 let restartView = document.getElementById('restart')
-let scorePanel = document.getElementById('score')
+let score = document.getElementById('score')
+
+let heartCounter = document.getElementById('health')
+
 
 let buttonStart = document.getElementById('btn-start')
 let buttonEnd = document.getElementById('btn-end')
@@ -50,6 +53,10 @@ function newPlayer() {
     function newEnemies() {
         enemiesSpawnInterval = setInterval(function () {
             enemy = new Enemy()
+            /*
+            const enemyTypes = ['js', 'html', 'css']
+            const decider = enemyTypes[Math.floor(Math.random() * enemyTypes)] 
+            */
             enemy.insert()
             enemies.push(enemy)
     }, 500)
@@ -57,14 +64,13 @@ function newPlayer() {
 
 function newGoodies() {
     goodieSpawnInterval = setInterval(function () {
-        const types = ['slimSalad', 'speedCoffee', 'flatEgg']
+        const types = ['slimSalad', 'speedCoffee', 'thickBurger']
         const randomType = types[Math.floor(Math.random() * types.length)] 
         goodie = new Goodies(randomType)
         goodie.insert()
         goodies.push(goodie)
     }, 6000)
 
-    //PENDIENTE: añadir un pop / shift al array para borrar (ver enemies.js) -> A LA COLISION
 
 }
 

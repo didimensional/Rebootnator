@@ -1,5 +1,6 @@
 class Enemy {
-    constructor() {
+    constructor(type) {
+        this.type
         this.height = 100
         this.width = 100
         this.y = 0

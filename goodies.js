@@ -18,7 +18,7 @@ class Goodies {
                 return 'greenyellow'
             case 'speedCoffee':
                 return 'brown'
-            case 'flatEgg':
+            case 'thickBurger':
                 return 'purple'
             default:
                 return 'green'
@@ -55,7 +55,6 @@ class Goodies {
 
     effect() {
         const originWidth = rebootnator.width
-        const originHeight = rebootnator.height
         const originSpeed = rebootnator.speed
 
         switch (this.type) {
@@ -66,9 +65,9 @@ class Goodies {
             case 'speedCoffee':
                 rebootnator.speed = 10
                 break;
-            case 'flatEgg':
-                rebootnator.height = 50
-                rebootnator.sprite.style.height = rebootnator.height + 'px' // Actualizar el estilo
+            case 'thickBurger':
+                rebootnator.width = 200
+                rebootnator.sprite.style.width = rebootnator.width + 'px' // Actualizar el estilo
                 break;
         }
 
@@ -78,9 +77,6 @@ class Goodies {
             rebootnator.width = originWidth
             rebootnator.sprite.style.width = rebootnator.width + 'px'
 
-            rebootnator.height = originHeight;
-            rebootnator.sprite.style.height = rebootnator.height + 'px'
-    
             rebootnator.speed = originSpeed
         }, 5000)
 }

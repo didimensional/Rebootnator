@@ -47,7 +47,7 @@ body {
     background-color: greenyellow;
 }
 
-.flatEgg{
+.thickBurger{
     position: absolute;
     background-color: purple;
 }
@@ -56,3 +56,26 @@ body {
     color: white;
     font-size: large;
 }
+
+/*
+.js {
+    position: absolute;
+    background-image: url(Images/enemies/js.png);
+    background-size: cover;
+}
+
+
+
+.html {
+    position: absolute;
+    background-image: url(Images/enemies/html.png);
+    background-size: cover;
+}
+
+
+.css {
+    position: absolute;
+    background-image: url(Images/enemies/css.png);
+    background-size: cover;
+}
+*7
