@@ -23,7 +23,7 @@ let goodies = []
 let goodieSpawnInterval
 
 let handsUp
-
+    
 function startGame() {
     newPlayer()
     newEnemies()
@@ -33,20 +33,21 @@ function startGame() {
 
 function gameWorking (){
     
-    if (reebootnator.lives > 0){
+    if (rebootnator.lives > 0){
         rebootnator.move()
+        console.log('asdasd')
         
     } else { 
         endGame() } 
     }
-    
+
     
     
 function newPlayer() {
     rebootnator = new Rebootnator(300, 700)
     rebootnator.insert()
     moveRebootnatorInterval = setInterval(function () {
-    rebootnator.move()
+    gameWorking()
     }, 5)
 }
     

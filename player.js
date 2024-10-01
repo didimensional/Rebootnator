@@ -4,7 +4,6 @@ class Rebootnator {
         this.x = x
         this.y = y
         this.lives = 3
-        this.health = 3
         this.width = 100
         this.height = 100
         this.directionX = 0   // Si es 1 es der ; Si es -1 es izq
