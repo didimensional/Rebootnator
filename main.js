@@ -29,13 +29,17 @@ function startGame() {
     newGoodies()
 }
 
-// function gameWorking (){
-//     if (Rebootnator.lives > 0) {
-//         rebootnator.move
-//     } else {
-//         endGame ()
-//     }
-// }
+// function prueba() {
+//      if (rebootnator.lives < 0) {
+//          console.log('MUERTO')
+//      }
+//  }
+
+function gameWorking (){
+    if (rebootnator.lives < 0) {
+        endGame ()
+    }
+}
 
 function newPlayer() {
     rebootnator = new Rebootnator(300, 700)

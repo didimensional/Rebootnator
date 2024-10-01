@@ -1,9 +1,9 @@
 class Rebootnator {
     static score = 0
-    static lives = 3
     constructor(x, y) {
         this.x = x
         this.y = y
+        this.lives = 3
         this.health = 3
         this.width = 100
         this.height = 100

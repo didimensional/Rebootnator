@@ -40,7 +40,7 @@ class Enemy {
     }
 
     checkCollision() {
-            if (Rebootnator.lives < 0) {
+            if (rebootnator.lives < 0) {
                 console.log('MUERTO')
             }
         enemies.forEach(function(enemy, index){
@@ -50,18 +50,13 @@ class Enemy {
                 enemy.y + enemy.height > rebootnator.y) {
                     enemy.remove()
                     enemies.splice(index, 1)
-                    Rebootnator.lives -= 1
+                    rebootnator.lives -= 1
                     heartCounter.removeChild(heartCounter.lastChild)
-                    console.log('CURRENT LIFE IS : ' + Rebootnator.lives)
-                    console.log(Rebootnator.lives)
+                    console.log('CURRENT LIFE IS : ' + rebootnator.lives)
+                    console.log(rebootnator.lives)
                 }    
         })
     }
 
 }
 
-// function prueba() {
-//     if (Rebootnator.lives < 0) {
-//         console.log('MUERTO')
-//     }
-// }
