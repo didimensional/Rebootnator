@@ -48,6 +48,9 @@ function newGoodies() {
         goodie.insert()
         goodies.push(goodie)
     }, 6000)
+
+    //PENDIENTE: añadir un pop / shift al array para borrar (ver enemies.js)
+
 }
 //--------------------------------------------
 /*-------------------------------

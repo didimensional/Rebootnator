@@ -70,7 +70,6 @@ class Goodies {
             case 'slimSalad':
                 rebootnator.width = 50
                 rebootnator.sprite.style.width = rebootnator.width + 'px' // Actualizar el estilo
-                setTimeout
                 break;
             case 'speedCoffee':
                 rebootnator.speed = 10
@@ -80,6 +79,8 @@ class Goodies {
                 rebootnator.sprite.style.height = rebootnator.height + 'px' // Actualizar el estilo
                 break;
         }
+
+//METER FLATEGG COMO BURGUER, Y HACER QUE SEA UN "GOODIE" NEGATIVO (modificar solo width)
 
         //timeout para devolver al jugador a su estado original pasados 5s
         setTimeout(function () {
