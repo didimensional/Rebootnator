@@ -5,8 +5,8 @@ class Rebootnator {
         this.y = y
         this.health = 3
         this.lives = 3
-        this.width = 100
-        this.height = 100
+        this.width = 134
+        this.height = 164
         this.directionX = 0   // Si es 1 es der ; Si es -1 es izq
         this.speed = 5
         this.sprite = document.createElement('div')

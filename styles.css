@@ -15,8 +15,53 @@ body {
 
 
 #rebootnator{
+    position: absolute;    
+    background-image: url(/Rebootnator/Images/sprites/sprites_quiet_front.png);
+    
+    
+}
+
+/* FUNCIONES COMENTADAS PORSIACA
+
+
+    #rebootnatorLeft {
     position: absolute;
-    background-color: red;
+    background-image: url(/Rebootnator/Images/sprites/sprites_move_left.png);
+    animation: animationLeft 2s steps(4)infinite;
+
+}
+
+#rebootnatorRight {
+    position: absolute;
+    background-image: url(/Rebootnator/Images/sprites/sprites_move_right.png);
+    animation: animationLeft 2s steps(4)infinite;
+
+}
+
+#rebootnatorShoot {
+    position: absolute;
+    background-image: url(/Rebootnator/Images/sprites/sprites_attack.png);
+}
+
+    */
+
+/* Esta está ok */
+
+@keyframes animationLeft { 
+    0%  {background-position: 0px}
+
+    100% {background-position: -534px}
+}
+
+/* Esta hay que probarla */
+@keyframes animationRight {
+    0% {
+        background-position: 0px
+    }
+
+    100% {
+        background-position: -534px
+    }
 }
 
 .enemies {
@@ -26,7 +71,7 @@ body {
 
 .handsUp{
     position: absolute;
-    background-image: url(Images/raise-hand.png);
+    background-image: url(Images/hand.png);
     background-size: cover;
 }
 
