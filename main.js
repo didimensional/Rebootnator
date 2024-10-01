@@ -18,6 +18,8 @@ let goodies = []
 
 let goodieSpawnInterval
 
+let score = document.getElementById('score')
+
 function startGame() {
     newPlayer()
     newEnemies()
@@ -116,9 +118,3 @@ startGame()
 
 
 // utilizaremos Reboonator.score
-
-// let score = document.createElement('h1')
-// score.setAttribute('id', 'score')
-// score.innerText
-// score.style.color = 'white'
-// body.appendChild(score)
