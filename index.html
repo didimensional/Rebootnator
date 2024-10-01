@@ -11,11 +11,27 @@
     <script src="goodies.js" defer></script>
     <script src="main.js" defer></script>
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    
+        
+    
+    <section id="gameScreen">
+    <div id="boardGame">
+        <div id="scoreBoard">
+        <h class="scoreText">SCORE</h>
+        <h class="scoreNumber">1000</h>
+        <div id="livesContainer">
+        <img class="live1" src="Images/liveHeart.png" alt="">
+        <img class="live2" src="Images/liveHeart.png" alt="">
+        <img class="live3" src="Images/liveHeart.png" alt="">
+        </div>
 
-    <div id="start">
+    <!-- <div id="start">
         <button id="btn-star">START GAME</button>
     </div>
 
@@ -26,10 +42,39 @@
     </div>
 
         
-    <div id="score"></div>
+    <div id="score"></div> -->
 
 
     </div>
-</body>
+    </div>
+    </section>
+    <section id="startScreen">
+<div class="startScreenContainer"> 
+    <img class="insertCoin" src="Images/insertCoin.gif" alt="">
+<img class="logoStart" src="Images/rebootnatorLogoStart.png" alt="">
+<div id="buttonStart"></div>
+<div id="buttonCredits"></div>
+</div>
+</section>
+ <section id="gameOverScreen"></section>
+<div class="gameOverScreenContainer"> 
+    <img class="laptop" src="Images/hacker-hacker-man.gif" alt="">
+    <br>
+<img class="gameOverTitle" src="Images/gameOver.gif" alt="">
+<div class="gameOverPicContainer">
+<img class="lang" src="Images/goodies/css.png">
+<img class= "lang" src="Images/goodies/js.png">
+<img class="lang" src="Images/goodies/html.png">
+<img class="lang" src="Images/raise-hand.png" alt="">
+</div>
+<h1 class="gameOverSentence">YOU HAVE TO STUDY MORE AND GET TO CLASS ON TIME TO BE THE NEXT</h1>
+<img class="logoGameOver" src="Images/rebootnatorLogo.png">
+<div class.btn>
+    <img src="Images/emptyButton (1).png" alt="">
+    <h1 class >RESTART</h1>
+</div>
 
+</div>
+</section>
+</body>
 </html>
