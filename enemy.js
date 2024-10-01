@@ -33,6 +33,9 @@ class Enemy {
         } else {
             enemies.shift()
             this.remove()
+            Rebootnator.score -= 1
+            score.innerText = "SCORE: " + Rebootnator.score
+            // console.log(Rebootnator.score)
         } 
     }
 
@@ -45,10 +48,17 @@ class Enemy {
                     enemy.remove()
                     enemies.splice(index, 1)
                     rebootnator.lives -= 1
+                    heartCounter.removeChild(heartCounter.lastChild)
+                    console.log('CURRENT LIFE IS : ' + rebootnator.lives)
+                    console.log(rebootnator.lives)
                 }    
         })
     }
 
 }
 
-
+function prueba() {
+    if (rebootnator.lives < 0) {
+        console.log('MUERTO')
+    }
+}

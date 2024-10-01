@@ -20,11 +20,22 @@ let goodieSpawnInterval
 
 let score = document.getElementById('score')
 
+const heartCounter = document.getElementById('health')
+// const hearts = document.getElementsByClassName('heartBox')
+
 function startGame() {
     newPlayer()
     newEnemies()
     newGoodies()
 }
+
+// function gameWorking (){
+//     if (rebootnator.lives > 0) {
+//         rebootnator.move
+//     } else {
+//         endGame ()
+//     }
+// }
 
 function newPlayer() {
     rebootnator = new Rebootnator(300, 700)
@@ -116,5 +127,25 @@ window.addEventListener('keyup', function (event) {
 
 startGame()
 
+function endGame() {
+    clearInterval(moveRebootnatorInterval)
+    clearInterval(goodieSpawnInterval)
+    clearInterval(enemiesSpawnInterval)
 
-// utilizaremos Reboonator.score
+    rebootnator.remove()
+
+    enemies.forEach(function (enemy, index) {
+        enemy.remove()
+    })
+
+    goodies.forEach(function (goodie, index) {
+        goodie.remove()
+    })
+
+    goodies = []
+    enemies = []
+
+    console.log('FIN DE JUEGO')
+
+}
+

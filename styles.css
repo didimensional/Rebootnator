@@ -53,5 +53,14 @@ body {
 }
 
 #score {
-    color: white
+    color: white;
+    display: inline-block;
+}
+
+.heartBox {
+    background-image: url(Images/liveHeart.png);
+    background-size: cover;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
 }
