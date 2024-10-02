@@ -21,7 +21,7 @@ let live3 = document.getElementsByClassName('live3')[0]
 let heartContador = 0
 
 
-let restartButtonGameOver = document.getElementsByClassName('restarButton')[0]
+let restartButtonGameOver = document.getElementsByClassName('restartButton')[0]
 
 // Esto es viejo
 
@@ -51,11 +51,6 @@ let goodieSpawnInterval;
 let handsUp;
 
 
-
-buttonStartGame.addEventListener('click', function(event){
-  showloading()
-})
-
 function showloading(){
   startScreen.style.display = 'none'
   loadingScreen.style.display = 'block'
@@ -66,15 +61,19 @@ function showloading(){
   }, 4500)
 }
 
-
-
-
+heartCounter
 function startGame() {
+  scoreNumber.innerText = 0
+
+  live1.style.display = 'inline-block'
+  live2.style.display = 'inline-block'
+  live3.style.display = 'inline-block'
+
+
   newPlayer();
   newEnemies();
   newGoodies();
 }
-
 function gameWorking() {
   if (rebootnator.lives > 0) {
     rebootnator.move();
@@ -83,15 +82,43 @@ function gameWorking() {
  }
 }
 
-
-function showGameOver() { 
+function showGameOverFromBoard() { 
   boardGame.style.display = 'none'
   gameOverScreen.style.display = 'block'
 }
 
+function restartGameOver(){
+  gameOverScreen.style.display = 'none'
+  boardGame.style.display = 'block'
+  startGame()
+}
+
+function endGame() {
+  clearInterval(moveRebootnatorInterval);
+  clearInterval(goodieSpawnInterval);
+  clearInterval(enemiesSpawnInterval);
+
+  rebootnator.remove();
+
+  enemies.forEach(function (enemy, index) {
+    enemy.remove();
+  });
+
+  goodies.forEach(function (goodie, index) {
+    goodie.remove();
+  });
 
 
+  goodies = [];
+  enemies = [];
 
+  console.log("FIN DE JUEGO");
+
+  heartContador = 0
+
+  showGameOverFromBoard()
+
+}
 
 
 function newPlayer() {
@@ -124,6 +151,25 @@ function fireHandsUp() {
   handsUp = new HandsUp();
   handsUp.insert();
 }
+
+function hideHearts () {
+
+  if (heartContador === 0){
+
+    live1.style.display = 'none'
+    console.log('elimino primer corazon')
+  } else if (heartContador === 1){
+    live2.style.display = 'none'
+    console.log('elimino el segundo corazón')
+  } else if (heartContador === 2){
+    live3.style.display = 'none'
+    console.log('elimino el tercer corazon')
+  }
+}
+
+buttonStartGame.addEventListener('click', function (event) {
+  showloading()
+})
 
 window.addEventListener("keydown", function (event) {
   switch (event.key) {
@@ -197,48 +243,9 @@ buttonEnd.addEventListener("click", function (event) {
   endGame();
 });
 
-restartButtonGameOver.addEventListener('click', function () {})
+restartButtonGameOver.addEventListener('click', function (event) {
+  restartGameOver()
+})
 
-function endGame() {
-  clearInterval(moveRebootnatorInterval);
-  clearInterval(goodieSpawnInterval);
-  clearInterval(enemiesSpawnInterval);
-
-  rebootnator.remove();
-
-  enemies.forEach(function (enemy, index) {
-    enemy.remove();
-  });
-
-  goodies.forEach(function (goodie, index) {
-    goodie.remove();
-  });
-
-  
-
-  goodies = [];
-  enemies = [];
-
-  console.log("FIN DE JUEGO");
-
-  showGameOver()
-
-}
-
-
-function hideHearts () {
-
-  if (heartContador === 0){
-
-    live1.style.display = 'none'
-    console.log('elimino primer corazon')
-  } else if (heartContador === 1){
-    live2.style.display = 'none'
-    console.log('elimino el segundo corazón')
-  } else if (heartContador === 2){
-    live3.style.display = 'none'
-    console.log('elimino el tercer corazon')
-  }
-}
 
 
