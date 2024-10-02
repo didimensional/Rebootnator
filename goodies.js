@@ -1,8 +1,8 @@
 class Goodies {
   constructor(type) {
     this.type = type;
-    this.height = 50;
-    this.width = 50;
+    this.height = 100;
+    this.width = 100;
     this.y = 0;
     this.x = Math.floor(Math.random() * (700 - this.width));
     this.directionY = 1;

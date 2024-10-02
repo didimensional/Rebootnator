@@ -3,12 +3,15 @@ let startScreen = document.getElementsByClassName('startScreenContainer')[0]
 let loadingScreen = document.getElementsByClassName('loadingScreenContainer')[0]
 let gameOverScreen = document.getElementsByClassName('gameOverScreenContainer')[0]
 let winScreen = document.getElementsByClassName('winScreenContainer')[0]
+let creditsScreen = document.getElementsByClassName('creditsScreenContainer')[0]
 
 let boardGame = document.getElementById("boardGame");
 
 let restartButtonGameOver = document.getElementsByClassName('restartButton')[0]
 let buttonStartGame = document.getElementsByClassName('startButton')[0]
 let continueAfterWinBtn = document.getElementsByClassName('continueButton')[0]
+let buttonCredits = document.getElementsByClassName('creditsButton')[0]
+let buttonFromCreditsToStart = document.getElementsByClassName('menuButton')[0]
 
 let scoreNumber = document.getElementsByClassName('scoreNumber')[0]
 let heartContador = 0
@@ -79,6 +82,16 @@ function gameWorking() {
   } else {
     endGame()
   }
+}
+
+function showCredits () {
+  startScreen.style.display = 'none'
+  creditsScreen.style.display = 'block'
+}
+
+function backToStartMenu () {
+  startScreen.style.display = 'block'
+  creditsScreen.style.display = 'none'
 }
 
 function winGame() {
@@ -306,4 +319,12 @@ restartButtonGameOver.addEventListener('click', function (event) {
 
 continueAfterWinBtn.addEventListener('click', function (event) {
   showBoardFromWin()
+})
+
+buttonCredits.addEventListener('click', function (event) {
+  showCredits()
+})
+
+buttonFromCreditsToStart.addEventListener('click', function (event) {
+  backToStartMenu()
 })

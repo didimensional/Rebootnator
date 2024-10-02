@@ -4,7 +4,7 @@ class Enemy {
         this.height = 100
         this.width = 100
         this.y = 0
-        this.x = Math.floor(Math.random() * (700 - this.width))
+        this.x = Math.floor(Math.random() * (650 - this.width))
         this.directionY = 1   // Si es 1 es der ; Si es -1 es izq
         this.speed = 2
         this.sprite = document.createElement('div')
@@ -22,10 +22,20 @@ class Enemy {
         boardGame.appendChild(this.sprite)
     }
 
+
     remove() {
-        boardGame.removeChild(this.sprite)
+        this.sprite.style.backgroundImage = "url('Images/plof.gif')";
+        setTimeout(function (self) {
+            boardGame.removeChild(self)
+        }, 500, this.sprite)
         clearInterval(this.interval)
+        
     }
+
+    // remove() {
+    //     boardGame.removeChild(this.sprite)
+    //     clearInterval(this.interval)
+    // }
 
     move() {
         let newY = this.y + this.speed * this.directionY
