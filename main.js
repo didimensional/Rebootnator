@@ -21,10 +21,33 @@ let live3 = document.getElementsByClassName('live3')[0]
 
 let heartContador = 0
 
+
 let continueAfterWinBtn = document.getElementsByClassName('continueButton')[0]
 
 
 
+
+
+let restartButtonGameOver = document.getElementsByClassName('restarButton')[0]
+
+
+// SONIDOS
+
+let musicMenu = new Audio('/Sounds/MUSIC MENU.mp3')
+
+let musicGame = new Audio('/Sounds/MUSIC GAME.mp3')
+
+let musicGameOver = new Audio('/Sounds/MUSIC GAME OVER.mp3')
+
+let musicKahoot = new Audio('/Sounds/MUSIC KAHOOT.mp3')
+
+let musicKahootWin = new Audio('/Sounds/MUSIC KAHOOT WIN.mp3')
+
+let deadEnemy = new Audio ('/Sounds/FX DEAD ENEMY.mp3')
+
+let goddieEat = new Audio('/Sounds/FX GOODIE EAT.mp3')
+
+let characterShoot = new Audio('/Sounds/FX SHOOT.mp3')
 
 
 // Esto es viejo
