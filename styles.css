@@ -3,17 +3,17 @@ body {
   background-size: cover;
   background-position: center;
   font-family: "VT323", system-ui;
-}
-
-.vt323-regular {
-  font-family: "VT323", monospace;
+  }
+  
+  .vt323-regular {
+    font-family: "VT323", monospace;
   font-weight: 400;
   font-style: normal;
-}
-
-/* BOARD GAME STYLES */
-
-#boardGame {
+  }
+  
+  /* BOARD GAME STYLES */
+  
+  #boardGame {
   position: relative;
   height: 800px;
   width: 700px;
@@ -23,26 +23,80 @@ body {
   background-size: cover;
   background-position: -50px;
   display: none;
-}
-
-.rebootnator {
-  position: absolute;
-  background-image: url("Images/sprites/machangoFront.gif");
-  background-size: cover;
-}
-
-.rebootnatorLeft {
-  position: absolute;
+  }
+  
+  /* KAHOOT SPEECH BALLOON  */
+  
+  #speechBalloonContainer {
+    position: absolute;
+  }
+  
+  .speechBalloonContainer {
+    position: absolute !important;
+    background-image: url(Images/8bit-retro-game-pixel-speech-bubble-balloon-icon-sticker-memo-keyword-planner-text-box-banner-flat-transparent-element-design-png.webp);
+    width: 670px;
+    height: 500px;
+    margin-top: 100px;
+    margin-left: 15px;
+    background-size: cover;
+    display: none;
+    z-index: 10 !important;
+  }
+  
+  .kahootLogo {
+    width: 250px;
+    margin-top: 60px;
+    margin-left: 220px;
+  }
+  
+  .kahootQuestion {
+    font-size: 30px;
+    margin-left: 0px;
+    text-align: CENTER;
+  }
+  
+  .answerTrue {
+    background-color: rgb(55, 55, 245);
+    border: 0px solid;
+    font-family: "VT323", monospace;
+    width: 300px;
+    height: 70px;
+    font-size: 30px;
+    color: white;
+    margin-left: 32px;
+    cursor: pointer
+  }
+  
+  .answerFalse {
+    background-color: rgb(243, 20, 57);
+    border: 0px solid;
+    font-family: "VT323", monospace;
+    width: 300px;
+    height: 70px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer
+  }
+  
+  
+  .rebootnator {
+    position: absolute;
+    background-image: url("Images/sprites/machangoFront.gif");
+    background-size: cover;
+    }
+    
+    .rebootnatorLeft {
+      position: absolute;
   background-image: url("Images/sprites/machangoLeft.gif");
   background-size: cover;
-}
-
-.rebootnatorRight {
-  position: absolute;
+  }
+  
+  .rebootnatorRight {
+    position: absolute;
   background-image: url("Images/sprites/machangoRight.gif");
   background-size: cover;
-}
-
+  }
+  
 .rebootnatorThin {
   background-image: url(Images/sprites/machangoThin.png);
   background-size: cover;
@@ -505,57 +559,6 @@ body {
 }
 
 
-/* KAHOOT SPEECH BALLOON  */
-
-#speechBalloonContainer {
-  position: relative;
-}
-
-.speechBalloonContainer {
-  position: absolute;
-  background-image: url(Images/8bit-retro-game-pixel-speech-bubble-balloon-icon-sticker-memo-keyword-planner-text-box-banner-flat-transparent-element-design-png.webp);
-  width: 700px;
-  height: 500px;
-  background-size: cover;
-  margin-left: 125px;
-  margin-top: 50px;
-  display: none;
-}
-
-.kahootLogo {
-  width: 250px;
-  margin-top: 60px;
-  margin-left: 220px;
-}
-
-.kahootQuestion {
-  font-size: 30px;
-  margin-left: 0px;
-  text-align: CENTER;
-}
-
-.answerTrue {
-  background-color: rgb(55, 55, 245);
-  border: 0px solid;
-  font-family: "VT323", monospace;
-  width: 300px;
-  height: 70px;
-  font-size: 30px;
-  color: white;
-  margin-left: 45px;
-  cursor: pointer
-}
-
-.answerFalse {
-  background-color: rgb(243, 20, 57);
-  border: 0px solid;
-  font-family: "VT323", monospace;
-  width: 300px;
-  height: 70px;
-  font-size: 30px;
-  color: white;
-  cursor: pointer
-}
 
 /* CREDITS SCREEN */
 
@@ -623,6 +626,8 @@ body {
   font-size: 30px;
   margin-left: 50px;
 }
+
+/* ENEMIES */
 
 .enemies {
   position: absolute;
