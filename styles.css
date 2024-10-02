@@ -192,6 +192,9 @@ position: absolute;
   border: 8px solid rgba(2, 150, 150, 0.733);
   margin-top: 90px;
   margin-left: 215px;
+  cursor: url("./Images/cursor.png"), auto;
+  /* cursor: url('https://res.cloudinary.com/dvkugaw3b/image/upload/v1641562028/cursor_ad12rf.png'), auto;  */
+  cursor: pointer;
 }
 
 .startButton:hover {
@@ -216,6 +219,7 @@ position: absolute;
   border: 8px solid rgba(2, 150, 150, 0.733);
   margin-top: 20px;
   margin-left: 215px;
+  cursor: pointer
 }
 
 /* GAME OVER SCREEN*/
@@ -280,6 +284,7 @@ position: absolute;
   border: 8px solid rgb(0, 0, 0);
   margin-top: 50px;
   margin-left: 215px;
+  cursor: pointer
 }
 
 .restartButton:hover {
@@ -382,6 +387,7 @@ position: absolute;
 }
 
 .continueButton {
+  position:absolute;
   width: 250px;
   height: 70px;
   font-size: 55px;
@@ -390,6 +396,7 @@ position: absolute;
   border: 8px solid rgb(0, 0, 0);
   margin-top: 50px;
   margin-left: 215px;
+  cursor: pointer
 }
 .continueButton:hover {
   scale: 110%;
@@ -397,6 +404,9 @@ position: absolute;
   color: white;
   background-color: rgb(243, 69, 0);
 }
+
+
+/* KAHOOT SPEECH BALLOON  */
 
 #speechBalloonContainer {
   position: relative;
@@ -433,6 +443,7 @@ position: absolute;
   font-size: 30px;
   color: white;
   margin-left: 45px;
+  cursor: pointer
 }
 
 .answerFalse {
@@ -443,8 +454,76 @@ position: absolute;
   height: 70px;
   font-size: 30px;
   color: white;
+  cursor: pointer
 }
 
+<<<<<<< HEAD
+/* CREDITS SCREEN */
+
+.creditsScreenContainer{
+  position: relative;
+  height: 800px;
+  width: 700px;
+  background-image: url(Images/backgrounds/pixelatedBackgroundStart.png);
+  margin: 0 auto;
+  margin-top: 110px;
+  background-size: cover;
+  background-position: -50px;
+  border: 4px solid white;
+  /* display: none; */
+}
+
+.creditsTitle {
+  width: 600px;
+  margin-left: 42px;
+  margin-top: 30px;
+}
+
+.team{
+  color:white;
+  font-size: 70px;
+  font-weight: 500;
+  text-align: center;
+  color: #5bc6dc;
+  margin-top: -25px;
+}
+
+.menuButton {
+  width: 250px;
+  height: 70px;
+  font-size: 55px;
+  font-family: "VT323", monospace;
+  font-weight: bold;
+  border: 8px solid rgb(0, 0, 0);
+  margin-top: -10px;
+  margin-left: 215px;
+  cursor: pointer
+}
+
+.menuButton:hover {
+  scale: 110%;
+  border: 8px solid rgb(160, 38, 1);
+  color: white;
+  background-color: rgb(243, 69, 0);
+}
+
+.flexImage{
+  display: flex;
+  margin-top: -7px;
+}
+.avatar{
+  margin-top: -10px;
+  margin-left: 100px;
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.nickname {
+  display:inline;
+  color: white;
+  font-size: 30px;
+  margin-left: 50px;
+=======
 .enemies {
   position: absolute;
   background-color: blue;
@@ -486,4 +565,5 @@ position: absolute;
   position: absolute;
   background-image: url(Images/enemies/skull.png);
   background-size: cover;
+>>>>>>> cfb3a89ff4ecbc7ec64c1ad36de727011da6c0ad
 }
