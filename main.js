@@ -7,12 +7,13 @@ let loadingScreen = document.getElementsByClassName('loadingScreenContainer')[0]
 let boardGame = document.getElementById("boardGame");
 
 let gameOverScreen = document.getElementsByClassName('gameOverScreenContainer')[0]
-
 let winScreen = document.getElementsByClassName('winScreenContainer')[0]
+let restartButtonGameOver = document.getElementsByClassName('restartButton')[0]
 
 let buttonStartGame = document.getElementsByClassName('startButton')[0]
 
 let scoreNumber = document.getElementsByClassName('scoreNumber')[0]
+
 
 let live1 = document.getElementsByClassName('live1')[0]
 let live2 = document.getElementsByClassName('live2')[0]
@@ -20,7 +21,15 @@ let live3 = document.getElementsByClassName('live3')[0]
 
 let heartContador = 0
 
+
+let continueAfterWinBtn = document.getElementsByClassName('continueButton')[0]
+
+
+
+
+
 let restartButtonGameOver = document.getElementsByClassName('restarButton')[0]
+
 
 // SONIDOS
 
@@ -69,10 +78,89 @@ let goodieSpawnInterval;
 let handsUp;
 
 
+function startGame() {
+  scoreNumber.innerText = 0
+  
+  live1.style.display = 'inline-block'
+  live2.style.display = 'inline-block'
+  live3.style.display = 'inline-block'
+  
+  
+  newPlayer();
+  newEnemies();
+  newGoodies();
+  HandsUp.counter()
+}
 
-buttonStartGame.addEventListener('click', function(event){
-  showloading()
-})
+function gameWorking() {
+  if (rebootnator.lives > 0 && Rebootnator.score <= 5000) {
+    rebootnator.move();
+  } else if (rebootnator.lives > 0 && Rebootnator.score > 5000 ){
+    winGame()
+  } else {
+    endGame()
+  }
+}
+
+function winGame() {
+  clearInterval(moveRebootnatorInterval);
+  clearInterval(goodieSpawnInterval);
+  clearInterval(enemiesSpawnInterval);
+  
+  rebootnator.remove();
+  
+  enemies.forEach(function (enemy, index) {
+    enemy.remove();
+  });
+  
+  goodies.forEach(function (goodie, index) {
+    goodie.remove();
+  });
+  
+  
+  goodies = [];
+  enemies = [];
+  
+  
+  heartContador = 0
+  
+  Rebootnator.score = 0
+  
+  HandsUp.counter = 0
+  
+  showWinScreen()
+}
+
+function endGame() {
+  clearInterval(moveRebootnatorInterval);
+  clearInterval(goodieSpawnInterval);
+  clearInterval(enemiesSpawnInterval);
+  
+  rebootnator.remove();
+  
+  enemies.forEach(function (enemy, index) {
+    enemy.remove();
+  });
+  
+  goodies.forEach(function (goodie, index) {
+    goodie.remove();
+  });
+  
+  
+  goodies = [];
+  enemies = [];
+  
+  
+  heartContador = 0
+  
+  Rebootnator.score = 0
+  
+  HandsUp.counter = 0
+  
+  
+  showGameOverFromBoard()
+  
+}
 
 function showloading(){
   startScreen.style.display = 'none'
@@ -83,34 +171,27 @@ function showloading(){
     startGame()
   }, 4500)
 }
-
-
-
-
-function startGame() {
-  newPlayer();
-  newEnemies();
-  newGoodies();
-}
-
-function gameWorking() {
-  if (rebootnator.lives > 0) {
-    rebootnator.move();
-  } else {
-    endGame();
- }
-}
-
-
-function showGameOver() { 
+function showGameOverFromBoard() { 
   boardGame.style.display = 'none'
   gameOverScreen.style.display = 'block'
 }
 
+function restartGameOver(){
+  gameOverScreen.style.display = 'none'
+  boardGame.style.display = 'block'
+  startGame()
+}
 
+function showWinScreen(){
+  boardGame.style.display = 'none'
+  winScreen.style.display = 'block'
+}
 
-
-
+function showBoardFromWin(){
+  winScreen.style.display = 'none'
+  boardGame.style.display = 'block'
+  startGame()
+}
 
 function newPlayer() {
   rebootnator = new Rebootnator(300, 630);
@@ -139,9 +220,31 @@ function newGoodies() {
 }
 
 function fireHandsUp() {
+
   handsUp = new HandsUp();
   handsUp.insert();
+  HandsUp.counter++
 }
+
+function hideHearts () {
+
+  if (heartContador === 0){
+
+    live3.style.display = 'none'
+    console.log('elimino primer corazon')
+  } else if (heartContador === 1){
+    live2.style.display = 'none'
+    console.log('elimino el segundo corazón')
+  } else if (heartContador === 2){
+    live1.style.display = 'none'
+    console.log('elimino el tercer corazon')
+  }
+}
+
+buttonStartGame.addEventListener('click', function (event) {
+  showloading()
+})
+
 
 window.addEventListener("keydown", function (event) {
   switch (event.key) {
@@ -194,7 +297,9 @@ window.addEventListener("keydown", function (event) {
       break;
 
     case " ":
-      fireHandsUp();
+      if (HandsUp.counter < 3){
+        fireHandsUp();
+      }
       break;
   }
 });
@@ -215,48 +320,11 @@ buttonEnd.addEventListener("click", function (event) {
   endGame();
 });
 
-restartButtonGameOver.addEventListener('click', function () {})
-
-function endGame() {
-  clearInterval(moveRebootnatorInterval);
-  clearInterval(goodieSpawnInterval);
-  clearInterval(enemiesSpawnInterval);
-
-  rebootnator.remove();
-
-  enemies.forEach(function (enemy, index) {
-    enemy.remove();
-  });
-
-  goodies.forEach(function (goodie, index) {
-    goodie.remove();
-  });
-
-  
-
-  goodies = [];
-  enemies = [];
-
-  console.log("FIN DE JUEGO");
-
-  showGameOver()
-
-}
+restartButtonGameOver.addEventListener('click', function (event) {
+  restartGameOver()
+})
 
 
-function hideHearts () {
-
-  if (heartContador === 0){
-
-    live1.style.display = 'none'
-    console.log('elimino primer corazon')
-  } else if (heartContador === 1){
-    live2.style.display = 'none'
-    console.log('elimino el segundo corazón')
-  } else if (heartContador === 2){
-    live3.style.display = 'none'
-    console.log('elimino el tercer corazon')
-  }
-}
-
-
+continueAfterWinBtn.addEventListener('click', function(event){
+  showBoardFromWin()
+})
