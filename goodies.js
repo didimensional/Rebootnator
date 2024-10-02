@@ -103,7 +103,7 @@ class Goodies {
         goodie.x + goodie.width > rebootnator.x &&
         goodie.y + goodie.height > rebootnator.y
       ) {
-        goodie.effect(); // Llamamos a los effect al detectar la colisión
+        goodie.effect();
         goodie.remove();
         goodies.splice(index, 1);
       }

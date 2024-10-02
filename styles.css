@@ -21,7 +21,7 @@ body {
   margin-top: 110px;
   background-size: cover;
   background-position: -50px;
-  /* display: none; */
+  display: none;
 }
 
 .rebootnator {
@@ -49,48 +49,6 @@ position: absolute;
 
 }
 
-/* FUNCIONES COMENTADAS PORSIACA
-
-
-    #rebootnatorLeft {
-    position: absolute;
-    background-image: url(/Rebootnator/Images/sprites/sprites_move_left.png);
-    animation: animationLeft 2s steps(4)infinite;
-
-}
-
-#rebootnatorRight {
-    position: absolute;
-    background-image: url(/Rebootnator/Images/sprites/sprites_move_right.png);
-    animation: animationLeft 2s steps(4)infinite;
-
-}
-
-#rebootnatorShoot {
-    position: absolute;
-    background-image: url(/Rebootnator/Images/sprites/sprites_attack.png);
-}
-
-    */
-
-/* Esta está ok */
-
-@keyframes animationLeft {
-  0% {
-    background-position: 0px;
-  }
-
-  100% {
-    background-position: 185px;
-  }
-}
-
-/* Esta hay que probarla */
-
-.enemies {
-  position: absolute;
-  background-color: blue;
-}
 
 .handsUp {
   position: absolute;
@@ -184,12 +142,15 @@ position: absolute;
 
 .live1 {
   width: 35px;
+  display: inline-block;
 }
 .live2 {
   width: 35px;
+  display: inline-block;
 }
 .live3 {
   width: 35px;
+  display: inline-block;
 }
 
 #livesContainer {
@@ -210,7 +171,7 @@ position: absolute;
   background-size: cover;
   background-position: -50px;
   border: 4px solid white;
-  /* display: none; */
+  display: block;
 }
 
 .insertCoin {
@@ -273,7 +234,7 @@ position: absolute;
   background-size: cover;
   background-position: -50px;
   border: 4px solid white;
-  /* display: none; */
+  display: none;
 }
 .laptop {
   height: 180px;
@@ -344,7 +305,7 @@ position: absolute;
   margin-top: 110px;
   background-size: cover;
   background-position: -50px;
-  /* display: none; */
+  display: none;
 }
 
 .loadingGif {
@@ -365,7 +326,7 @@ position: absolute;
   background-size: cover;
   background-position: -50px;
   border: 4px solid white;
-  /* display: none; */
+  display: none;
 }
 
 .winTitle {
@@ -458,6 +419,7 @@ position: absolute;
   background-size: cover;
   margin-left: 125px;
   margin-top: 50px;
+  display: none;
 }
 
 .kahootLogo {
@@ -495,6 +457,7 @@ position: absolute;
   cursor: pointer
 }
 
+<<<<<<< HEAD
 /* CREDITS SCREEN */
 
 .creditsScreenContainer{
@@ -560,4 +523,47 @@ position: absolute;
   color: white;
   font-size: 30px;
   margin-left: 50px;
+=======
+.enemies {
+  position: absolute;
+  background-color: blue;
+}
+
+.jsEnemy{
+  position: absolute;
+  background-image: url(Images/enemies/js.png);
+  background-size: cover;
+  
+}
+.htmlEnemy {
+  position: absolute;
+  background-image: url(Images/enemies/html.png);
+  background-size: cover;
+  
+}
+.cssEnemy {
+  position: absolute;
+  background-image: url(Images/enemies/css.png);
+  background-size: cover;
+}
+.airconEnemy {
+  position: absolute;
+  background-image: url(Images/enemies/aircon.png);
+  background-size: cover;
+}
+.gamechairEnemy {
+  position: absolute;
+  background-image: url(Images/enemies/gamechair.png);
+  background-size: cover;
+}
+.playstationEnemy {
+  position: absolute;
+  background-image: url(Images/enemies/playstation.png);
+  background-size: cover;
+}
+.skullEnemy{
+  position: absolute;
+  background-image: url(Images/enemies/skull.png);
+  background-size: cover;
+>>>>>>> cfb3a89ff4ecbc7ec64c1ad36de727011da6c0ad
 }

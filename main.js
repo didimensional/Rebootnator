@@ -1,12 +1,41 @@
+// PANTALLAS
+let startScreen = document.getElementsByClassName('startScreenContainer')[0]
+
+
+let loadingScreen = document.getElementsByClassName('loadingScreenContainer')[0]
+
 let boardGame = document.getElementById("boardGame");
+
+let gameOverScreen = document.getElementsByClassName('gameOverScreenContainer')[0]
+
+let winScreen = document.getElementsByClassName('winScreenContainer')[0]
+
+let buttonStartGame = document.getElementsByClassName('startButton')[0]
+
+let scoreNumber = document.getElementsByClassName('scoreNumber')[0]
+
+let live1 = document.getElementsByClassName('live1')[0]
+let live2 = document.getElementsByClassName('live2')[0]
+let live3 = document.getElementsByClassName('live3')[0]
+
+let heartContador = 0
+
+
+let restartButtonGameOver = document.getElementsByClassName('restarButton')[0]
+
+// Esto es viejo
+
+
 let startView = document.getElementById("start");
 let restartView = document.getElementById("restart");
-let score = document.getElementById("score");
 
 let heartCounter = document.getElementById("health");
 
 let buttonStart = document.getElementById("btn-start");
 let buttonEnd = document.getElementById("btn-end");
+
+
+// Esto se mantiene
 
 let rebootnator;
 let moveRebootnatorInterval;
@@ -21,6 +50,25 @@ let goodieSpawnInterval;
 
 let handsUp;
 
+
+
+buttonStartGame.addEventListener('click', function(event){
+  showloading()
+})
+
+function showloading(){
+  startScreen.style.display = 'none'
+  loadingScreen.style.display = 'block'
+  setTimeout(function(){
+    loadingScreen.style.display = 'none'
+    boardGame.style.display = 'block'
+    startGame()
+  }, 4500)
+}
+
+
+
+
 function startGame() {
   newPlayer();
   newEnemies();
@@ -28,12 +76,23 @@ function startGame() {
 }
 
 function gameWorking() {
-  // if (rebootnator.lives > 0) {
+  if (rebootnator.lives > 0) {
     rebootnator.move();
-  // } else {
-  //   endGame();
-  // }
+  } else {
+    endGame();
+ }
 }
+
+
+function showGameOver() { 
+  boardGame.style.display = 'none'
+  gameOverScreen.style.display = 'block'
+}
+
+
+
+
+
 
 function newPlayer() {
   rebootnator = new Rebootnator(300, 630);
@@ -43,11 +102,9 @@ function newPlayer() {
 
 function newEnemies() {
   enemiesSpawnInterval = setInterval(function () {
-    enemy = new Enemy();
-    /*
-            const enemyTypes = ['js', 'html', 'css']
-            const decider = enemyTypes[Math.floor(Math.random() * enemyTypes)] 
-            */
+    const enemyTypes = ['jsEnemy', 'htmlEnemy', 'cssEnemy', 'airconEnemy', 'gamechairEnemy', 'playstationEnemy', 'skullEnemy']
+    const decider = enemyTypes[Math.floor(Math.random() * enemyTypes.length)] 
+    enemy = new Enemy(decider);
     enemy.insert();
     enemies.push(enemy);
   }, 500);
@@ -140,6 +197,8 @@ buttonEnd.addEventListener("click", function (event) {
   endGame();
 });
 
+restartButtonGameOver.addEventListener('click', function () {})
+
 function endGame() {
   clearInterval(moveRebootnatorInterval);
   clearInterval(goodieSpawnInterval);
@@ -161,4 +220,25 @@ function endGame() {
   enemies = [];
 
   console.log("FIN DE JUEGO");
+
+  showGameOver()
+
 }
+
+
+function hideHearts () {
+
+  if (heartContador === 0){
+
+    live1.style.display = 'none'
+    console.log('elimino primer corazon')
+  } else if (heartContador === 1){
+    live2.style.display = 'none'
+    console.log('elimino el segundo corazón')
+  } else if (heartContador === 2){
+    live3.style.display = 'none'
+    console.log('elimino el tercer corazon')
+  }
+}
+
+
