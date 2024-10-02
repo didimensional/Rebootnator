@@ -1,5 +1,8 @@
 class HandsUp {
+    static counter = 0
+
     constructor() {
+
         this.height = 50
         this.width = 40
         this.y = rebootnator.y - this.height
@@ -7,9 +10,8 @@ class HandsUp {
         this.directionY = -1
         this.speed = 10
         this.sprite = document.createElement("div")
-        this.interval = setInterval(this.move.bind(this), 20)
+        this.interval = setInterval(this.move.bind(this), 10)
     }
-
     insert() {
         this.sprite.setAttribute("class", "handsUp")
         this.sprite.style.width = this.width + "px"
@@ -19,7 +21,6 @@ class HandsUp {
         boardGame.appendChild(this.sprite)
 
     }
-
     move() {
         let newY = this.y + this.speed * this.directionY
         this.checkCollision(this)
@@ -28,6 +29,7 @@ class HandsUp {
             this.sprite.style.top = this.y + "px"
         } else {
             this.remove()
+            HandsUp.counter--
         }
     }
 
@@ -59,11 +61,11 @@ class HandsUp {
                     enemy.type === 'skullEnemy' ) {
                     
                     Rebootnator.score += 50
-    
-
                 }
+                
                 scoreNumber.innerText = Rebootnator.score
                 self.remove()
+                HandsUp.counter--
                 console.log(Rebootnator.score)
 
             }
@@ -71,6 +73,5 @@ class HandsUp {
         })
 
     }
-
 
 }

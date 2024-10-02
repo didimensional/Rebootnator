@@ -73,6 +73,7 @@ function startGame() {
   newPlayer();
   newEnemies();
   newGoodies();
+  HandsUp.topNumberBullets()
 }
 function gameWorking() {
   if (rebootnator.lives > 0) {
@@ -116,6 +117,11 @@ function endGame() {
 
   heartContador = 0
 
+  Rebootnator.score = 0
+
+  HandsUp.counter = 0
+  
+
   showGameOverFromBoard()
 
 }
@@ -148,21 +154,23 @@ function newGoodies() {
 }
 
 function fireHandsUp() {
+
   handsUp = new HandsUp();
   handsUp.insert();
+  HandsUp.counter++
 }
 
 function hideHearts () {
 
   if (heartContador === 0){
 
-    live1.style.display = 'none'
+    live3.style.display = 'none'
     console.log('elimino primer corazon')
   } else if (heartContador === 1){
     live2.style.display = 'none'
     console.log('elimino el segundo corazón')
   } else if (heartContador === 2){
-    live3.style.display = 'none'
+    live1.style.display = 'none'
     console.log('elimino el tercer corazon')
   }
 }
@@ -222,7 +230,9 @@ window.addEventListener("keydown", function (event) {
       break;
 
     case " ":
-      fireHandsUp();
+      if (HandsUp.counter < 3){
+        fireHandsUp();
+      }
       break;
   }
 });
