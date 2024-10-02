@@ -21,7 +21,7 @@ body {
   margin-top: 110px;
   background-size: cover;
   background-position: -50px;
-  display: none;
+  display: block;
 }
 
 .rebootnator {
@@ -134,10 +134,10 @@ position: absolute;
 }
 .scoreNumber {
   position: absolute;
-  color: white;
-  font-size: 35px;
+  color: rgb(245, 167, 0);
+  font-size: 45px;
   margin-left: 110px;
-  margin-top: 8px;
+  margin-top: 2px;
 }
 
 .live1 {
@@ -171,7 +171,7 @@ position: absolute;
   background-size: cover;
   background-position: -50px;
   border: 4px solid white;
-  display: block;
+  display: none;
 }
 
 .insertCoin {
@@ -480,7 +480,7 @@ position: absolute;
   background-size: cover;
   background-position: -50px;
   border: 4px solid white;
-  /* display: none; */
+  display: none;
 }
 
 .creditsTitle {
