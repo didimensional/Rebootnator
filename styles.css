@@ -181,7 +181,18 @@ position: absolute;
 .logoStart {
   margin-top: 100px;
   margin-left: 65px;
+  animation: blink 1.7s steps(4, start) infinite
 }
+
+
+@keyframes blink {
+    0% {
+        visibility: visible;
+    }
+    100% {
+        visibility: hidden;
+    }
+  }
 
 .startButton {
   width: 250px;
@@ -457,7 +468,6 @@ position: absolute;
   cursor: pointer
 }
 
-<<<<<<< HEAD
 /* CREDITS SCREEN */
 
 .creditsScreenContainer{
@@ -523,7 +533,8 @@ position: absolute;
   color: white;
   font-size: 30px;
   margin-left: 50px;
-=======
+}
+
 .enemies {
   position: absolute;
   background-color: blue;
@@ -565,5 +576,4 @@ position: absolute;
   position: absolute;
   background-image: url(Images/enemies/skull.png);
   background-size: cover;
->>>>>>> cfb3a89ff4ecbc7ec64c1ad36de727011da6c0ad
 }
