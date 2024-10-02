@@ -46,7 +46,18 @@ let handsUp;
 
 
 
+buttonStartGame.addEventListener('click', function(event){
+  showloading()
+})
 
+function showloading(){
+  startScreen.style.display = 'none'
+  loadingScreen.style.display = 'block'
+  setTimeout(function(){
+    loadingScreen.style.display = 'none'
+    startScreen.style.display = 'block'
+  }, 4500)
+}
 
 
 
