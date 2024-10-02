@@ -64,7 +64,7 @@ class Enemy {
                 enemies.splice(index, 1)
                 rebootnator.lives -= 1
 
-                // AQUI HAY QUE BORRAR CORAZONES
+                
                 hideHearts()
                 heartContador++
                 console.log(heartContador)

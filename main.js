@@ -19,29 +19,18 @@ let live3 = document.getElementsByClassName('live3')[0]
 
 // SONIDOS
 
-let musicMenu = new Audio('/Sounds/MUSIC MENU.mp3')
-let musicGame = new Audio('/Sounds/MUSIC GAME.mp3')
-let musicGameOver = new Audio('/Sounds/MUSIC GAME OVER.mp3')
-let musicKahoot = new Audio('/Sounds/MUSIC KAHOOT.mp3')
-let musicKahootWin = new Audio('/Sounds/MUSIC KAHOOT WIN.mp3')
-let deadEnemy = new Audio('/Sounds/FX DEAD ENEMY.mp3')
-let goddieEat = new Audio('/Sounds/FX GOODIE EAT.mp3')
-let characterShoot = new Audio('/Sounds/FX SHOOT.mp3')
+let musicMenu = new Audio('./Sounds/MUSIC_MENU.mp3') // done
+musicMenu.loop = true
+let musicGame = new Audio('./Sounds/MUSIC_GAME.mp3') // done
+musicGame.loop = true
+let musicGameOver = new Audio('./Sounds/MUSIC_GAME_OVER.mp3') // done
+let musicKahoot = new Audio('./Sounds/MUSIC_KAHOOT.mp3')
+musicKahoot.loop = true
+let musicKahootWin = new Audio('./Sounds/MUSIC_KAHOOT_WIN.mp3')
+let deadEnemy = new Audio('./Sounds/FX DEAD_ENEMY.mp3') // done
+let goddieEat = new Audio('./Sounds/FX_GOODIE_EAT.mp3') // done
+let characterShoot = new Audio('./Sounds/FX_SHOOT.mp3') // done
 
-
-// Esto es viejo
-
-
-// let startView = document.getElementById("start");
-// let restartView = document.getElementById("restart");
-
-// let heartCounter = document.getElementById("health");
-
-// let buttonStart = document.getElementById("btn-start");
-// let buttonEnd = document.getElementById("btn-end");
-
-
-// Esto se mantiene
 
 let rebootnator;
 let moveRebootnatorInterval;
@@ -55,7 +44,6 @@ let goodies = [];
 let goodieSpawnInterval;
 
 let handsUp;
-
 
 function startGame() {
   scoreNumber.innerText = 0
@@ -74,6 +62,7 @@ function startGame() {
 function gameWorking() {
   if (rebootnator.lives > 0 && Rebootnator.score <= 5000) {
     rebootnator.move();
+    musicGame.play()
   } else if (rebootnator.lives > 0 && Rebootnator.score > 5000) {
     winGame()
   } else {
@@ -107,6 +96,9 @@ function winGame() {
 
   HandsUp.counter = 0
 
+  musicGame.pause()
+  musicGame.currentTime = 0
+  
   showWinScreen()
 }
 
@@ -136,6 +128,8 @@ function endGame() {
 
   HandsUp.counter = 0
 
+  musicGame.pause();
+  musicGame.currentTime = 0;
 
   showGameOverFromBoard()
 
@@ -144,20 +138,25 @@ function endGame() {
 function showloading() {
   startScreen.style.display = 'none'
   loadingScreen.style.display = 'block'
+  musicMenu.play();
   setTimeout(function () {
     loadingScreen.style.display = 'none'
     boardGame.style.display = 'block'
     startGame()
+    musicMenu.pause()
   }, 4500)
 }
 function showGameOverFromBoard() {
   boardGame.style.display = 'none'
   gameOverScreen.style.display = 'block'
+  musicGameOver.play()
 }
 
 function restartGameOver() {
   gameOverScreen.style.display = 'none'
   boardGame.style.display = 'block'
+  musicGameOver.pause()
+  musicGameOver.currentTime = 0
   startGame()
 }
 
