@@ -142,12 +142,15 @@ position: absolute;
 
 .live1 {
   width: 35px;
+  display: inline-block;
 }
 .live2 {
   width: 35px;
+  display: inline-block;
 }
 .live3 {
   width: 35px;
+  display: inline-block;
 }
 
 #livesContainer {

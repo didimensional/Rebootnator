@@ -14,8 +14,12 @@ let buttonStartGame = document.getElementsByClassName('startButton')[0]
 
 let scoreNumber = document.getElementsByClassName('scoreNumber')[0]
 
+let live1 = document.getElementsByClassName('live1')[0]
+let live2 = document.getElementsByClassName('live2')[0]
+let live3 = document.getElementsByClassName('live3')[0]
 
 
+let heartContador = 0
 
 // Esto es viejo
 
@@ -201,4 +205,20 @@ function endGame() {
   enemies = [];
 
   console.log("FIN DE JUEGO");
+}
+
+
+function hideHearts () {
+
+  if (heartContador === 0){
+
+    live1.style.display = 'none'
+    console.log('elimino primer corazon')
+  } else if (heartContador === 1){
+    live2.style.display = 'none'
+    console.log('elimino el segundo corazón')
+  } else if (heartContador === 2){
+    live3.style.display = 'none'
+    console.log('elimino el tercer corazon')
+  }
 }

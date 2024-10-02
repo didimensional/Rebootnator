@@ -63,19 +63,16 @@ class Enemy {
                     enemy.remove()
                     enemies.splice(index, 1)
 
-                if (this.type === 'jsEnemy' ||
-                    this.type === 'htmlEnemy' ||
-                    this.type === 'cssEnemy') {
+
                     rebootnator.lives -= 1
+                    
                     heartCounter.innerText = "LIVES: " + rebootnator.lives
 
-                } else if (this.type === 'airconEnemy' ||
-                    this.type === 'gamechairEnemy' ||
-                    this.type === 'playstationEnemy' ||
-                    this.type === 'skullEnemy') {
-                    rebootnator.lives -= 1
-                    heartCounter.innerText = "LIVES: " + rebootnator.lives
-                }
+                    // AQUI HAY QUE BORRAR CORAZONES
+                    hideHearts()
+                    heartContador ++
+                    console.log(heartContador)
+
             }
         })
     }
