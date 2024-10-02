@@ -4,6 +4,7 @@ body {
   background-position: center;
   font-family: "VT323", system-ui;
 }
+
 .vt323-regular {
   font-family: "VT323", monospace;
   font-weight: 400;
@@ -29,23 +30,27 @@ body {
   background-image: url("Images/sprites/machangoFront.gif");
   background-size: cover;
 }
+
 .rebootnatorLeft {
-position: absolute;
+  position: absolute;
   background-image: url("Images/sprites/machangoLeft.gif");
   background-size: cover;
 }
-.rebootnatorRight{
-position: absolute;
+
+.rebootnatorRight {
+  position: absolute;
   background-image: url("Images/sprites/machangoRight.gif");
   background-size: cover;
 }
-.rebootnatorThin{
- background-image: url(Images/sprites/machangoThin.png);
- background-size: cover;
+
+.rebootnatorThin {
+  background-image: url(Images/sprites/machangoThin.png);
+  background-size: cover;
 }
+
 .rebootnatorFat {
-   background-image: url(Images/sprites/machangoFat.png);
- background-size: cover;
+  background-image: url(Images/sprites/machangoFat.png);
+  background-size: cover;
 
 }
 
@@ -63,13 +68,13 @@ position: absolute;
 
 .speedCoffee {
   position: absolute;
-  background-image: url(Images/goodies/coffee-cup.png);
+  background-image: url(Images/goodies/coffee-cupCircle.png);
   background-size: cover;
 }
 
 .slimSalad {
   position: absolute;
-  background-image: url(Images/goodies/output-onlinepngtools.png);
+  background-image: url(Images/goodies/brecolCircle.png);
   background-size: cover;
 }
 
@@ -81,7 +86,7 @@ position: absolute;
 
 .thickBurger {
   position: absolute;
-  background-color: purple;
+  background-image: url(Images/enemies/burgerCircle.png);
 }
 
 #lives {
@@ -125,6 +130,7 @@ position: absolute;
   height: 50px;
   width: 700px;
 }
+
 .scoreText {
   position: absolute;
   color: white;
@@ -132,6 +138,7 @@ position: absolute;
   margin-left: 20px;
   margin-top: 5px;
 }
+
 .scoreNumber {
   position: absolute;
   color: white;
@@ -144,10 +151,12 @@ position: absolute;
   width: 35px;
   display: inline-block;
 }
+
 .live2 {
   width: 35px;
   display: inline-block;
 }
+
 .live3 {
   width: 35px;
   display: inline-block;
@@ -178,6 +187,7 @@ position: absolute;
   width: 250px;
   margin-left: 450px;
 }
+
 .logoStart {
   margin-top: 100px;
   margin-left: 65px;
@@ -207,6 +217,7 @@ position: absolute;
   color: white;
   background-color: rgb(243, 69, 0);
 }
+
 .creditsButton {
   width: 250px;
   height: 70px;
@@ -232,6 +243,7 @@ position: absolute;
   border: 4px solid white;
   display: none;
 }
+
 .laptop {
   height: 180px;
   margin-left: 260px;
@@ -265,6 +277,7 @@ position: absolute;
   font-size: 50px;
   font-stretch: ultra-expanded;
 }
+
 .logoGameOver {
   width: 500px;
   margin-left: 100px;
@@ -373,13 +386,86 @@ position: absolute;
   0% {
     transform: rotate(-40deg);
   }
+
   50% {
     transform: rotate(40deg);
   }
+
   100% {
     transform: rotate(-40deg);
   }
 }
+
+@keyframes enemiesMoving {
+  0% {
+
+    transform: translateX(-20px);
+  }
+
+  15% {
+    transform: translateX(30px);
+
+  }
+
+  25% {
+    transform: translateY(50px);
+
+  }
+
+  30% {
+    transform: translateX(90px);
+
+  }
+
+  50% {
+    transform: translateX(20px);
+  }
+
+  51% {
+    transform: translateX(30px);
+  }
+
+  100% {
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes enemiesMoving2 {
+  0% {
+
+    transform: translateX(20px);
+  }
+
+  15% {
+    transform: translateX(-30px);
+
+  }
+
+  25% {
+    transform: translateY(-50px);
+
+  }
+
+  30% {
+    transform: translateX(90px);
+
+  }
+}
+
+@keyframes punishMoving {
+   
+  from {
+    transform: rotate(0deg) translate(-100px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translate(-100px) rotate(-360deg);
+  }
+}
+
+
+@keyframes goodiesMoving {}
+
 
 .continueButton {
   width: 250px;
@@ -391,6 +477,7 @@ position: absolute;
   margin-top: 50px;
   margin-left: 215px;
 }
+
 .continueButton:hover {
   scale: 110%;
   border: 8px solid rgb(160, 38, 1);
@@ -401,6 +488,7 @@ position: absolute;
 #speechBalloonContainer {
   position: relative;
 }
+
 .speechBalloonContainer {
   position: absolute;
   background-image: url(Images/8bit-retro-game-pixel-speech-bubble-balloon-icon-sticker-memo-keyword-planner-text-box-banner-flat-transparent-element-design-png.webp);
@@ -450,40 +538,53 @@ position: absolute;
   background-color: blue;
 }
 
-.jsEnemy{
+.jsEnemy {
   position: absolute;
-  background-image: url(Images/enemies/js.png);
+  background-image: url(Images/enemies/jsCircle.png);
   background-size: cover;
-  
+  animation: enemiesMoving 2s ease infinite;
 }
+
+
 .htmlEnemy {
   position: absolute;
-  background-image: url(Images/enemies/html.png);
+  background-image: url(Images/enemies/htmlCircle.png);
   background-size: cover;
-  
+  animation: enemiesMoving 2s ease infinite;
+
 }
+
 .cssEnemy {
   position: absolute;
-  background-image: url(Images/enemies/css.png);
+  background-image: url(Images/enemies/cssCircle.png);
   background-size: cover;
+  animation: enemiesMoving2 2s ease infinite;
 }
+
 .airconEnemy {
   position: absolute;
-  background-image: url(Images/enemies/aircon.png);
+  background-image: url(Images/enemies/airconCircle.png);
   background-size: cover;
+  animation: enemiesMoving2 2s ease infinite;
 }
+
 .gamechairEnemy {
   position: absolute;
-  background-image: url(Images/enemies/gamechair.png);
+  background-image: url(Images/enemies/gamechairCircle.png);
   background-size: cover;
+  animation: enemiesMoving 2s ease infinite;
 }
+
 .playstationEnemy {
   position: absolute;
-  background-image: url(Images/enemies/playstation.png);
+  background-image: url(Images/enemies/remoteCircle.png);
   background-size: cover;
+  animation: enemiesMoving2 2s ease infinite;
 }
-.skullEnemy{
+
+.skullEnemy {
   position: absolute;
-  background-image: url(Images/enemies/skull.png);
+  background-image: url(Images/enemies/punisherCircle.png);
   background-size: cover;
+  animation: punishMoving 4s infinite linear;
 }
