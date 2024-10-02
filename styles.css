@@ -49,10 +49,6 @@ position: absolute;
 
 }
 
-.enemies {
-  position: absolute;
-  background-color: blue;
-}
 
 .handsUp {
   position: absolute;
@@ -227,7 +223,8 @@ position: absolute;
   width: 700px;
   background-image: url(Images/backgrounds/pixelatedBackgroundStart.png);
   margin: 0 auto;
-  margin-top: 110px;
+  marbackground-image: url(Images/enemies/css.png);
+    background-size: cover;gin-top: 110px;
   background-size: cover;
   background-position: -50px;
   border: 4px solid white;
@@ -444,4 +441,47 @@ position: absolute;
   height: 70px;
   font-size: 30px;
   color: white;
+}
+
+.enemies {
+  position: absolute;
+  background-color: blue;
+}
+
+.jsEnemy{
+  position: absolute;
+  background-image: url(Images/enemies/js.png);
+  background-size: cover;
+  
+}
+.htmlEnemy {
+  position: absolute;
+  background-image: url(Images/enemies/html.png);
+  background-size: cover;
+  
+}
+.cssEnemy {
+  position: absolute;
+  background-image: url(Images/enemies/css.png);
+  background-size: cover;
+}
+.airconEnemy {
+  position: absolute;
+  background-image: url(Images/enemies/aircon.png);
+  background-size: cover;
+}
+.gamechairEnemy {
+  position: absolute;
+  background-image: url(Images/enemies/gamechair.png);
+  background-size: cover;
+}
+.playstationEnemy {
+  position: absolute;
+  background-image: url(Images/enemies/playstation.png);
+  background-size: cover;
+}
+.skullEnemy{
+  position: absolute;
+  background-image: url(Images/enemies/skull.png);
+  background-size: cover;
 }

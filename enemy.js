@@ -1,6 +1,6 @@
 class Enemy {
-    constructor(type) {
-        this.type
+    constructor(decider) {
+        this.decider = decider
         this.height = 100
         this.width = 100
         this.y = 0
@@ -11,8 +11,10 @@ class Enemy {
         this.interval = setInterval(this.move.bind(this), 10)
     }
 
+
+
     insert(){
-        this.sprite.setAttribute('class', 'enemies')
+        this.sprite.setAttribute("class", this.decider)
         this.sprite.style.width = this.width + 'px'
         this.sprite.style.height = this.height + 'px'
         this.sprite.style.top = this.y + 'px'

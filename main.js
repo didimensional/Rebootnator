@@ -55,9 +55,11 @@ function showloading(){
   loadingScreen.style.display = 'block'
   setTimeout(function(){
     loadingScreen.style.display = 'none'
-    startScreen.style.display = 'block'
+    boardGame.style.display = 'block'
+    startGame()
   }, 4500)
 }
+
 
 
 
@@ -83,11 +85,9 @@ function newPlayer() {
 
 function newEnemies() {
   enemiesSpawnInterval = setInterval(function () {
-    enemy = new Enemy();
-    /*
-            const enemyTypes = ['js', 'html', 'css']
-            const decider = enemyTypes[Math.floor(Math.random() * enemyTypes)] 
-            */
+    const enemyTypes = ['jsEnemy', 'htmlEnemy', 'cssEnemy', 'airconEnemy', 'gamechairEnemy', 'playstationEnemy', 'skullEnemy']
+    const decider = enemyTypes[Math.floor(Math.random() * enemyTypes.length)] 
+    enemy = new Enemy(decider);
     enemy.insert();
     enemies.push(enemy);
   }, 500);
