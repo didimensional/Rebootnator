@@ -23,8 +23,6 @@ let scoreNumber = document.getElementsByClassName('scoreNumber')[0]
 let startView = document.getElementById("start");
 let restartView = document.getElementById("restart");
 
-let score = document.getElementById("score");
-
 let heartCounter = document.getElementById("health");
 
 let buttonStart = document.getElementById("btn-start");
