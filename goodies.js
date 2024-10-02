@@ -103,6 +103,7 @@ class Goodies {
         goodie.x + goodie.width > rebootnator.x &&
         goodie.y + goodie.height > rebootnator.y
       ) {
+        goddieEat.play()
         goodie.effect();
         goodie.remove();
         goodies.splice(index, 1);

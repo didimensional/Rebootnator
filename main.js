@@ -19,17 +19,17 @@ let live3 = document.getElementsByClassName('live3')[0]
 
 // SONIDOS
 
-let musicMenu = new Audio('./Sounds/MUSIC_MENU.mp3') // done
+let musicMenu = new Audio('./Sounds/MUSIC_MENU.mp3') // no hemos identificado donde y como meterla
 musicMenu.loop = true
-let musicGame = new Audio('./Sounds/MUSIC_GAME.mp3') // done
+let musicGame = new Audio('./Sounds/MUSIC_GAME.mp3') // done -> BAJAR VOLUMEN
 musicGame.loop = true
-let musicGameOver = new Audio('./Sounds/MUSIC_GAME_OVER.mp3') // done
-let musicKahoot = new Audio('./Sounds/MUSIC_KAHOOT.mp3')
+let musicGameOver = new Audio('./Sounds/MUSIC_GAME_OVER.mp3') // done -> IGUALAR EL VOLUMEN A MUSIC GAME
+let musicKahoot = new Audio('./Sounds/MUSIC_KAHOOT.mp3') // Cuando sale el kahoot. todavia NO -> IGUALAR A MUSIC GAME
 musicKahoot.loop = true
-let musicKahootWin = new Audio('./Sounds/MUSIC_KAHOOT_WIN.mp3')
-let deadEnemy = new Audio('./Sounds/FX DEAD_ENEMY.mp3') // done
-let goddieEat = new Audio('./Sounds/FX_GOODIE_EAT.mp3') // done
-let characterShoot = new Audio('./Sounds/FX_SHOOT.mp3') // done
+let musicKahootWin = new Audio('./Sounds/MUSIC_KAHOOT_WIN.mp3') // You Win , todavia NO
+let deadEnemy = new Audio('./Sounds/FX DEAD_ENEMY.mp3') // Cuando muere un enemigo, todavia NO
+let goddieEat = new Audio('./Sounds/FX_GOODIE_EAT.mp3') // done -> SUBIR VOLUMEN
+let characterShoot = new Audio('./Sounds/FX_SHOOT.mp3') // done -> SUBIR VOLUMEN
 
 
 let rebootnator;
@@ -98,7 +98,8 @@ function winGame() {
 
   musicGame.pause()
   musicGame.currentTime = 0
-  
+  musicKahootWin.play()
+
   showWinScreen()
 }
 
@@ -163,6 +164,7 @@ function restartGameOver() {
 function showWinScreen() {
   boardGame.style.display = 'none'
   winScreen.style.display = 'block'
+  musicKahootWin.play()
 }
 
 function showBoardFromWin() {
@@ -277,6 +279,7 @@ window.addEventListener("keydown", function (event) {
     case " ":
       if (HandsUp.counter < 3) {
         fireHandsUp();
+        characterShoot.play()
       }
       break;
   }
