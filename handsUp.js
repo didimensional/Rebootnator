@@ -53,7 +53,7 @@ class HandsUp {
                     enemy.type === 'htmlEnemy' ||
                     enemy.type === 'cssEnemy' ) {
 
-                    Rebootnator.score += 1000
+                    Rebootnator.score += 100
                     
                 } else if (enemy.type === 'airconEnemy' ||
                     enemy.type === 'gamechairEnemy' ||

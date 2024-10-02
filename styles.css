@@ -81,12 +81,13 @@ body {
 .flatEgg {
   position: absolute;
   background-image: url(Images/enemies/burger.png);
-  background-size: contain;
+  background-size: cover;
 }
 
 .thickBurger {
   position: absolute;
-  background-image: url(Images/enemies/burgerCircle.png);
+  background-image: url(Images/goodies/burgerCircle.png);
+  background-size: cover;
 }
 
 #lives {
@@ -260,15 +261,15 @@ body {
 }
 
 .laptop {
-  height: 180px;
-  margin-left: 260px;
-  margin-top: 50px;
+  height: 270px;
+  margin-left: 200px;
+  margin-top: 10px;
   opacity: 0.8;
 }
 
 .gameOverTitle {
   width: 700px;
-  margin-top: -207px;
+  margin-top: -242px;
   margin-left: 0px;
 }
 
