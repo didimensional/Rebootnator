@@ -22,7 +22,7 @@ body {
   margin-top: 110px;
   background-size: cover;
   background-position: -50px;
-  display: block;
+  display: none;
 }
 
 .rebootnator {
@@ -180,7 +180,7 @@ body {
   background-size: cover;
   background-position: -50px;
   border: 4px solid white;
-  display: none;
+  display: block;
 }
 
 .insertCoin {
