@@ -18,8 +18,10 @@ let live1 = document.getElementsByClassName('live1')[0]
 let live2 = document.getElementsByClassName('live2')[0]
 let live3 = document.getElementsByClassName('live3')[0]
 
-
 let heartContador = 0
+
+
+let restartButtonGameOver = document.getElementsByClassName('restarButton')[0]
 
 // Esto es viejo
 
@@ -80,6 +82,17 @@ function gameWorking() {
     endGame();
  }
 }
+
+
+function showGameOver() { 
+  boardGame.style.display = 'none'
+  gameOverScreen.style.display = 'block'
+}
+
+
+
+
+
 
 function newPlayer() {
   rebootnator = new Rebootnator(300, 630);
@@ -184,6 +197,8 @@ buttonEnd.addEventListener("click", function (event) {
   endGame();
 });
 
+restartButtonGameOver.addEventListener('click', function () {})
+
 function endGame() {
   clearInterval(moveRebootnatorInterval);
   clearInterval(goodieSpawnInterval);
@@ -205,6 +220,9 @@ function endGame() {
   enemies = [];
 
   console.log("FIN DE JUEGO");
+
+  showGameOver()
+
 }
 
 
@@ -222,3 +240,5 @@ function hideHearts () {
     console.log('elimino el tercer corazon')
   }
 }
+
+
