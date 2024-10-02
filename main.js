@@ -1,12 +1,35 @@
+// PANTALLAS
+let startScreen = document.getElementsByClassName('startScreenContainer')[0]
+
+
+let loadingScreen = document.getElementsByClassName('loadingScreenContainer')[0]
+
 let boardGame = document.getElementById("boardGame");
+
+let gameOverScreen = document.getElementsByClassName('gameOverScreenContainer')[0]
+
+let winScreen = document.getElementsByClassName('winScreenContainer')[0]
+
+let buttonStartGame = document.getElementsByClassName('startButton')[0]
+
+
+
+
+// Esto es viejo
+
+
 let startView = document.getElementById("start");
 let restartView = document.getElementById("restart");
+
 let score = document.getElementById("score");
 
 let heartCounter = document.getElementById("health");
 
 let buttonStart = document.getElementById("btn-start");
 let buttonEnd = document.getElementById("btn-end");
+
+
+// Esto se mantiene
 
 let rebootnator;
 let moveRebootnatorInterval;
@@ -21,6 +44,12 @@ let goodieSpawnInterval;
 
 let handsUp;
 
+
+
+
+
+
+
 function startGame() {
   newPlayer();
   newEnemies();
@@ -28,11 +57,11 @@ function startGame() {
 }
 
 function gameWorking() {
-  // if (rebootnator.lives > 0) {
+  if (rebootnator.lives > 0) {
     rebootnator.move();
-  // } else {
-  //   endGame();
-  // }
+  } else {
+    endGame();
+ }
 }
 
 function newPlayer() {
