@@ -45,10 +45,27 @@ class HandsUp {
 
                 enemy.remove()
                 enemies.splice(index, 1)
-                Rebootnator.score += 1
-                score.innerText = "SCORE: " + Rebootnator.score
+                
+
+                if (enemy.type === 'jsEnemy' || 
+                    enemy.type === 'htmlEnemy' ||
+                    enemy.type === 'cssEnemy' ) {
+
+                    Rebootnator.score += 1000
+                    
+                } else if (enemy.type === 'airconEnemy' ||
+                    enemy.type === 'gamechairEnemy' ||
+                    enemy.type === 'playstationEnemy' ||
+                    enemy.type === 'skullEnemy' ) {
+                    
+                    Rebootnator.score += 50
+    
+
+                }
+                scoreNumber.innerText = Rebootnator.score
                 self.remove()
                 console.log(Rebootnator.score)
+
             }
 
         })

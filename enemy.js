@@ -1,6 +1,6 @@
 class Enemy {
     constructor(decider) {
-        this.decider = decider
+        this.type = decider
         this.height = 100
         this.width = 100
         this.y = 0
@@ -14,7 +14,7 @@ class Enemy {
 
 
     insert(){
-        this.sprite.setAttribute("class", this.decider)
+        this.sprite.setAttribute("class", this.type)
         this.sprite.style.width = this.width + 'px'
         this.sprite.style.height = this.height + 'px'
         this.sprite.style.top = this.y + 'px'
@@ -34,10 +34,23 @@ class Enemy {
             this.y = newY
             this.sprite.style.top = this.y + 'px'
         } else {
-            Rebootnator.score -= 1
-            score.innerText = "SCORE: " + Rebootnator.score
-            enemies.shift()
-            this.remove()
+            if (this.type === 'jsEnemy' || 
+                this.type === 'htmlEnemy' || 
+                this.type === 'cssEnemy' ) {
+                    Rebootnator.score -= 200
+                    scoreNumber.innerText = Rebootnator.score
+                    enemies.shift()
+                    this.remove()
+
+            } else if (this.type === 'airconEnemy' || 
+                    this.type === 'gamechairEnemy' || 
+                    this.type === 'playstationEnemy' ||
+                    this.type === 'skullEnemy') {
+                        Rebootnator.score -= 50
+                         scoreNumber.innerText = Rebootnator.score
+                         enemies.shift()
+                        this.remove()
+                    }
         }
     }
 
@@ -49,9 +62,21 @@ class Enemy {
                 enemy.y + enemy.height > rebootnator.y) {
                     enemy.remove()
                     enemies.splice(index, 1)
+
+                if (this.type === 'jsEnemy' ||
+                    this.type === 'htmlEnemy' ||
+                    this.type === 'cssEnemy') {
+                    rebootnator.lives -= 1
+                    heartCounter.innerText = "LIVES: " + rebootnator.lives
+
+                } else if (this.type === 'airconEnemy' ||
+                    this.type === 'gamechairEnemy' ||
+                    this.type === 'playstationEnemy' ||
+                    this.type === 'skullEnemy') {
                     rebootnator.lives -= 1
                     heartCounter.innerText = "LIVES: " + rebootnator.lives
                 }
+            }
         })
     }
 

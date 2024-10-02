@@ -12,6 +12,8 @@ let winScreen = document.getElementsByClassName('winScreenContainer')[0]
 
 let buttonStartGame = document.getElementsByClassName('startButton')[0]
 
+let scoreNumber = document.getElementsByClassName('scoreNumber')[0]
+
 
 
 
