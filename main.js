@@ -7,12 +7,13 @@ let loadingScreen = document.getElementsByClassName('loadingScreenContainer')[0]
 let boardGame = document.getElementById("boardGame");
 
 let gameOverScreen = document.getElementsByClassName('gameOverScreenContainer')[0]
-
 let winScreen = document.getElementsByClassName('winScreenContainer')[0]
+let restartButtonGameOver = document.getElementsByClassName('restartButton')[0]
 
 let buttonStartGame = document.getElementsByClassName('startButton')[0]
 
 let scoreNumber = document.getElementsByClassName('scoreNumber')[0]
+
 
 let live1 = document.getElementsByClassName('live1')[0]
 let live2 = document.getElementsByClassName('live2')[0]
@@ -20,8 +21,11 @@ let live3 = document.getElementsByClassName('live3')[0]
 
 let heartContador = 0
 
+let continueAfterWinBtn = document.getElementsByClassName('continueButton')[0]
 
-let restartButtonGameOver = document.getElementsByClassName('restartButton')[0]
+
+
+
 
 // Esto es viejo
 
@@ -51,6 +55,90 @@ let goodieSpawnInterval;
 let handsUp;
 
 
+function startGame() {
+  scoreNumber.innerText = 0
+  
+  live1.style.display = 'inline-block'
+  live2.style.display = 'inline-block'
+  live3.style.display = 'inline-block'
+  
+  
+  newPlayer();
+  newEnemies();
+  newGoodies();
+  HandsUp.counter()
+}
+
+function gameWorking() {
+  if (rebootnator.lives > 0 && Rebootnator.score <= 5000) {
+    rebootnator.move();
+  } else if (rebootnator.lives > 0 && Rebootnator.score > 5000 ){
+    winGame()
+  } else {
+    endGame()
+  }
+}
+
+function winGame() {
+  clearInterval(moveRebootnatorInterval);
+  clearInterval(goodieSpawnInterval);
+  clearInterval(enemiesSpawnInterval);
+  
+  rebootnator.remove();
+  
+  enemies.forEach(function (enemy, index) {
+    enemy.remove();
+  });
+  
+  goodies.forEach(function (goodie, index) {
+    goodie.remove();
+  });
+  
+  
+  goodies = [];
+  enemies = [];
+  
+  
+  heartContador = 0
+  
+  Rebootnator.score = 0
+  
+  HandsUp.counter = 0
+  
+  showWinScreen()
+}
+
+function endGame() {
+  clearInterval(moveRebootnatorInterval);
+  clearInterval(goodieSpawnInterval);
+  clearInterval(enemiesSpawnInterval);
+  
+  rebootnator.remove();
+  
+  enemies.forEach(function (enemy, index) {
+    enemy.remove();
+  });
+  
+  goodies.forEach(function (goodie, index) {
+    goodie.remove();
+  });
+  
+  
+  goodies = [];
+  enemies = [];
+  
+  
+  heartContador = 0
+  
+  Rebootnator.score = 0
+  
+  HandsUp.counter = 0
+  
+  
+  showGameOverFromBoard()
+  
+}
+
 function showloading(){
   startScreen.style.display = 'none'
   loadingScreen.style.display = 'block'
@@ -60,29 +148,6 @@ function showloading(){
     startGame()
   }, 4500)
 }
-
-heartCounter
-function startGame() {
-  scoreNumber.innerText = 0
-
-  live1.style.display = 'inline-block'
-  live2.style.display = 'inline-block'
-  live3.style.display = 'inline-block'
-
-
-  newPlayer();
-  newEnemies();
-  newGoodies();
-  HandsUp.topNumberBullets()
-}
-function gameWorking() {
-  if (rebootnator.lives > 0) {
-    rebootnator.move();
-  } else {
-    endGame();
- }
-}
-
 function showGameOverFromBoard() { 
   boardGame.style.display = 'none'
   gameOverScreen.style.display = 'block'
@@ -94,38 +159,16 @@ function restartGameOver(){
   startGame()
 }
 
-function endGame() {
-  clearInterval(moveRebootnatorInterval);
-  clearInterval(goodieSpawnInterval);
-  clearInterval(enemiesSpawnInterval);
-
-  rebootnator.remove();
-
-  enemies.forEach(function (enemy, index) {
-    enemy.remove();
-  });
-
-  goodies.forEach(function (goodie, index) {
-    goodie.remove();
-  });
-
-
-  goodies = [];
-  enemies = [];
-
-  console.log("FIN DE JUEGO");
-
-  heartContador = 0
-
-  Rebootnator.score = 0
-
-  HandsUp.counter = 0
-  
-
-  showGameOverFromBoard()
-
+function showWinScreen(){
+  boardGame.style.display = 'none'
+  winScreen.style.display = 'block'
 }
 
+function showBoardFromWin(){
+  winScreen.style.display = 'none'
+  boardGame.style.display = 'block'
+  startGame()
+}
 
 function newPlayer() {
   rebootnator = new Rebootnator(300, 630);
@@ -178,6 +221,7 @@ function hideHearts () {
 buttonStartGame.addEventListener('click', function (event) {
   showloading()
 })
+
 
 window.addEventListener("keydown", function (event) {
   switch (event.key) {
@@ -258,4 +302,6 @@ restartButtonGameOver.addEventListener('click', function (event) {
 })
 
 
-
+continueAfterWinBtn.addEventListener('click', function(event){
+  showBoardFromWin()
+})
