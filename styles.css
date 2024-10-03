@@ -787,3 +787,22 @@ body {
   margin-top:30px
 
 }
+
+.controlsButton {
+  width: 250px;
+  height: 70px;
+  font-size: 55px;
+  font-family: "VT323", monospace;
+  font-weight: bold;
+  border: 8px solid rgba(2, 150, 150, 0.733);
+  margin-top: 20px;
+  margin-left: 215px;
+  cursor: url("./Images/cursor.png"), auto;
+}
+
+.controlsButton:hover {
+  scale: 110%;
+  border: 8px solid rgb(160, 38, 1);
+  color: white;
+  background-color: rgb(243, 69, 0);
+}

@@ -5,14 +5,18 @@ let winScreen = document.getElementsByClassName('winScreenContainer')[0]
 let creditsScreen = document.getElementsByClassName('creditsScreenContainer')[0]
 let kahootScreen = document.getElementsByClassName('speechBalloonContainer')[0]
 let boardGame = document.getElementById("boardGame");
+let howToPlayScreen = document.getElementsByClassName('howToPlayScreenContainer')[0]
 
 let restartButtonGameOver = document.getElementsByClassName('restartButton')[0]
 let buttonStartGame = document.getElementsByClassName('startButton')[0]
 let continueAfterWinBtn = document.getElementsByClassName('continueButton')[0]
 let buttonCredits = document.getElementsByClassName('creditsButton')[0]
 let buttonFromCreditsToStart = document.getElementsByClassName('menuButton')[0]
+let buttonFromControlsToStart = document.getElementsByClassName('menuButton')[1]
 let kahootTrueBtn = document.getElementsByClassName('answerTrue')[0]
-let kahootFalseBtn = document.getElementsByClassName('answerFalse')[0]
+let kahootFalseBtn = document.getElementsByClassName('answerFalse')[0] 
+let controlsBtn = document.getElementsByClassName('controlsButton')[0]
+
 
 let scoreNumber = document.getElementsByClassName('scoreNumber')[0]
 let heartCounter = 0
@@ -141,7 +145,7 @@ function endGame() {
   Rebootnator.score = 0
 
   HandsUp.counter = 0
-
+  startScreen
 
   showGameOverFromBoard()
 
@@ -340,6 +344,10 @@ buttonFromCreditsToStart.addEventListener('click', function (event) {
   backToStartMenu()
 })
 
+buttonFromControlsToStart.addEventListener('click', function (event) {
+  backToStartMenu()
+})
+
 kahootFalseBtn.addEventListener('click', function (event) {
   musicKahoot.pause()
   musicKahoot.currentTime = 0
@@ -350,4 +358,13 @@ kahootTrueBtn.addEventListener('click', function (event) {
   musicKahoot.pause()
   musicKahoot.currentTime = 0
   showWinScreen()
+})
+
+function showHowToplayScreen() {
+  startScreen.style.display = 'none'
+  howToPlayScreen.style.display = 'block'
+}
+
+controlsBtn.addEventListener('click', function (event) {
+  showHowToplayScreen()
 })
