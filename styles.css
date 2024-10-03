@@ -684,3 +684,103 @@ body {
   background-size: cover;
   animation: punishMoving 4s infinite linear;
 }
+
+/* HOW TO PLAY SCREEN */
+
+.howToPlayScreenContainer {
+  position: relative;
+  height: 800px;
+  width: 700px;
+  background-image: url(Images/backgrounds/pixelatedBackgroundStart.png);
+  margin: 0 auto;
+  margin-top: 80px;
+  background-size: cover;
+  background-position: -50px;
+  border: 4px solid white;
+  display: block;
+}
+
+.howToPlayTittle{
+  color:white;
+  font-size: 80px;
+  font-weight: 500;
+  margin-left:170px;
+  margin-top: 25px;
+}
+
+.howRebootnator{
+  position: absolute;
+  width: 250px;
+  top:0;
+  z-index: 1;
+  margin-top: 163px;
+  margin-left: 140px;
+}
+
+.titleGoal{
+  color: #5bc6dc;
+  font-size: 40px;
+  margin-left: 50px;
+  margin-top: -45px
+  
+}
+
+.textGoal{
+  color: white;
+  margin-left: 50px;
+  width: 600px;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: -14px;
+  z-index: 0;
+}
+
+.enemiesGroup {
+  margin-top: -30px;
+  margin-left: 150px;
+}
+.textGoodies{
+  color: white;
+  margin-left: 50px;
+  width: 600px;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 20px;
+  z-index: 0;
+}
+
+.titleControl{
+  color: #5bc6dc;
+  font-size: 40px;
+  margin-left: 50px;
+  margin-top: 10px
+  
+}
+
+.flexImageControls{
+  display:flex;
+  margin-left: 100px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+.arrowKeys{
+  height: 60px;
+}
+
+.move {
+  color: white;
+  margin-left:20px;
+  font-size: 30px;
+  font-weight: 100;
+}
+.shoot {
+  color:white;
+  font-size: 30px;
+  font-weight: 100;
+  margin-left: 20px;
+}
+.spaceKey {
+  height: 30px;
+  margin-left: 60px;
+  margin-top:30px
+}
