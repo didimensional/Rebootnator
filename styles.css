@@ -454,19 +454,15 @@ body {
 }
 
 @keyframes punishMoving {
-   
   from {
     transform: rotate(0deg) translate(-100px) rotate(0deg);
   }
-
   to {
     transform: rotate(360deg) translate(-100px) rotate(-360deg);
   }
 }
 
-
 @keyframes goodiesMoving {}
-
 
 .continueButton {
   position:absolute;
@@ -487,11 +483,6 @@ body {
   color: white;
   background-color: rgb(243, 69, 0);
 }
-
-
-
-/* CREDITS SCREEN */
-
 .creditsScreenContainer{
   position: relative;
   height: 800px;
@@ -504,13 +495,11 @@ body {
   border: 4px solid white;
   display: none;
 }
-
 .creditsTitle {
   width: 600px;
   margin-left: 42px;
   margin-top: 30px;
 }
-
 .team{
   color:white;
   font-size: 70px;
@@ -519,7 +508,6 @@ body {
   color: #5bc6dc;
   margin-top: -25px;
 }
-
 .menuButton {
   width: 250px;
   height: 70px;
@@ -531,14 +519,12 @@ body {
   margin-left: 215px;
   cursor: pointer
 }
-
 .menuButton:hover {
   scale: 110%;
   border: 8px solid rgb(160, 38, 1);
   color: white;
   background-color: rgb(243, 69, 0);
 }
-
 .flexImage{
   display: flex;
   margin-top: -7px;
@@ -556,68 +542,52 @@ body {
   font-size: 30px;
   margin-left: 50px;
 }
-
-/* ENEMIES */
-
 .enemies {
   position: absolute;
   background-color: blue;
 }
-
 .jsEnemy {
   position: absolute;
   background-image: url(Images/enemies/jsCircle.png);
   background-size: cover;
   animation: enemiesMoving 2s ease infinite;
 }
-
-
 .htmlEnemy {
   position: absolute;
   background-image: url(Images/enemies/htmlCircle.png);
   background-size: cover;
   animation: enemiesMoving 2s ease infinite;
-
 }
-
 .cssEnemy {
   position: absolute;
   background-image: url(Images/enemies/cssCircle.png);
   background-size: cover;
   animation: enemiesMoving2 2s ease infinite;
 }
-
 .airconEnemy {
   position: absolute;
   background-image: url(Images/enemies/airconCircle.png);
   background-size: cover;
   animation: enemiesMoving2 2s ease infinite;
 }
-
 .gamechairEnemy {
   position: absolute;
   background-image: url(Images/enemies/gamechairCircle.png);
   background-size: cover;
   animation: enemiesMoving 2s ease infinite;
 }
-
 .playstationEnemy {
   position: absolute;
   background-image: url(Images/enemies/remoteCircle.png);
   background-size: cover;
   animation: enemiesMoving2 2s ease infinite;
 }
-
 .skullEnemy {
   position: absolute;
   background-image: url(Images/enemies/punisherCircle.png);
   background-size: cover;
-
   animation: enemiesMoving 2s ease infinite;
 }
-
-/* HOW TO PLAY SCREEN */
-
 .howToPlayScreenContainer {
   position: relative;
   height: 800px;
@@ -630,7 +600,6 @@ body {
   border: 4px solid white;
   display: none;
 }
-
 .howToPlayTittle{
   color:white;
   font-size: 80px;
@@ -638,7 +607,6 @@ body {
   margin-left:170px;
   margin-top: 25px;
 }
-
 .howRebootnator{
   position: absolute;
   width: 250px;
@@ -647,15 +615,12 @@ body {
   margin-top: 163px;
   margin-left: 140px;
 }
-
 .titleGoal{
   color: #5bc6dc;
   font-size: 40px;
   margin-left: 50px;
   margin-top: -45px
-  
 }
-
 .textGoal{
   color: white;
   margin-left: 50px;
@@ -665,7 +630,6 @@ body {
   margin-top: -14px;
   z-index: 0;
 }
-
 .enemiesGroup {
   margin-top: -30px;
   margin-left: 150px;
@@ -679,15 +643,12 @@ body {
   margin-top: 20px;
   z-index: 0;
 }
-
 .titleControl{
   color: #5bc6dc;
   font-size: 40px;
   margin-left: 50px;
   margin-top: 10px
-  
 }
-
 .flexImageControls{
   display:flex;
   margin-left: 100px;
@@ -697,7 +658,6 @@ body {
 .arrowKeys{
   height: 60px;
 }
-
 .move {
   color: white;
   margin-left:20px;
@@ -714,9 +674,7 @@ body {
   height: 30px;
   margin-left: 60px;
   margin-top:30px
-
 }
-
 .controlsButton {
   width: 250px;
   height: 70px;
@@ -728,7 +686,6 @@ body {
   margin-left: 215px;
   cursor: url("./Images/cursor.png"), auto;
 }
-
 .controlsButton:hover {
   scale: 110%;
   border: 8px solid rgb(160, 38, 1);
