@@ -126,6 +126,7 @@ function showCredits () {
 function backToStartMenu () {
   startScreen.style.display = 'block'
   creditsScreen.style.display = 'none'
+  howToPlayScreen.style.display = 'none'
 }
 
 
