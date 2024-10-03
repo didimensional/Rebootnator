@@ -77,8 +77,8 @@ class Enemy {
 
                 // AQUI HAY QUE BORRAR CORAZONES
                 hideHearts()
-                heartContador++
-                console.log(heartContador)
+                heartCounter++
+                console.log(heartCounter)
 
             }
         })

@@ -1,4 +1,3 @@
-// PANTALLAS
 let startScreen = document.getElementsByClassName('startScreenContainer')[0]
 let loadingScreen = document.getElementsByClassName('loadingScreenContainer')[0]
 let gameOverScreen = document.getElementsByClassName('gameOverScreenContainer')[0]
@@ -6,7 +5,6 @@ let winScreen = document.getElementsByClassName('winScreenContainer')[0]
 let creditsScreen = document.getElementsByClassName('creditsScreenContainer')[0]
 let kahootScreen = document.getElementsByClassName('speechBalloonContainer')[0]
 let boardGame = document.getElementById("boardGame");
-
 
 let restartButtonGameOver = document.getElementsByClassName('restartButton')[0]
 let buttonStartGame = document.getElementsByClassName('startButton')[0]
@@ -17,13 +15,11 @@ let kahootTrueBtn = document.getElementsByClassName('answerTrue')[0]
 let kahootFalseBtn = document.getElementsByClassName('answerFalse')[0]
 
 let scoreNumber = document.getElementsByClassName('scoreNumber')[0]
-let heartContador = 0
+let heartCounter = 0
 
 let live1 = document.getElementsByClassName('live1')[0]
 let live2 = document.getElementsByClassName('live2')[0]
 let live3 = document.getElementsByClassName('live3')[0]
-
-// SONIDOS
 
 let musicMenu = new Audio('/Sounds/MUSIC_MENU.mp3')
 let musicGame = new Audio('/Sounds/MUSIC_GAME.mp3')
@@ -33,21 +29,6 @@ let musicKahootWin = new Audio('/Sounds/MUSIC_KAHOOT_WIN.mp3')
 let deadEnemy = new Audio('/Sounds/FX_DEAD_ENEMY.mp3')
 let goddieEat = new Audio('/Sounds/FX_GOODIE_EAT.mp3')
 let characterShoot = new Audio('/Sounds/FX_SHOOT.mp3')
-
-
-// Esto es viejo
-
-
-// let startView = document.getElementById("start");
-// let restartView = document.getElementById("restart");
-
-// let heartCounter = document.getElementById("health");
-
-// let buttonStart = document.getElementById("btn-start");
-// let buttonEnd = document.getElementById("btn-end");
-
-
-// Esto se mantiene
 
 let rebootnator;
 let moveRebootnatorInterval;
@@ -62,7 +43,7 @@ let goodieSpawnInterval;
 
 let handsUp;
 
-let scoreWinCondition = 1000
+let scoreWinCondition = 30000
 
 
 function startGame() {
@@ -118,7 +99,7 @@ function winGame() {
   enemies = [];
 
 
-  heartContador = 0
+  heartCounter = 0
 
   Rebootnator.score = 0
 
@@ -147,7 +128,7 @@ function endGame() {
   enemies = [];
 
 
-  heartContador = 0
+  heartCounter = 0
 
   Rebootnator.score = 0
 
@@ -226,7 +207,7 @@ function newGoodies() {
     goodie = new Goodies(randomType);
     goodie.insert();
     goodies.push(goodie);
-  }, 6000);
+  }, 3500);
 }
 
 function fireHandsUp() {
@@ -238,14 +219,14 @@ function fireHandsUp() {
 
 function hideHearts() {
 
-  if (heartContador === 0) {
+  if (heartCounter === 0) {
 
     live3.style.display = 'none'
     console.log('elimino primer corazon')
-  } else if (heartContador === 1) {
+  } else if (heartCounter === 1) {
     live2.style.display = 'none'
     console.log('elimino el segundo corazón')
-  } else if (heartContador === 2) {
+  } else if (heartCounter === 2) {
     live1.style.display = 'none'
     console.log('elimino el tercer corazon')
   }
