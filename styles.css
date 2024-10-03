@@ -100,12 +100,13 @@ body {
 .rebootnatorThin {
   background-image: url(Images/sprites/machangoThin.png);
   background-size: cover;
+  position: absolute;
 }
 
 .rebootnatorFat {
   background-image: url(Images/sprites/machangoFat.png);
   background-size: cover;
-
+  position: absolute;
 }
 
 

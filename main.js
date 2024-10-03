@@ -62,7 +62,7 @@ let goodieSpawnInterval;
 
 let handsUp;
 
-let scoreWinCondition = 2000
+let scoreWinCondition = 1000
 
 
 function startGame() {
@@ -183,6 +183,7 @@ function showWinScreen() {
   boardGame.style.display = 'none'
   kahootScreen.style.display = 'none'
   winScreen.style.display = 'block'
+  rebootnator.remove()
 }
 
 function showBoardFromWin() {
@@ -193,6 +194,7 @@ function showBoardFromWin() {
 
 function showKahootScreen() {
   kahootScreen.style.display = 'block'
+  newPlayer()
 }
 
 function newPlayer() {
