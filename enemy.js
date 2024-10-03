@@ -32,11 +32,6 @@ class Enemy {
         
     }
 
-    // remove() {
-    //     boardGame.removeChild(this.sprite)
-    //     clearInterval(this.interval)
-    // }
-
     move() {
         let newY = this.y + this.speed * this.directionY
         this.checkCollision()

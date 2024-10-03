@@ -98,12 +98,12 @@ body {
   }
   
 .rebootnatorThin {
-  background-image: url(Images/sprites/machangoThin.png);
+  background-image: url(Images/sprites/machangoThin.gif);
   background-size: cover;
 }
 
 .rebootnatorFat {
-  background-image: url(Images/sprites/machangoFat.png);
+  background-image: url(Images/sprites/machangoFat.gif);
   background-size: cover;
 
 }
