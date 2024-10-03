@@ -16,7 +16,6 @@ let kahootFalseBtn = document.getElementsByClassName('answerFalse')[0]
 
 let scoreNumber = document.getElementsByClassName('scoreNumber')[0]
 let heartCounter = 0
-
 let live1 = document.getElementsByClassName('live1')[0]
 let live2 = document.getElementsByClassName('live2')[0]
 let live3 = document.getElementsByClassName('live3')[0]
@@ -34,19 +33,19 @@ let goddieEat = new Audio('./Sounds/FX_GOODIE_EAT.mp3')
 let characterShoot = new Audio('./Sounds/FX_SHOOT.mp3')
 
 let rebootnator;
-let moveRebootnatorInterval;
-
 let enemy;
-let enemiesSpawnInterval;
-
 let goodie;
 let enemies = [];
 let goodies = [];
-let goodieSpawnInterval;
-
 let handsUp;
 
+let moveRebootnatorInterval;
+let enemiesSpawnInterval;
+let goodieSpawnInterval;
+
 let scoreWinCondition = 3000
+
+let moveRebootnatorIntervalFixed = 5
 
 
 function startGame() {
@@ -66,6 +65,8 @@ function startGame() {
 function gameWorking() {
   if (rebootnator.lives > 0 && Rebootnator.score <= scoreWinCondition) {
     rebootnator.move();
+    console.log('PLAYER SPEED: ' + rebootnator.speed)
+    console.log('PLAYER SPEED: ' + rebootnator.speed)
   } else if (rebootnator.lives > 0 && Rebootnator.score > scoreWinCondition) {
     winGame()
   } else {
@@ -119,7 +120,7 @@ function endGame() {
   clearInterval(moveRebootnatorInterval);
   clearInterval(goodieSpawnInterval);
   clearInterval(enemiesSpawnInterval);
-
+  
   rebootnator.remove()
 
   enemies.forEach(function (enemy, index) {
@@ -166,7 +167,6 @@ function showGameOverFromBoard() {
 }
 
 function showGameOverFromKahoot() {
-  rebootnator.remove()
   kahootScreen.style.display = 'none'
   boardGame.style.display = 'none'
   gameOverScreen.style.display = 'block'
@@ -190,7 +190,6 @@ function showWinScreen() {
   musicKahoot.pause()
   musicKahoot.currentTime = 0
   musicWin.play()
-  rebootnator.remove()
 }
 
 function showBoardFromWin() {
@@ -201,15 +200,13 @@ function showBoardFromWin() {
 
 function showKahootScreen() {
   kahootScreen.style.display = 'block'
-
   musicKahoot.play()
-  newPlayer()
 }
 
 function newPlayer() {
   rebootnator = new Rebootnator(300, 630);
   rebootnator.insert();
-  moveRebootnatorInterval = setInterval(gameWorking, 5);
+  moveRebootnatorInterval = setInterval(gameWorking, moveRebootnatorIntervalFixed);
 }
 
 function newEnemies() {
@@ -220,8 +217,8 @@ function newEnemies() {
     enemy.insert();
     enemies.push(enemy);
   }, 500);
-}
-
+}                                              
+    
 function newGoodies() {
   goodieSpawnInterval = setInterval(function () {
     const types = ["slimSalad", "speedCoffee", "thickBurger"];
