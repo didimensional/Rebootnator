@@ -189,7 +189,7 @@ function newGoodies() {
     goodie = new Goodies(randomType);
     goodie.insert();
     goodies.push(goodie);
-  }, 3000);
+  }, 5500);
 }
 function fireHandsUp() {
   handsUp = new HandsUp();

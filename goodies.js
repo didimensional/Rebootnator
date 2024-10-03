@@ -90,7 +90,7 @@ class Goodies {
       rebootnator.sprite.classList.remove("rebootnatorThin");
       rebootnator.sprite.classList.remove("rebootnatorFat");
       rebootnator.speed = originSpeed;
-    }, 5000);
+    }, 4000);
   }
   checkCollision() {
     goodies.forEach(function (goodie, index) {
