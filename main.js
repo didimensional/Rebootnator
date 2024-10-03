@@ -217,7 +217,7 @@ function newGoodies() {
     goodie = new Goodies(randomType);
     goodie.insert();
     goodies.push(goodie);
-  }, 3500);
+  }, 2000);
 }
 
 function fireHandsUp() {
