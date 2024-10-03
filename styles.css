@@ -683,5 +683,5 @@ body {
   position: absolute;
   background-image: url(Images/enemies/punisherCircle.png);
   background-size: cover;
-  animation: punishMoving 4s infinite linear;
+  animation: enemiesMoving 2s ease infinite;
 }

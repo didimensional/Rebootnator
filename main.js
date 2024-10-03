@@ -76,7 +76,6 @@ function startGame() {
   newPlayer();
   newEnemies();
   newGoodies();
-  HandsUp.counter
 }
 
 function gameWorking() {
@@ -169,6 +168,13 @@ function showloading() {
   }, 4500)
 }
 function showGameOverFromBoard() {
+  boardGame.style.display = 'none'
+  gameOverScreen.style.display = 'block'
+}
+
+function showGameOverFromKahoot() {
+  rebootnator.remove()
+  kahootScreen.style.display = 'none'
   boardGame.style.display = 'none'
   gameOverScreen.style.display = 'block'
 }
@@ -316,14 +322,6 @@ window.addEventListener("keyup", function (event) {
 
 });
 
-// buttonStart.addEventListener("click", function (event) {
-//   startGame();
-// });
-
-// buttonEnd.addEventListener("click", function (event) {
-//   endGame();
-// });
-
 restartButtonGameOver.addEventListener('click', function (event) {
   restartGameOver()
 })
@@ -342,7 +340,7 @@ buttonFromCreditsToStart.addEventListener('click', function (event) {
 })
 
 kahootFalseBtn.addEventListener('click', function (event) {
-  showWinScreen()
+  showGameOverFromKahoot()
 })
 
 kahootTrueBtn.addEventListener('click', function (event) {

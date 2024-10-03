@@ -62,6 +62,7 @@ class Enemy {
                 this.remove()
             }
         }
+        // let newX = this.x + this.speed * 
     }
 
     checkCollision() {
@@ -72,7 +73,7 @@ class Enemy {
                 enemy.y + enemy.height > rebootnator.y) {
                 enemy.remove()
                 enemies.splice(index, 1)
-                rebootnator.lives -= 0 // <------------- CAMBIAR A 1
+                rebootnator.lives -= 1 // <------------- CAMBIAR A 1
 
                 // AQUI HAY QUE BORRAR CORAZONES
                 hideHearts()
