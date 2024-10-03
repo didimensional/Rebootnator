@@ -4,14 +4,17 @@ let loadingScreen = document.getElementsByClassName('loadingScreenContainer')[0]
 let gameOverScreen = document.getElementsByClassName('gameOverScreenContainer')[0]
 let winScreen = document.getElementsByClassName('winScreenContainer')[0]
 let creditsScreen = document.getElementsByClassName('creditsScreenContainer')[0]
-
+let kahootScreen = document.getElementsByClassName('speechBalloonContainer')[0]
 let boardGame = document.getElementById("boardGame");
+
 
 let restartButtonGameOver = document.getElementsByClassName('restartButton')[0]
 let buttonStartGame = document.getElementsByClassName('startButton')[0]
 let continueAfterWinBtn = document.getElementsByClassName('continueButton')[0]
 let buttonCredits = document.getElementsByClassName('creditsButton')[0]
 let buttonFromCreditsToStart = document.getElementsByClassName('menuButton')[0]
+let kahootTrueBtn = document.getElementsByClassName('answerTrue')[0]
+let kahootFalseBtn = document.getElementsByClassName('answerFalse')[0]
 
 let scoreNumber = document.getElementsByClassName('scoreNumber')[0]
 let heartContador = 0
@@ -59,6 +62,8 @@ let goodieSpawnInterval;
 
 let handsUp;
 
+let scoreWinCondition = 2000
+
 
 function startGame() {
   scoreNumber.innerText = 0
@@ -75,9 +80,9 @@ function startGame() {
 }
 
 function gameWorking() {
-  if (rebootnator.lives > 0 && Rebootnator.score <= 5000) {
+  if (rebootnator.lives > 0 && Rebootnator.score <= scoreWinCondition) {
     rebootnator.move();
-  } else if (rebootnator.lives > 0 && Rebootnator.score > 5000) {
+  } else if (rebootnator.lives > 0 && Rebootnator.score > scoreWinCondition) {
     winGame()
   } else {
     endGame()
@@ -120,7 +125,7 @@ function winGame() {
 
   HandsUp.counter = 0
 
-  showWinScreen()
+  showKahootScreen()
 }
 
 function endGame() {
@@ -176,6 +181,7 @@ function restartGameOver() {
 
 function showWinScreen() {
   boardGame.style.display = 'none'
+  kahootScreen.style.display = 'none'
   winScreen.style.display = 'block'
 }
 
@@ -183,6 +189,10 @@ function showBoardFromWin() {
   winScreen.style.display = 'none'
   boardGame.style.display = 'block'
   startGame()
+}
+
+function showKahootScreen() {
+  kahootScreen.style.display = 'block'
 }
 
 function newPlayer() {
@@ -327,4 +337,12 @@ buttonCredits.addEventListener('click', function (event) {
 
 buttonFromCreditsToStart.addEventListener('click', function (event) {
   backToStartMenu()
+})
+
+kahootFalseBtn.addEventListener('click', function (event) {
+  showWinScreen()
+})
+
+kahootTrueBtn.addEventListener('click', function (event) {
+  showWinScreen()
 })
