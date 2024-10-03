@@ -1,8 +1,6 @@
 class HandsUp {
     static counter = 0
-
     constructor() {
-
         this.height = 50
         this.width = 40
         this.y = rebootnator.y - this.height
@@ -19,7 +17,6 @@ class HandsUp {
         this.sprite.style.top = this.y + "px"
         this.sprite.style.left = this.x + "px"
         boardGame.appendChild(this.sprite)
-
     }
     move() {
         let newY = this.y + this.speed * this.directionY
@@ -32,46 +29,33 @@ class HandsUp {
             HandsUp.counter--
         }
     }
-
     remove() {
         boardGame.removeChild(this.sprite)
         clearInterval(this.interval)
     }
-
     checkCollision(self) {
         enemies.forEach(function (enemy, index) {
             if (enemy.x < self.x + self.width &&
                 enemy.y < self.y + self.height &&
                 enemy.x + enemy.width > self.x &&
                 enemy.y + enemy.height > self.y) {
-
                 enemy.remove()
                 enemies.splice(index, 1)
-                
-
                 if (enemy.type === 'jsEnemy' || 
                     enemy.type === 'htmlEnemy' ||
                     enemy.type === 'cssEnemy' ) {
-
                     Rebootnator.score += 1000
-                    
                 } else if (enemy.type === 'airconEnemy' ||
                     enemy.type === 'gamechairEnemy' ||
                     enemy.type === 'playstationEnemy' ||
                     enemy.type === 'skullEnemy' ) {
-                    
                     Rebootnator.score += 100
                 }
-                
                 scoreNumber.innerText = Rebootnator.score
                 self.remove()
                 HandsUp.counter--
                 deadEnemy.play()
-
             }
-
         })
-
     }
-
 }

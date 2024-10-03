@@ -17,7 +17,6 @@ let kahootTrueBtn = document.getElementsByClassName('answerTrue')[0]
 let kahootFalseBtn = document.getElementsByClassName('answerFalse')[0] 
 let controlsBtn = document.getElementsByClassName('controlsButton')[0]
 
-
 let scoreNumber = document.getElementsByClassName('scoreNumber')[0]
 let heartCounter = 0
 let live1 = document.getElementsByClassName('live1')[0]
@@ -42,30 +41,24 @@ let goodie;
 let enemies = [];
 let goodies = [];
 let handsUp;
-
 let moveRebootnatorInterval;
 let enemiesSpawnInterval;
 let goodieSpawnInterval;
 
-let scoreWinCondition = 10000
+let scoreWinCondition = 20000
 
 let moveRebootnatorIntervalFixed = 5
 
-
 function startGame() {
   scoreNumber.innerText = 0
-
   live1.style.display = 'inline-block'
   live2.style.display = 'inline-block'
   live3.style.display = 'inline-block'
-  
   musicGame.play()
-
   newPlayer();
   newEnemies();
   newGoodies();
 }
-
 function gameWorking() {
   if (rebootnator.lives > 0 && Rebootnator.score <= scoreWinCondition) { rebootnator.move();
   } else if (rebootnator.lives > 0 && Rebootnator.score > scoreWinCondition) { winGame()
@@ -89,15 +82,18 @@ function winGame() {
 }
 function showKahootScreen() {
   kahootScreen.style.display = 'block'
-  musicKahoot.play()}
+  musicKahoot.play()
+}
 kahootFalseBtn.addEventListener('click', function (event) {
   musicKahoot.pause()
   musicKahoot.currentTime = 0
-  showGameOverFromKahoot()})
+  showGameOverFromKahoot()
+})
 kahootTrueBtn.addEventListener('click', function (event) {
   musicKahoot.pause()
   musicKahoot.currentTime = 0
-  showWinScreen()})
+  showWinScreen()
+})
 function showGameOverFromKahoot() {
   kahootScreen.style.display = 'none'
   boardGame.style.display = 'none'
@@ -114,22 +110,15 @@ function showWinScreen() {
   musicKahoot.currentTime = 0
   musicWin.play()
 }
-
-
-
-
 function showCredits () {
   startScreen.style.display = 'none'
   creditsScreen.style.display = 'block'
 }
-
 function backToStartMenu () {
   startScreen.style.display = 'block'
   creditsScreen.style.display = 'none'
   howToPlayScreen.style.display = 'none'
 }
-
-
 function endGame() {
   clearInterval(moveRebootnatorInterval);
   clearInterval(goodieSpawnInterval);
@@ -141,23 +130,14 @@ function endGame() {
   goodies.forEach(function (goodie, index) {
     goodie.remove();
   });
-
-
   goodies = [];
   enemies = [];
-
-
   heartCounter = 0
-
   Rebootnator.score = 0
-
   HandsUp.counter = 0
   startScreen
-
   showGameOverFromBoard()
-
 }
-
 function showloading() {
   startScreen.style.display = 'none'
   loadingScreen.style.display = 'block'
@@ -176,8 +156,6 @@ function showGameOverFromBoard() {
   musicGame.currentTime = 0
   musicGameOver.play()
 }
-
-
 function restartGameOver() {
   gameOverScreen.style.display = 'none'
   boardGame.style.display = 'block'
@@ -185,21 +163,16 @@ function restartGameOver() {
   musicGameOver.currentTime = 0
   startGame()
 }
-
-
 function showBoardFromWin() {
   winScreen.style.display = 'none'
   boardGame.style.display = 'block'
   startGame()
 }
-
-
 function newPlayer() {
   rebootnator = new Rebootnator(300, 630);
   rebootnator.insert();
   moveRebootnatorInterval = setInterval(gameWorking, moveRebootnatorIntervalFixed);
 }
-
 function newEnemies() {
   enemiesSpawnInterval = setInterval(function () {
     const enemyTypes = ['jsEnemy', 'htmlEnemy', 'cssEnemy', 'airconEnemy', 'gamechairEnemy', 'playstationEnemy', 'skullEnemy']
@@ -209,7 +182,6 @@ function newEnemies() {
     enemies.push(enemy);
   }, 500);
 }                                              
-    
 function newGoodies() {
   goodieSpawnInterval = setInterval(function () {
     const types = ["slimSalad", "speedCoffee", "thickBurger"];
@@ -217,21 +189,16 @@ function newGoodies() {
     goodie = new Goodies(randomType);
     goodie.insert();
     goodies.push(goodie);
-  }, 2000);
+  }, 3000);
 }
-
 function fireHandsUp() {
-
   handsUp = new HandsUp();
   handsUp.insert();
   HandsUp.counter++
   characterShoot.play ()
 }
-
 function hideHearts() {
-
   if (heartCounter === 0) {
-
     live3.style.display = 'none'
   } else if (heartCounter === 1) {
     live2.style.display = 'none'
@@ -239,12 +206,9 @@ function hideHearts() {
     live1.style.display = 'none'
   }
 }
-
 buttonStartGame.addEventListener('click', function (event) {
   showloading()
 })
-
-
 window.addEventListener("keydown", function (event) {
   switch (event.key) {
     case "a":
@@ -254,7 +218,6 @@ window.addEventListener("keydown", function (event) {
       rebootnator.sprite.classList.remove("rebootnatorRight");
       rebootnator.sprite.classList.add("rebootnatorLeft");
       break;
-
     case "d":
       rebootnator.directionX = 1;
       rebootnator.move();
@@ -262,7 +225,6 @@ window.addEventListener("keydown", function (event) {
       rebootnator.sprite.classList.remove("rebootnatorLeft");
       rebootnator.sprite.classList.add("rebootnatorRight");
       break;
-
     case "A":
       rebootnator.directionX = -1;
       rebootnator.move();
@@ -270,7 +232,6 @@ window.addEventListener("keydown", function (event) {
       rebootnator.sprite.classList.remove("rebootnatorRight");
       rebootnator.sprite.classList.add("rebootnatorLeft");
       break;
-
     case "D":
       rebootnator.directionX = 1;
       rebootnator.move();
@@ -278,7 +239,6 @@ window.addEventListener("keydown", function (event) {
       rebootnator.sprite.classList.remove("rebootnatorLeft");
       rebootnator.sprite.classList.add("rebootnatorRight");
       break;
-
     case "ArrowLeft":
       rebootnator.directionX = -1;
       rebootnator.move();
@@ -286,7 +246,6 @@ window.addEventListener("keydown", function (event) {
       rebootnator.sprite.classList.remove("rebootnatorRight");
       rebootnator.sprite.classList.add("rebootnatorLeft");
       break;
-
     case "ArrowRight":
       rebootnator.directionX = 1;
       rebootnator.move();
@@ -294,50 +253,37 @@ window.addEventListener("keydown", function (event) {
       rebootnator.sprite.classList.remove("rebootnatorLeft");
       rebootnator.sprite.classList.add("rebootnatorRight");
       break;
-
     case " ":
       if (HandsUp.counter < 3) {
-        fireHandsUp();
-      }
+        fireHandsUp();}
       break;
   }
 });
-
 window.addEventListener("keyup", function (event) {
   rebootnator.directionX = 0;
   rebootnator.sprite.classList.remove("rebootnatorRight");
   rebootnator.sprite.classList.remove("rebootnatorLeft");
   rebootnator.sprite.classList.add("rebootnator");
-
 });
-
 restartButtonGameOver.addEventListener('click', function (event) {
   restartGameOver()
 })
-
-
 continueAfterWinBtn.addEventListener('click', function (event) {
   showBoardFromWin()
 })
-
 buttonCredits.addEventListener('click', function (event) {
   showCredits()
 })
-
 buttonFromCreditsToStart.addEventListener('click', function (event) {
   backToStartMenu()
 })
-
 buttonFromControlsToStart.addEventListener('click', function (event) {
   backToStartMenu()
 })
-
-
 function showHowToplayScreen() {
   startScreen.style.display = 'none'
   howToPlayScreen.style.display = 'block'
 }
-
 controlsBtn.addEventListener('click', function (event) {
   showHowToplayScreen()
 })

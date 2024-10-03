@@ -23,7 +23,6 @@ class Goodies {
         return "green";
     }
   }
-
   insert() {
     this.sprite.setAttribute("class", this.type);
     this.sprite.style.width = this.width + "px";
@@ -32,12 +31,10 @@ class Goodies {
     this.sprite.style.left = this.x + "px";
     boardGame.appendChild(this.sprite);
   }
-
   remove() {
     boardGame.removeChild(this.sprite);
     clearInterval(this.interval);
   }
-
   move() {
     let newY = this.y + this.speed * this.directionY;
     this.checkCollision();
@@ -49,13 +46,11 @@ class Goodies {
       this.remove();
     }
   }
-
   effect() {
     const originWidth = rebootnator.width;
     const originHeight = rebootnator.height;
     const originSpeed = rebootnator.speed;
     const originY = 630;
-
     switch (this.type) {
       case "slimSalad":
         rebootnator.width = 50;
@@ -97,7 +92,6 @@ class Goodies {
       rebootnator.speed = originSpeed;
     }, 5000);
   }
-
   checkCollision() {
     goodies.forEach(function (goodie, index) {
       if (

@@ -3,17 +3,15 @@ body {
   background-size: cover;
   background-position: center;
   font-family: "VT323", system-ui;
-  }
+}
   
-  .vt323-regular {
-    font-family: "VT323", monospace;
+.vt323-regular {
+  font-family: "VT323", monospace;
   font-weight: 400;
   font-style: normal;
-  }
+}
   
-  /* BOARD GAME STYLES */
-  
-  #boardGame {
+#boardGame {
   position: relative;
   height: 800px;
   width: 700px;
@@ -23,161 +21,136 @@ body {
   background-size: cover;
   background-position: -50px;
   display: none;
-  }
-  
-  /* KAHOOT SPEECH BALLOON  */
-  
-  #speechBalloonContainer {
+}    
+#speechBalloonContainer {
     position: absolute;
-  }
+} 
+.speechBalloonContainer {
+  position: absolute !important;
+  background-image: url(Images/8bit-retro-game-pixel-speech-bubble-balloon-icon-sticker-memo-keyword-planner-text-box-banner-flat-transparent-element-design-png.webp);
+  width: 670px;
+  height: 500px;
+  margin-top: 100px;
+  margin-left: 15px;
+  background-size: cover;
+  display: none;
+  z-index: 10 !important;
+}  
+.kahootLogo {
+  width: 250px;
+  margin-top: 60px;
+  margin-left: 220px;
+}
   
-  .speechBalloonContainer {
-    position: absolute !important;
-    background-image: url(Images/8bit-retro-game-pixel-speech-bubble-balloon-icon-sticker-memo-keyword-planner-text-box-banner-flat-transparent-element-design-png.webp);
-    width: 670px;
-    height: 500px;
-    margin-top: 100px;
-    margin-left: 15px;
-    background-size: cover;
-    display: none;
-    z-index: 10 !important;
-  }
+.kahootQuestion {
+  font-size: 30px;
+  margin-left: 0px;
+  text-align: CENTER;
+}
   
-  .kahootLogo {
-    width: 250px;
-    margin-top: 60px;
-    margin-left: 220px;
-  }
+.answerTrue {
+  background-color: rgb(55, 55, 245);
+  border: 0px solid;
+  font-family: "VT323", monospace;
+  width: 300px;
+  height: 70px;
+  font-size: 30px;
+  color: white;
+  margin-left: 32px;
+  cursor: pointer
+}
   
-  .kahootQuestion {
-    font-size: 30px;
-    margin-left: 0px;
-    text-align: CENTER;
-  }
-  
-  .answerTrue {
-    background-color: rgb(55, 55, 245);
-    border: 0px solid;
-    font-family: "VT323", monospace;
-    width: 300px;
-    height: 70px;
-    font-size: 30px;
-    color: white;
-    margin-left: 32px;
-    cursor: pointer
-  }
-  
-  .answerFalse {
-    background-color: rgb(243, 20, 57);
-    border: 0px solid;
-    font-family: "VT323", monospace;
-    width: 300px;
-    height: 70px;
-    font-size: 30px;
-    color: white;
-    cursor: pointer
-  }
-  
-  
-  .rebootnator {
-    position: absolute;
-    background-image: url("Images/sprites/machangoFront.gif");
-    background-size: cover;
-    }
-    
-    .rebootnatorLeft {
-      position: absolute;
+.answerFalse {
+  background-color: rgb(243, 20, 57);
+  border: 0px solid;
+  font-family: "VT323", monospace;
+  width: 300px;
+  height: 70px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer
+}  
+.rebootnator {
+  position: absolute;
+  background-image: url("Images/sprites/machangoFront.gif");
+  background-size: cover;
+}   
+.rebootnatorLeft {
+  position: absolute;
   background-image: url("Images/sprites/machangoLeft.gif");
   background-size: cover;
-  }
-  
-  .rebootnatorRight {
-    position: absolute;
+} 
+.rebootnatorRight {
+  position: absolute;
   background-image: url("Images/sprites/machangoRight.gif");
   background-size: cover;
-  }
-  
+}
 .rebootnatorThin {
   background-image: url(Images/sprites/machangoThin.gif);
   background-size: cover;
   position: absolute;
 }
-
 .rebootnatorFat {
   background-image: url(Images/sprites/machangoFat.gif);
   background-size: cover;
   position: absolute;
 }
-
-
 .handsUp {
   position: absolute;
   background-image: url(Images/hand.png);
   background-size: cover;
 }
-
 .goodies {
   position: absolute;
   background-color: rgb(24, 121, 21);
 }
-
 .speedCoffee {
   position: absolute;
   background-image: url(Images/goodies/coffee-cupCircle.png);
   background-size: cover;
 }
-
 .slimSalad {
   position: absolute;
   background-image: url(Images/goodies/brecolCircle.png);
   background-size: cover;
 }
-
 .flatEgg {
   position: absolute;
   background-image: url(Images/enemies/burger.png);
   background-size: cover;
 }
-
 .thickBurger {
   position: absolute;
   background-image: url(Images/goodies/burgerCircle.png);
   background-size: cover;
 }
-
 #lives {
   color: black;
   font-size: large;
 }
-
 #score {
   color: black;
   display: inline-block;
 }
-
 #health {
   color: black;
   display: inline-block;
 }
-
 .js {
   position: absolute;
   background-image: url(Images/enemies/js.png);
   background-size: cover;
 }
-
 .html {
   position: absolute;
   background-image: url(Images/enemies/html.png);
   background-size: cover;
 }
-
 .css {
   position: absolute;
   background-image: url(Images/enemies/css.png);
   background-size: cover;
 }
-
 #scoreBoard {
   position: absolute;
   margin-top: -50px;
@@ -186,7 +159,6 @@ body {
   height: 50px;
   width: 700px;
 }
-
 .scoreText {
   position: absolute;
   color: white;
@@ -194,7 +166,6 @@ body {
   margin-left: 20px;
   margin-top: 5px;
 }
-
 .scoreNumber {
   position: absolute;
   color: rgb(245, 167, 0);
@@ -202,30 +173,23 @@ body {
   margin-left: 110px;
   margin-top: 2px;
 }
-
 .live1 {
   width: 35px;
   display: inline-block;
 }
-
 .live2 {
   width: 35px;
   display: inline-block;
 }
-
 .live3 {
   width: 35px;
   display: inline-block;
 }
-
 #livesContainer {
   display: inline-block;
   margin-left: 560px;
   margin-top: 8px;
 }
-
-/* START GAME SCREEN*/
-
 .startScreenContainer {
   position: relative;
   height: 800px;
@@ -238,19 +202,15 @@ body {
   border: 4px solid white;
   display: block;
 }
-
 .insertCoin {
   width: 250px;
   margin-left: 450px;
 }
-
 .logoStart {
   margin-top: 60px;
   margin-left: 65px;
   animation: blink 1.7s steps(4, start) infinite
 }
-
-
 @keyframes blink {
     0% {
         visibility: visible;
@@ -258,8 +218,7 @@ body {
     100% {
         visibility: hidden;
     }
-  }
-
+}
 .startButton {
   width: 250px;
   height: 70px;
@@ -273,21 +232,18 @@ body {
   /* cursor: url('https://res.cloudinary.com/dvkugaw3b/image/upload/v1641562028/cursor_ad12rf.png'), auto;  */
   cursor: pointer;
 }
-
 .startButton:hover {
   scale: 110%;
   border: 8px solid rgb(160, 38, 1);
   color: white;
   background-color: rgb(243, 69, 0);
 }
-
 .creditsButton:hover {
   scale: 110%;
   border: 8px solid rgb(160, 38, 1);
   color: white;
   background-color: rgb(243, 69, 0);
 }
-
 .creditsButton {
   width: 250px;
   height: 70px;
@@ -299,9 +255,6 @@ body {
   margin-left: 215px;
   cursor: pointer
 }
-
-/* GAME OVER SCREEN*/
-
 .gameOverScreenContainer {
   position: relative;
   height: 800px;
@@ -313,31 +266,26 @@ body {
   background-position: -50px;
   border: 4px solid white;
   display: none;
-}
-
+}¡
 .laptop {
   height: 270px;
   margin-left: 200px;
   margin-top: 10px;
   opacity: 0.8;
 }
-
 .gameOverTitle {
   width: 700px;
   margin-top: -242px;
   margin-left: 0px;
 }
-
 .lang {
   width: 40px;
   margin-right: 20px;
 }
-
 .gameOverPicContainer {
   margin-left: 240px;
   margin-top: -180px;
 }
-
 .gameOverSentence {
   margin-top: -130px;
   color: rgb(9, 229, 236);
@@ -348,13 +296,11 @@ body {
   font-size: 50px;
   font-stretch: ultra-expanded;
 }
-
 .logoGameOver {
   width: 500px;
   margin-left: 100px;
   margin-top: -30px;
 }
-
 .restartButton {
   width: 250px;
   height: 70px;
@@ -366,16 +312,12 @@ body {
   margin-left: 215px;
   cursor: pointer
 }
-
 .restartButton:hover {
   scale: 110%;
   border: 8px solid rgb(160, 38, 1);
   color: white;
   background-color: rgb(243, 69, 0);
 }
-
-/* LOADING SCREEN  */
-
 .loadingScreenContainer {
   position: relative;
   height: 800px;
@@ -387,15 +329,11 @@ body {
   background-position: -50px;
   display: none;
 }
-
 .loadingGif {
   width: 300px;
   margin-top: 60px;
   margin-left: 195px;
 }
-
-/* WINNER SCREEN  */
-
 .winScreenContainer {
   position: relative;
   height: 800px;
@@ -408,13 +346,11 @@ body {
   border: 4px solid white;
   display: none;
 }
-
 .winTitle {
   width: 500px;
   margin-left: 100px;
   margin-top: 100px;
 }
-
 .winSentence {
   margin-top: 80px;
   color: rgb(255, 255, 255);
@@ -425,7 +361,6 @@ body {
   font-size: 50px;
   font-stretch: ultra-expanded;
 }
-
 .winSentence2 {
   margin-top: 10px;
   color: rgb(255, 255, 255);
@@ -436,24 +371,20 @@ body {
   font-size: 50px;
   font-stretch: ultra-expanded;
 }
-
 .edukami {
   margin-top: -30px;
   width: 350px;
   margin-left: 170px;
 }
-
 .logosContainer {
   margin-left: 230px;
 }
-
 .study {
   margin-top: 30px;
   margin-left: 10px;
   width: 50px;
   animation: logosMoving 2s ease infinite;
 }
-
 @keyframes logosMoving {
   0% {
     transform: rotate(-40deg);
@@ -466,8 +397,7 @@ body {
   100% {
     transform: rotate(-40deg);
   }
-}
-
+} 
 @keyframes enemiesMoving {
   0% {
 
@@ -476,7 +406,6 @@ body {
 
   15% {
     transform: translateX(30px);
-
   }
 
   25% {
