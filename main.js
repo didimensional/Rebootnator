@@ -1,10 +1,9 @@
-// PANTALLAS
 let startScreen = document.getElementsByClassName('startScreenContainer')[0]
 let loadingScreen = document.getElementsByClassName('loadingScreenContainer')[0]
 let gameOverScreen = document.getElementsByClassName('gameOverScreenContainer')[0]
 let winScreen = document.getElementsByClassName('winScreenContainer')[0]
 let creditsScreen = document.getElementsByClassName('creditsScreenContainer')[0]
-
+let kahootScreen = document.getElementsByClassName('speechBalloonContainer')[0]
 let boardGame = document.getElementById("boardGame");
 
 let restartButtonGameOver = document.getElementsByClassName('restartButton')[0]
@@ -12,52 +11,41 @@ let buttonStartGame = document.getElementsByClassName('startButton')[0]
 let continueAfterWinBtn = document.getElementsByClassName('continueButton')[0]
 let buttonCredits = document.getElementsByClassName('creditsButton')[0]
 let buttonFromCreditsToStart = document.getElementsByClassName('menuButton')[0]
+let kahootTrueBtn = document.getElementsByClassName('answerTrue')[0]
+let kahootFalseBtn = document.getElementsByClassName('answerFalse')[0]
 
 let scoreNumber = document.getElementsByClassName('scoreNumber')[0]
-let heartContador = 0
-
+let heartCounter = 0
 let live1 = document.getElementsByClassName('live1')[0]
 let live2 = document.getElementsByClassName('live2')[0]
 let live3 = document.getElementsByClassName('live3')[0]
 
-// SONIDOS
-
-let musicMenu = new Audio('/Sounds/MUSIC MENU.mp3')
-let musicGame = new Audio('/Sounds/MUSIC GAME.mp3')
-let musicGameOver = new Audio('/Sounds/MUSIC GAME OVER.mp3')
-let musicKahoot = new Audio('/Sounds/MUSIC KAHOOT.mp3')
-let musicKahootWin = new Audio('/Sounds/MUSIC KAHOOT WIN.mp3')
-let deadEnemy = new Audio('/Sounds/FX DEAD ENEMY.mp3')
-let goddieEat = new Audio('/Sounds/FX GOODIE EAT.mp3')
-let characterShoot = new Audio('/Sounds/FX SHOOT.mp3')
-
-
-// Esto es viejo
-
-
-// let startView = document.getElementById("start");
-// let restartView = document.getElementById("restart");
-
-// let heartCounter = document.getElementById("health");
-
-// let buttonStart = document.getElementById("btn-start");
-// let buttonEnd = document.getElementById("btn-end");
-
-
-// Esto se mantiene
+let musicMenu = new Audio('./Sounds/MUSIC_MENU.mp3')
+musicMenu.loop = true
+let musicGame = new Audio('./Sounds/MUSIC_GAME.mp3')
+musicGame.loop = true
+let musicGameOver = new Audio('./Sounds/MUSIC_GAME_OVER.mp3')
+let musicKahoot = new Audio('./Sounds/MUSIC_KAHOOT.mp3')
+musicKahoot.loop = true
+let musicWin = new Audio('./Sounds/MUSIC_KAHOOT_WIN.mp3')
+let deadEnemy = new Audio('./Sounds/FX_DEAD_ENEMY.mp3')
+let goddieEat = new Audio('./Sounds/FX_GOODIE_EAT.mp3')
+let characterShoot = new Audio('./Sounds/FX_SHOOT.mp3')
 
 let rebootnator;
-let moveRebootnatorInterval;
-
 let enemy;
-let enemiesSpawnInterval;
-
 let goodie;
 let enemies = [];
 let goodies = [];
+let handsUp;
+
+let moveRebootnatorInterval;
+let enemiesSpawnInterval;
 let goodieSpawnInterval;
 
-let handsUp;
+let scoreWinCondition = 10000
+
+let moveRebootnatorIntervalFixed = 5
 
 
 function startGame() {
@@ -66,18 +54,20 @@ function startGame() {
   live1.style.display = 'inline-block'
   live2.style.display = 'inline-block'
   live3.style.display = 'inline-block'
-
+  
+  musicGame.play()
 
   newPlayer();
   newEnemies();
   newGoodies();
-  HandsUp.counter
 }
 
 function gameWorking() {
-  if (rebootnator.lives > 0 && Rebootnator.score <= 5000) {
+  if (rebootnator.lives > 0 && Rebootnator.score <= scoreWinCondition) {
     rebootnator.move();
-  } else if (rebootnator.lives > 0 && Rebootnator.score > 5000) {
+    console.log('PLAYER SPEED: ' + rebootnator.speed)
+    console.log('PLAYER SPEED: ' + rebootnator.speed)
+  } else if (rebootnator.lives > 0 && Rebootnator.score > scoreWinCondition) {
     winGame()
   } else {
     endGame()
@@ -114,21 +104,24 @@ function winGame() {
   enemies = [];
 
 
-  heartContador = 0
+  heartCounter = 0
 
   Rebootnator.score = 0
 
   HandsUp.counter = 0
 
-  showWinScreen()
+  musicGame.pause()
+  musicGame.currentTime = 0
+
+  showKahootScreen()
 }
 
 function endGame() {
   clearInterval(moveRebootnatorInterval);
   clearInterval(goodieSpawnInterval);
   clearInterval(enemiesSpawnInterval);
-
-  rebootnator.remove();
+  
+  rebootnator.remove()
 
   enemies.forEach(function (enemy, index) {
     enemy.remove();
@@ -143,7 +136,7 @@ function endGame() {
   enemies = [];
 
 
-  heartContador = 0
+  heartCounter = 0
 
   Rebootnator.score = 0
 
@@ -157,26 +150,46 @@ function endGame() {
 function showloading() {
   startScreen.style.display = 'none'
   loadingScreen.style.display = 'block'
+  musicMenu.play()
   setTimeout(function () {
     loadingScreen.style.display = 'none'
     boardGame.style.display = 'block'
     startGame()
+    musicMenu.pause()
   }, 4500)
 }
 function showGameOverFromBoard() {
   boardGame.style.display = 'none'
   gameOverScreen.style.display = 'block'
+  musicGame.pause()
+  musicGame.currentTime = 0
+  musicGameOver.play()
+}
+
+function showGameOverFromKahoot() {
+  kahootScreen.style.display = 'none'
+  boardGame.style.display = 'none'
+  gameOverScreen.style.display = 'block'
+  musicGame.pause()
+  musicGame.currentTime = 0
+  musicGameOver.play()
 }
 
 function restartGameOver() {
   gameOverScreen.style.display = 'none'
   boardGame.style.display = 'block'
+  musicGameOver.pause()
+  musicGameOver.currentTime = 0
   startGame()
 }
 
 function showWinScreen() {
   boardGame.style.display = 'none'
+  kahootScreen.style.display = 'none'
   winScreen.style.display = 'block'
+  musicKahoot.pause()
+  musicKahoot.currentTime = 0
+  musicWin.play()
 }
 
 function showBoardFromWin() {
@@ -185,10 +198,15 @@ function showBoardFromWin() {
   startGame()
 }
 
+function showKahootScreen() {
+  kahootScreen.style.display = 'block'
+  musicKahoot.play()
+}
+
 function newPlayer() {
   rebootnator = new Rebootnator(300, 630);
   rebootnator.insert();
-  moveRebootnatorInterval = setInterval(gameWorking, 5);
+  moveRebootnatorInterval = setInterval(gameWorking, moveRebootnatorIntervalFixed);
 }
 
 function newEnemies() {
@@ -199,8 +217,8 @@ function newEnemies() {
     enemy.insert();
     enemies.push(enemy);
   }, 500);
-}
-
+}                                              
+    
 function newGoodies() {
   goodieSpawnInterval = setInterval(function () {
     const types = ["slimSalad", "speedCoffee", "thickBurger"];
@@ -208,7 +226,7 @@ function newGoodies() {
     goodie = new Goodies(randomType);
     goodie.insert();
     goodies.push(goodie);
-  }, 6000);
+  }, 3500);
 }
 
 function fireHandsUp() {
@@ -216,18 +234,19 @@ function fireHandsUp() {
   handsUp = new HandsUp();
   handsUp.insert();
   HandsUp.counter++
+  characterShoot.play ()
 }
 
 function hideHearts() {
 
-  if (heartContador === 0) {
+  if (heartCounter === 0) {
 
     live3.style.display = 'none'
     console.log('elimino primer corazon')
-  } else if (heartContador === 1) {
+  } else if (heartCounter === 1) {
     live2.style.display = 'none'
     console.log('elimino el segundo corazón')
-  } else if (heartContador === 2) {
+  } else if (heartCounter === 2) {
     live1.style.display = 'none'
     console.log('elimino el tercer corazon')
   }
@@ -304,14 +323,6 @@ window.addEventListener("keyup", function (event) {
 
 });
 
-// buttonStart.addEventListener("click", function (event) {
-//   startGame();
-// });
-
-// buttonEnd.addEventListener("click", function (event) {
-//   endGame();
-// });
-
 restartButtonGameOver.addEventListener('click', function (event) {
   restartGameOver()
 })
@@ -327,4 +338,16 @@ buttonCredits.addEventListener('click', function (event) {
 
 buttonFromCreditsToStart.addEventListener('click', function (event) {
   backToStartMenu()
+})
+
+kahootFalseBtn.addEventListener('click', function (event) {
+  musicKahoot.pause()
+  musicKahoot.currentTime = 0
+  showGameOverFromKahoot()
+})
+
+kahootTrueBtn.addEventListener('click', function (event) {
+  musicKahoot.pause()
+  musicKahoot.currentTime = 0
+  showWinScreen()
 })

@@ -53,20 +53,20 @@ class HandsUp {
                     enemy.type === 'htmlEnemy' ||
                     enemy.type === 'cssEnemy' ) {
 
-                    Rebootnator.score += 100
+                    Rebootnator.score += 1000
                     
                 } else if (enemy.type === 'airconEnemy' ||
                     enemy.type === 'gamechairEnemy' ||
                     enemy.type === 'playstationEnemy' ||
                     enemy.type === 'skullEnemy' ) {
                     
-                    Rebootnator.score += 50
+                    Rebootnator.score += 100
                 }
                 
                 scoreNumber.innerText = Rebootnator.score
                 self.remove()
                 HandsUp.counter--
-                console.log(Rebootnator.score)
+                deadEnemy.play()
 
             }
 

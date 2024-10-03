@@ -54,6 +54,7 @@ class Goodies {
     const originWidth = rebootnator.width;
     const originHeight = rebootnator.height;
     const originSpeed = rebootnator.speed;
+    console.log('PLAYER SPEED:' + rebootnator.speed)
     const originY = 630;
 
     switch (this.type) {
@@ -67,6 +68,7 @@ class Goodies {
         break;
       case "speedCoffee":
         rebootnator.speed = 10;
+        console.log('PLAYER SPEED:' + rebootnator.speed)
         break;
       case "thickBurger":
         rebootnator.y = 660
@@ -97,6 +99,7 @@ class Goodies {
       rebootnator.sprite.classList.remove("rebootnatorThin");
       rebootnator.sprite.classList.remove("rebootnatorFat");
       rebootnator.speed = originSpeed;
+      console.log('PLAYER SPEED:' + rebootnator.speed)
     }, 5000);
   }
 
@@ -111,6 +114,7 @@ class Goodies {
         goodie.effect();
         goodie.remove();
         goodies.splice(index, 1);
+        goddieEat.play()
       }
     });
   }

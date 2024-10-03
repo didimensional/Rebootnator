@@ -100,12 +100,13 @@ body {
 .rebootnatorThin {
   background-image: url(Images/sprites/machangoThin.gif);
   background-size: cover;
+  position: absolute;
 }
 
 .rebootnatorFat {
   background-image: url(Images/sprites/machangoFat.gif);
   background-size: cover;
-
+  position: absolute;
 }
 
 
@@ -682,7 +683,8 @@ body {
   position: absolute;
   background-image: url(Images/enemies/punisherCircle.png);
   background-size: cover;
-  animation: punishMoving 4s infinite linear;
+
+  animation: enemiesMoving 2s ease infinite;
 }
 
 /* HOW TO PLAY SCREEN */
@@ -783,4 +785,5 @@ body {
   height: 30px;
   margin-left: 60px;
   margin-top:30px
+
 }
