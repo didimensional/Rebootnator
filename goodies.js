@@ -54,13 +54,12 @@ class Goodies {
     const originWidth = rebootnator.width;
     const originHeight = rebootnator.height;
     const originSpeed = rebootnator.speed;
-    console.log('PLAYER SPEED:' + rebootnator.speed)
     const originY = 630;
 
     switch (this.type) {
       case "slimSalad":
         rebootnator.width = 50;
-        rebootnator.sprite.style.width = rebootnator.width + "px"; // Actualizar el estilo
+        rebootnator.sprite.style.width = rebootnator.width + "px";
         rebootnator.sprite.classList.remove("rebootnator");
         rebootnator.sprite.classList.remove("rebootnatorRight");
         rebootnator.sprite.classList.remove("rebootnatorLeft");
@@ -68,7 +67,6 @@ class Goodies {
         break;
       case "speedCoffee":
         rebootnator.speed = 10;
-        console.log('PLAYER SPEED:' + rebootnator.speed)
         break;
       case "thickBurger":
         rebootnator.y = 660
@@ -76,7 +74,7 @@ class Goodies {
         rebootnator.height = 75;
         rebootnator.sprite.style.top = rebootnator.y + "px"
         rebootnator.sprite.style.height = rebootnator.height + "px";
-        rebootnator.sprite.style.width = rebootnator.width + "px"; // Actualizar el estilo
+        rebootnator.sprite.style.width = rebootnator.width + "px";
         rebootnator.sprite.classList.remove("rebootnator");
         rebootnator.sprite.classList.remove("rebootnatorRight");
         rebootnator.sprite.classList.remove("rebootnatorLeft");
@@ -84,8 +82,6 @@ class Goodies {
         rebootnator.sprite.classList.add("rebootnatorFat");
         break;
     }
-
-    //timeout para devolver al jugador a su estado original pasados 5s
     setTimeout(function () {
       rebootnator.y = originY
       rebootnator.height = originHeight;
@@ -99,7 +95,6 @@ class Goodies {
       rebootnator.sprite.classList.remove("rebootnatorThin");
       rebootnator.sprite.classList.remove("rebootnatorFat");
       rebootnator.speed = originSpeed;
-      console.log('PLAYER SPEED:' + rebootnator.speed)
     }, 5000);
   }
 

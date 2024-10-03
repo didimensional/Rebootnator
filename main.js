@@ -67,16 +67,56 @@ function startGame() {
 }
 
 function gameWorking() {
-  if (rebootnator.lives > 0 && Rebootnator.score <= scoreWinCondition) {
-    rebootnator.move();
-    console.log('PLAYER SPEED: ' + rebootnator.speed)
-    console.log('PLAYER SPEED: ' + rebootnator.speed)
-  } else if (rebootnator.lives > 0 && Rebootnator.score > scoreWinCondition) {
-    winGame()
-  } else {
-    endGame()
-  }
+  if (rebootnator.lives > 0 && Rebootnator.score <= scoreWinCondition) { rebootnator.move();
+  } else if (rebootnator.lives > 0 && Rebootnator.score > scoreWinCondition) { winGame()
+  } else { endGame()}
 }
+function winGame() {
+  clearInterval(moveRebootnatorInterval);
+  clearInterval(goodieSpawnInterval);
+  clearInterval(enemiesSpawnInterval);
+  rebootnator.remove();
+  enemies.forEach(function (enemy, index) {enemy.remove();});
+  goodies.forEach(function (goodie, index) {goodie.remove();});
+  goodies = [];
+  enemies = [];
+  heartCounter = 0
+  Rebootnator.score = 0
+  HandsUp.counter = 0
+  musicGame.pause()
+  musicGame.currentTime = 0
+  showKahootScreen()
+}
+function showKahootScreen() {
+  kahootScreen.style.display = 'block'
+  musicKahoot.play()}
+kahootFalseBtn.addEventListener('click', function (event) {
+  musicKahoot.pause()
+  musicKahoot.currentTime = 0
+  showGameOverFromKahoot()})
+kahootTrueBtn.addEventListener('click', function (event) {
+  musicKahoot.pause()
+  musicKahoot.currentTime = 0
+  showWinScreen()})
+function showGameOverFromKahoot() {
+  kahootScreen.style.display = 'none'
+  boardGame.style.display = 'none'
+  gameOverScreen.style.display = 'block'
+  musicGame.pause()
+  musicGame.currentTime = 0
+  musicGameOver.play()
+}
+function showWinScreen() {
+  boardGame.style.display = 'none'
+  kahootScreen.style.display = 'none'
+  winScreen.style.display = 'block'
+  musicKahoot.pause()
+  musicKahoot.currentTime = 0
+  musicWin.play()
+}
+
+
+
 
 function showCredits () {
   startScreen.style.display = 'none'
@@ -88,49 +128,15 @@ function backToStartMenu () {
   creditsScreen.style.display = 'none'
 }
 
-function winGame() {
-  clearInterval(moveRebootnatorInterval);
-  clearInterval(goodieSpawnInterval);
-  clearInterval(enemiesSpawnInterval);
-
-  rebootnator.remove();
-
-  enemies.forEach(function (enemy, index) {
-    enemy.remove();
-  });
-
-  goodies.forEach(function (goodie, index) {
-    goodie.remove();
-  });
-
-
-  goodies = [];
-  enemies = [];
-
-
-  heartCounter = 0
-
-  Rebootnator.score = 0
-
-  HandsUp.counter = 0
-
-  musicGame.pause()
-  musicGame.currentTime = 0
-
-  showKahootScreen()
-}
 
 function endGame() {
   clearInterval(moveRebootnatorInterval);
   clearInterval(goodieSpawnInterval);
   clearInterval(enemiesSpawnInterval);
-  
   rebootnator.remove()
-
   enemies.forEach(function (enemy, index) {
     enemy.remove();
   });
-
   goodies.forEach(function (goodie, index) {
     goodie.remove();
   });
@@ -170,14 +176,6 @@ function showGameOverFromBoard() {
   musicGameOver.play()
 }
 
-function showGameOverFromKahoot() {
-  kahootScreen.style.display = 'none'
-  boardGame.style.display = 'none'
-  gameOverScreen.style.display = 'block'
-  musicGame.pause()
-  musicGame.currentTime = 0
-  musicGameOver.play()
-}
 
 function restartGameOver() {
   gameOverScreen.style.display = 'none'
@@ -187,14 +185,6 @@ function restartGameOver() {
   startGame()
 }
 
-function showWinScreen() {
-  boardGame.style.display = 'none'
-  kahootScreen.style.display = 'none'
-  winScreen.style.display = 'block'
-  musicKahoot.pause()
-  musicKahoot.currentTime = 0
-  musicWin.play()
-}
 
 function showBoardFromWin() {
   winScreen.style.display = 'none'
@@ -202,10 +192,6 @@ function showBoardFromWin() {
   startGame()
 }
 
-function showKahootScreen() {
-  kahootScreen.style.display = 'block'
-  musicKahoot.play()
-}
 
 function newPlayer() {
   rebootnator = new Rebootnator(300, 630);
@@ -246,13 +232,10 @@ function hideHearts() {
   if (heartCounter === 0) {
 
     live3.style.display = 'none'
-    console.log('elimino primer corazon')
   } else if (heartCounter === 1) {
     live2.style.display = 'none'
-    console.log('elimino el segundo corazón')
   } else if (heartCounter === 2) {
     live1.style.display = 'none'
-    console.log('elimino el tercer corazon')
   }
 }
 
@@ -348,17 +331,6 @@ buttonFromControlsToStart.addEventListener('click', function (event) {
   backToStartMenu()
 })
 
-kahootFalseBtn.addEventListener('click', function (event) {
-  musicKahoot.pause()
-  musicKahoot.currentTime = 0
-  showGameOverFromKahoot()
-})
-
-kahootTrueBtn.addEventListener('click', function (event) {
-  musicKahoot.pause()
-  musicKahoot.currentTime = 0
-  showWinScreen()
-})
 
 function showHowToplayScreen() {
   startScreen.style.display = 'none'
