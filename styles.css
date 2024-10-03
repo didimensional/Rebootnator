@@ -244,7 +244,7 @@ body {
 }
 
 .logoStart {
-  margin-top: 100px;
+  margin-top: 60px;
   margin-left: 65px;
   animation: blink 1.7s steps(4, start) infinite
 }
@@ -266,7 +266,7 @@ body {
   font-family: "VT323", monospace;
   font-weight: bold;
   border: 8px solid rgba(2, 150, 150, 0.733);
-  margin-top: 90px;
+  margin-top: 60px;
   margin-left: 215px;
   cursor: url("./Images/cursor.png"), auto;
   /* cursor: url('https://res.cloudinary.com/dvkugaw3b/image/upload/v1641562028/cursor_ad12rf.png'), auto;  */
@@ -697,7 +697,7 @@ body {
   background-size: cover;
   background-position: -50px;
   border: 4px solid white;
-  display: block;
+  display: none;
 }
 
 .howToPlayTittle{
