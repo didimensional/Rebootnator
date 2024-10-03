@@ -21,14 +21,17 @@ let live1 = document.getElementsByClassName('live1')[0]
 let live2 = document.getElementsByClassName('live2')[0]
 let live3 = document.getElementsByClassName('live3')[0]
 
-let musicMenu = new Audio('/Sounds/MUSIC_MENU.mp3')
-let musicGame = new Audio('/Sounds/MUSIC_GAME.mp3')
-let musicGameOver = new Audio('/Sounds/MUSIC_GAME_OVER.mp3')
-let musicKahoot = new Audio('/Sounds/MUSIC_KAHOOT.mp3')
-let musicKahootWin = new Audio('/Sounds/MUSIC_KAHOOT_WIN.mp3')
-let deadEnemy = new Audio('/Sounds/FX_DEAD_ENEMY.mp3')
-let goddieEat = new Audio('/Sounds/FX_GOODIE_EAT.mp3')
-let characterShoot = new Audio('/Sounds/FX_SHOOT.mp3')
+let musicMenu = new Audio('./Sounds/MUSIC_MENU.mp3')
+musicMenu.loop = true
+let musicGame = new Audio('./Sounds/MUSIC_GAME.mp3')
+musicGame.loop = true
+let musicGameOver = new Audio('./Sounds/MUSIC_GAME_OVER.mp3')
+let musicKahoot = new Audio('./Sounds/MUSIC_KAHOOT.mp3')
+musicKahoot.loop = true
+let musicWin = new Audio('./Sounds/MUSIC_KAHOOT_WIN.mp3')
+let deadEnemy = new Audio('./Sounds/FX_DEAD_ENEMY.mp3')
+let goddieEat = new Audio('./Sounds/FX_GOODIE_EAT.mp3')
+let characterShoot = new Audio('./Sounds/FX_SHOOT.mp3')
 
 let rebootnator;
 let moveRebootnatorInterval;
@@ -43,7 +46,7 @@ let goodieSpawnInterval;
 
 let handsUp;
 
-let scoreWinCondition = 30000
+let scoreWinCondition = 3000
 
 
 function startGame() {
@@ -52,7 +55,8 @@ function startGame() {
   live1.style.display = 'inline-block'
   live2.style.display = 'inline-block'
   live3.style.display = 'inline-block'
-
+  
+  musicGame.play()
 
   newPlayer();
   newEnemies();
@@ -105,6 +109,9 @@ function winGame() {
 
   HandsUp.counter = 0
 
+  musicGame.pause()
+  musicGame.currentTime = 0
+
   showKahootScreen()
 }
 
@@ -142,15 +149,20 @@ function endGame() {
 function showloading() {
   startScreen.style.display = 'none'
   loadingScreen.style.display = 'block'
+  musicMenu.play()
   setTimeout(function () {
     loadingScreen.style.display = 'none'
     boardGame.style.display = 'block'
     startGame()
+    musicMenu.pause()
   }, 4500)
 }
 function showGameOverFromBoard() {
   boardGame.style.display = 'none'
   gameOverScreen.style.display = 'block'
+  musicGame.pause()
+  musicGame.currentTime = 0
+  musicGameOver.play()
 }
 
 function showGameOverFromKahoot() {
@@ -158,11 +170,16 @@ function showGameOverFromKahoot() {
   kahootScreen.style.display = 'none'
   boardGame.style.display = 'none'
   gameOverScreen.style.display = 'block'
+  musicGame.pause()
+  musicGame.currentTime = 0
+  musicGameOver.play()
 }
 
 function restartGameOver() {
   gameOverScreen.style.display = 'none'
   boardGame.style.display = 'block'
+  musicGameOver.pause()
+  musicGameOver.currentTime = 0
   startGame()
 }
 
@@ -170,6 +187,9 @@ function showWinScreen() {
   boardGame.style.display = 'none'
   kahootScreen.style.display = 'none'
   winScreen.style.display = 'block'
+  musicKahoot.pause()
+  musicKahoot.currentTime = 0
+  musicWin.play()
   rebootnator.remove()
 }
 
@@ -181,6 +201,8 @@ function showBoardFromWin() {
 
 function showKahootScreen() {
   kahootScreen.style.display = 'block'
+
+  musicKahoot.play()
   newPlayer()
 }
 
@@ -321,9 +343,13 @@ buttonFromCreditsToStart.addEventListener('click', function (event) {
 })
 
 kahootFalseBtn.addEventListener('click', function (event) {
+  musicKahoot.pause()
+  musicKahoot.currentTime = 0
   showGameOverFromKahoot()
 })
 
 kahootTrueBtn.addEventListener('click', function (event) {
+  musicKahoot.pause()
+  musicKahoot.currentTime = 0
   showWinScreen()
 })
