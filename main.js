@@ -25,14 +25,14 @@ let live3 = document.getElementsByClassName('live3')[0]
 
 // SONIDOS
 
-let musicMenu = new Audio('/Sounds/MUSIC MENU.mp3')
-let musicGame = new Audio('/Sounds/MUSIC GAME.mp3')
-let musicGameOver = new Audio('/Sounds/MUSIC GAME OVER.mp3')
-let musicKahoot = new Audio('/Sounds/MUSIC KAHOOT.mp3')
-let musicKahootWin = new Audio('/Sounds/MUSIC KAHOOT WIN.mp3')
-let deadEnemy = new Audio('/Sounds/FX DEAD ENEMY.mp3')
-let goddieEat = new Audio('/Sounds/FX GOODIE EAT.mp3')
-let characterShoot = new Audio('/Sounds/FX SHOOT.mp3')
+let musicMenu = new Audio('/Sounds/MUSIC_MENU.mp3')
+let musicGame = new Audio('/Sounds/MUSIC_GAME.mp3')
+let musicGameOver = new Audio('/Sounds/MUSIC_GAME_OVER.mp3')
+let musicKahoot = new Audio('/Sounds/MUSIC_KAHOOT.mp3')
+let musicKahootWin = new Audio('/Sounds/MUSIC_KAHOOT_WIN.mp3')
+let deadEnemy = new Audio('/Sounds/FX_DEAD_ENEMY.mp3')
+let goddieEat = new Audio('/Sounds/FX_GOODIE_EAT.mp3')
+let characterShoot = new Audio('/Sounds/FX_SHOOT.mp3')
 
 
 // Esto es viejo
@@ -132,7 +132,7 @@ function endGame() {
   clearInterval(goodieSpawnInterval);
   clearInterval(enemiesSpawnInterval);
 
-  rebootnator.remove();
+  rebootnator.remove()
 
   enemies.forEach(function (enemy, index) {
     enemy.remove();
