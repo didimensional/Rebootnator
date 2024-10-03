@@ -114,6 +114,7 @@ class Goodies {
         goodie.effect();
         goodie.remove();
         goodies.splice(index, 1);
+        goddieEat.play()
       }
     });
   }

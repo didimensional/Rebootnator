@@ -43,7 +43,7 @@ let moveRebootnatorInterval;
 let enemiesSpawnInterval;
 let goodieSpawnInterval;
 
-let scoreWinCondition = 3000
+let scoreWinCondition = 10000
 
 let moveRebootnatorIntervalFixed = 5
 
@@ -234,6 +234,7 @@ function fireHandsUp() {
   handsUp = new HandsUp();
   handsUp.insert();
   HandsUp.counter++
+  characterShoot.play ()
 }
 
 function hideHearts() {

@@ -66,7 +66,7 @@ class HandsUp {
                 scoreNumber.innerText = Rebootnator.score
                 self.remove()
                 HandsUp.counter--
-                console.log(Rebootnator.score)
+                deadEnemy.play()
 
             }
 
