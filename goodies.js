@@ -9,19 +9,6 @@ class Goodies {
     this.speed = 1
     this.sprite = document.createElement("div")
     this.interval = setInterval(this.move.bind(this), 20)
-    this.color = this.getColorByType(type)
-  }
-  getColorByType(type) {
-    switch (type) {
-      case "slimSalad":
-        return "greenyellow"
-      case "speedCoffee":
-        return "brown"
-      case "thickBurger":
-        return "purple"
-      default:
-        return "green"
-    }
   }
   insert() {
     this.sprite.setAttribute("class", this.type)
