@@ -4,7 +4,7 @@ let gameOverScreen = document.getElementsByClassName('gameOverScreenContainer')[
 let winScreen = document.getElementsByClassName('winScreenContainer')[0]
 let creditsScreen = document.getElementsByClassName('creditsScreenContainer')[0]
 let kahootScreen = document.getElementsByClassName('speechBalloonContainer')[0]
-let boardGame = document.getElementById("boardGame");
+let boardGame = document.getElementById("boardGame")
 let howToPlayScreen = document.getElementsByClassName('howToPlayScreenContainer')[0]
 
 let restartButtonGameOver = document.getElementsByClassName('restartButton')[0]
@@ -35,15 +35,15 @@ let deadEnemy = new Audio('./Sounds/FX_DEAD_ENEMY.mp3')
 let goddieEat = new Audio('./Sounds/FX_GOODIE_EAT.mp3')
 let characterShoot = new Audio('./Sounds/FX_SHOOT.mp3')
 
-let rebootnator;
-let enemy;
-let goodie;
-let enemies = [];
-let goodies = [];
-let handsUp;
-let moveRebootnatorInterval;
-let enemiesSpawnInterval;
-let goodieSpawnInterval;
+let rebootnator
+let enemy
+let goodie
+let enemies = []
+let goodies = []
+let handsUp
+let moveRebootnatorInterval
+let enemiesSpawnInterval
+let goodieSpawnInterval
 
 let scoreWinCondition = 20000
 
@@ -55,24 +55,24 @@ function startGame() {
   live2.style.display = 'inline-block'
   live3.style.display = 'inline-block'
   musicGame.play()
-  newPlayer();
-  newEnemies();
-  newGoodies();
+  newPlayer()
+  newEnemies()
+  newGoodies()
 }
 function gameWorking() {
-  if (rebootnator.lives > 0 && Rebootnator.score <= scoreWinCondition) { rebootnator.move();
+  if (rebootnator.lives > 0 && Rebootnator.score <= scoreWinCondition) { rebootnator.move()
   } else if (rebootnator.lives > 0 && Rebootnator.score > scoreWinCondition) { winGame()
   } else { endGame()}
 }
 function winGame() {
-  clearInterval(moveRebootnatorInterval);
-  clearInterval(goodieSpawnInterval);
-  clearInterval(enemiesSpawnInterval);
-  rebootnator.remove();
-  enemies.forEach(function (enemy, index) {enemy.remove();});
-  goodies.forEach(function (goodie, index) {goodie.remove();});
-  goodies = [];
-  enemies = [];
+  clearInterval(moveRebootnatorInterval)
+  clearInterval(goodieSpawnInterval)
+  clearInterval(enemiesSpawnInterval)
+  rebootnator.remove()
+  enemies.forEach(function (enemy, index) {enemy.remove()})
+  goodies.forEach(function (goodie, index) {goodie.remove()})
+  goodies = []
+  enemies = []
   heartCounter = 0
   Rebootnator.score = 0
   HandsUp.counter = 0
@@ -120,18 +120,18 @@ function backToStartMenu () {
   howToPlayScreen.style.display = 'none'
 }
 function endGame() {
-  clearInterval(moveRebootnatorInterval);
-  clearInterval(goodieSpawnInterval);
-  clearInterval(enemiesSpawnInterval);
+  clearInterval(moveRebootnatorInterval)
+  clearInterval(goodieSpawnInterval)
+  clearInterval(enemiesSpawnInterval)
   rebootnator.remove()
   enemies.forEach(function (enemy, index) {
-    enemy.remove();
-  });
+    enemy.remove()
+  })
   goodies.forEach(function (goodie, index) {
-    goodie.remove();
-  });
-  goodies = [];
-  enemies = [];
+    goodie.remove()
+  })
+  goodies = []
+  enemies = []
   heartCounter = 0
   Rebootnator.score = 0
   HandsUp.counter = 0
@@ -169,31 +169,31 @@ function showBoardFromWin() {
   startGame()
 }
 function newPlayer() {
-  rebootnator = new Rebootnator(300, 630);
-  rebootnator.insert();
-  moveRebootnatorInterval = setInterval(gameWorking, moveRebootnatorIntervalFixed);
+  rebootnator = new Rebootnator(300, 630)
+  rebootnator.insert()
+  moveRebootnatorInterval = setInterval(gameWorking, moveRebootnatorIntervalFixed)
 }
 function newEnemies() {
   enemiesSpawnInterval = setInterval(function () {
     const enemyTypes = ['jsEnemy', 'htmlEnemy', 'cssEnemy', 'airconEnemy', 'gamechairEnemy', 'playstationEnemy', 'skullEnemy']
     const decider = enemyTypes[Math.floor(Math.random() * enemyTypes.length)]
-    enemy = new Enemy(decider);
-    enemy.insert();
-    enemies.push(enemy);
-  }, 500);
+    enemy = new Enemy(decider)
+    enemy.insert()
+    enemies.push(enemy)
+  }, 500)
 }                                              
 function newGoodies() {
   goodieSpawnInterval = setInterval(function () {
-    const types = ["slimSalad", "speedCoffee", "thickBurger"];
-    const randomType = types[Math.floor(Math.random() * types.length)];
-    goodie = new Goodies(randomType);
-    goodie.insert();
-    goodies.push(goodie);
-  }, 5500);
+    const types = ["slimSalad", "speedCoffee", "thickBurger"]
+    const randomType = types[Math.floor(Math.random() * types.length)]
+    goodie = new Goodies(randomType)
+    goodie.insert()
+    goodies.push(goodie)
+  }, 5500)
 }
 function fireHandsUp() {
-  handsUp = new HandsUp();
-  handsUp.insert();
+  handsUp = new HandsUp()
+  handsUp.insert()
   HandsUp.counter++
   characterShoot.play ()
 }
@@ -212,58 +212,58 @@ buttonStartGame.addEventListener('click', function (event) {
 window.addEventListener("keydown", function (event) {
   switch (event.key) {
     case "a":
-      rebootnator.directionX = -1;
-      rebootnator.move();
-      rebootnator.sprite.classList.remove("rebootnator");
-      rebootnator.sprite.classList.remove("rebootnatorRight");
-      rebootnator.sprite.classList.add("rebootnatorLeft");
-      break;
-    case "d":
-      rebootnator.directionX = 1;
-      rebootnator.move();
-      rebootnator.sprite.classList.remove("rebootnator");
-      rebootnator.sprite.classList.remove("rebootnatorLeft");
-      rebootnator.sprite.classList.add("rebootnatorRight");
-      break;
-    case "A":
-      rebootnator.directionX = -1;
-      rebootnator.move();
-      rebootnator.sprite.classList.remove("rebootnator");
-      rebootnator.sprite.classList.remove("rebootnatorRight");
-      rebootnator.sprite.classList.add("rebootnatorLeft");
-      break;
-    case "D":
-      rebootnator.directionX = 1;
-      rebootnator.move();
-      rebootnator.sprite.classList.remove("rebootnator");
-      rebootnator.sprite.classList.remove("rebootnatorLeft");
-      rebootnator.sprite.classList.add("rebootnatorRight");
-      break;
-    case "ArrowLeft":
-      rebootnator.directionX = -1;
-      rebootnator.move();
+      rebootnator.directionX = -1
+      rebootnator.move()
       rebootnator.sprite.classList.remove("rebootnator")
-      rebootnator.sprite.classList.remove("rebootnatorRight");
-      rebootnator.sprite.classList.add("rebootnatorLeft");
-      break;
+      rebootnator.sprite.classList.remove("rebootnatorRight")
+      rebootnator.sprite.classList.add("rebootnatorLeft")
+      break
+    case "d":
+      rebootnator.directionX = 1
+      rebootnator.move()
+      rebootnator.sprite.classList.remove("rebootnator")
+      rebootnator.sprite.classList.remove("rebootnatorLeft")
+      rebootnator.sprite.classList.add("rebootnatorRight")
+      break
+    case "A":
+      rebootnator.directionX = -1
+      rebootnator.move()
+      rebootnator.sprite.classList.remove("rebootnator")
+      rebootnator.sprite.classList.remove("rebootnatorRight")
+      rebootnator.sprite.classList.add("rebootnatorLeft")
+      break
+    case "D":
+      rebootnator.directionX = 1
+      rebootnator.move()
+      rebootnator.sprite.classList.remove("rebootnator")
+      rebootnator.sprite.classList.remove("rebootnatorLeft")
+      rebootnator.sprite.classList.add("rebootnatorRight")
+      break
+    case "ArrowLeft":
+      rebootnator.directionX = -1
+      rebootnator.move()
+      rebootnator.sprite.classList.remove("rebootnator")
+      rebootnator.sprite.classList.remove("rebootnatorRight")
+      rebootnator.sprite.classList.add("rebootnatorLeft")
+      break
     case "ArrowRight":
-      rebootnator.directionX = 1;
-      rebootnator.move();
-      rebootnator.sprite.classList.remove("rebootnator");
-      rebootnator.sprite.classList.remove("rebootnatorLeft");
-      rebootnator.sprite.classList.add("rebootnatorRight");
-      break;
+      rebootnator.directionX = 1
+      rebootnator.move()
+      rebootnator.sprite.classList.remove("rebootnator")
+      rebootnator.sprite.classList.remove("rebootnatorLeft")
+      rebootnator.sprite.classList.add("rebootnatorRight")
+      break
     case " ":
       if (HandsUp.counter < 3) {
-        fireHandsUp();}
+        fireHandsUp()}
       break;
   }
 });
 window.addEventListener("keyup", function (event) {
-  rebootnator.directionX = 0;
-  rebootnator.sprite.classList.remove("rebootnatorRight");
-  rebootnator.sprite.classList.remove("rebootnatorLeft");
-  rebootnator.sprite.classList.add("rebootnator");
+  rebootnator.directionX = 0
+  rebootnator.sprite.classList.remove("rebootnatorRight")
+  rebootnator.sprite.classList.remove("rebootnatorLeft")
+  rebootnator.sprite.classList.add("rebootnator")
 });
 restartButtonGameOver.addEventListener('click', function (event) {
   restartGameOver()
