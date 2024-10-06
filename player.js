@@ -10,7 +10,6 @@ class Rebootnator {
         this.speed = 5
         this.sprite = document.createElement('div')
     }
-
     insert() {
         this.sprite.setAttribute('class', 'rebootnator')
         this.sprite.style.width = this.width + 'px'
@@ -18,10 +17,7 @@ class Rebootnator {
         this.sprite.style.top = this.y + 'px'
         this.sprite.style.left = this.x + 'px'
         boardGame.appendChild(this.sprite)
-
     }
-
-
     move() {
         let newX = this.x + this.speed * this.directionX
 
@@ -29,13 +25,8 @@ class Rebootnator {
             this.x = newX
             this.sprite.style.left = this.x + 'px'
         }
-
     }
-
     remove() {
         boardGame.removeChild(this.sprite)
     }
-
 }
-
-

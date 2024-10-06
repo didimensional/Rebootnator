@@ -1,8 +1,8 @@
 class Goodies {
   constructor(type) {
     this.type = type;
-    this.height = 50;
-    this.width = 50;
+    this.height = 100;
+    this.width = 100;
     this.y = 0;
     this.x = Math.floor(Math.random() * (700 - this.width));
     this.directionY = 1;
@@ -23,7 +23,6 @@ class Goodies {
         return "green";
     }
   }
-
   insert() {
     this.sprite.setAttribute("class", this.type);
     this.sprite.style.width = this.width + "px";
@@ -32,12 +31,10 @@ class Goodies {
     this.sprite.style.left = this.x + "px";
     boardGame.appendChild(this.sprite);
   }
-
   remove() {
     boardGame.removeChild(this.sprite);
     clearInterval(this.interval);
   }
-
   move() {
     let newY = this.y + this.speed * this.directionY;
     this.checkCollision();
@@ -49,16 +46,15 @@ class Goodies {
       this.remove();
     }
   }
-
   effect() {
     const originWidth = rebootnator.width;
     const originHeight = rebootnator.height;
     const originSpeed = rebootnator.speed;
-
+    const originY = 630;
     switch (this.type) {
       case "slimSalad":
         rebootnator.width = 50;
-        rebootnator.sprite.style.width = rebootnator.width + "px"; // Actualizar el estilo
+        rebootnator.sprite.style.width = rebootnator.width + "px";
         rebootnator.sprite.classList.remove("rebootnator");
         rebootnator.sprite.classList.remove("rebootnatorRight");
         rebootnator.sprite.classList.remove("rebootnatorLeft");
@@ -68,10 +64,12 @@ class Goodies {
         rebootnator.speed = 10;
         break;
       case "thickBurger":
+        rebootnator.y = 660
         rebootnator.width = 200;
         rebootnator.height = 75;
+        rebootnator.sprite.style.top = rebootnator.y + "px"
         rebootnator.sprite.style.height = rebootnator.height + "px";
-        rebootnator.sprite.style.width = rebootnator.width + "px"; // Actualizar el estilo
+        rebootnator.sprite.style.width = rebootnator.width + "px";
         rebootnator.sprite.classList.remove("rebootnator");
         rebootnator.sprite.classList.remove("rebootnatorRight");
         rebootnator.sprite.classList.remove("rebootnatorLeft");
@@ -79,11 +77,11 @@ class Goodies {
         rebootnator.sprite.classList.add("rebootnatorFat");
         break;
     }
-
-    //timeout para devolver al jugador a su estado original pasados 5s
     setTimeout(function () {
+      rebootnator.y = originY
       rebootnator.height = originHeight;
       rebootnator.width = originWidth;
+      rebootnator.sprite.style.top = rebootnator.y + "px";
       rebootnator.sprite.style.width = rebootnator.width + "px";
       rebootnator.sprite.style.height = rebootnator.height + "px";
       rebootnator.sprite.classList.add("rebootnator");
@@ -92,9 +90,8 @@ class Goodies {
       rebootnator.sprite.classList.remove("rebootnatorThin");
       rebootnator.sprite.classList.remove("rebootnatorFat");
       rebootnator.speed = originSpeed;
-    }, 5000);
+    }, 4000);
   }
-
   checkCollision() {
     goodies.forEach(function (goodie, index) {
       if (
@@ -106,6 +103,7 @@ class Goodies {
         goodie.effect();
         goodie.remove();
         goodies.splice(index, 1);
+        goddieEat.play()
       }
     });
   }

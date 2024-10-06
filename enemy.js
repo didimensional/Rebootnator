@@ -4,15 +4,12 @@ class Enemy {
         this.height = 100
         this.width = 100
         this.y = 0
-        this.x = Math.floor(Math.random() * (700 - this.width))
-        this.directionY = 1   // Si es 1 es der ; Si es -1 es izq
+        this.x = Math.floor(Math.random() * (650 - this.width))
+        this.directionY = 1
         this.speed = 2
         this.sprite = document.createElement('div')
         this.interval = setInterval(this.move.bind(this), 10)
     }
-
-
-
     insert() {
         this.sprite.setAttribute("class", this.type)
         this.sprite.style.width = this.width + 'px'
@@ -21,12 +18,13 @@ class Enemy {
         this.sprite.style.left = this.x + 'px'
         boardGame.appendChild(this.sprite)
     }
-
     remove() {
-        boardGame.removeChild(this.sprite)
-        clearInterval(this.interval)
+        this.sprite.style.backgroundImage = "url('Images/plof.gif')";
+        setTimeout(function (self) {
+            boardGame.removeChild(self)
+        }, 500, this.sprite)
+        clearInterval(this.interval)   
     }
-
     move() {
         let newY = this.y + this.speed * this.directionY
         this.checkCollision()
@@ -41,7 +39,6 @@ class Enemy {
                 scoreNumber.innerText = Rebootnator.score
                 enemies.shift()
                 this.remove()
-
             } else if (this.type === 'airconEnemy' ||
                 this.type === 'gamechairEnemy' ||
                 this.type === 'playstationEnemy' ||
@@ -51,9 +48,8 @@ class Enemy {
                 enemies.shift()
                 this.remove()
             }
-        }
+        } 
     }
-
     checkCollision() {
         enemies.forEach(function (enemy, index) {
             if (enemy.x < rebootnator.x + rebootnator.width &&
@@ -63,12 +59,9 @@ class Enemy {
                 enemy.remove()
                 enemies.splice(index, 1)
                 rebootnator.lives -= 1
-
-                // AQUI HAY QUE BORRAR CORAZONES
                 hideHearts()
-                heartContador++
-                console.log(heartContador)
-
+                heartCounter++
+                console.log(heartCounter)
             }
         })
     }

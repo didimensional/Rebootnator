@@ -4,15 +4,13 @@ body {
   background-position: center;
   font-family: "VT323", system-ui;
 }
-
+  
 .vt323-regular {
   font-family: "VT323", monospace;
   font-weight: 400;
   font-style: normal;
 }
-
-/* BOARD GAME STYLES */
-
+  
 #boardGame {
   position: relative;
   height: 800px;
@@ -23,105 +21,136 @@ body {
   background-size: cover;
   background-position: -50px;
   display: none;
+}    
+#speechBalloonContainer {
+    position: absolute;
+} 
+.speechBalloonContainer {
+  position: absolute !important;
+  background-image: url(Images/8bit-retro-game-pixel-speech-bubble-balloon-icon-sticker-memo-keyword-planner-text-box-banner-flat-transparent-element-design-png.webp);
+  width: 670px;
+  height: 500px;
+  margin-top: 100px;
+  margin-left: 15px;
+  background-size: cover;
+  display: none;
+  z-index: 10 !important;
+}  
+.kahootLogo {
+  width: 250px;
+  margin-top: 60px;
+  margin-left: 220px;
 }
-
+  
+.kahootQuestion {
+  font-size: 30px;
+  margin-left: 0px;
+  text-align: CENTER;
+}
+  
+.answerTrue {
+  background-color: rgb(55, 55, 245);
+  border: 0px solid;
+  font-family: "VT323", monospace;
+  width: 300px;
+  height: 70px;
+  font-size: 30px;
+  color: white;
+  margin-left: 32px;
+  cursor: pointer
+}
+  
+.answerFalse {
+  background-color: rgb(243, 20, 57);
+  border: 0px solid;
+  font-family: "VT323", monospace;
+  width: 300px;
+  height: 70px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer
+}  
 .rebootnator {
   position: absolute;
   background-image: url("Images/sprites/machangoFront.gif");
   background-size: cover;
-}
-
+}   
 .rebootnatorLeft {
   position: absolute;
   background-image: url("Images/sprites/machangoLeft.gif");
   background-size: cover;
-}
-
+} 
 .rebootnatorRight {
   position: absolute;
   background-image: url("Images/sprites/machangoRight.gif");
   background-size: cover;
 }
-
 .rebootnatorThin {
-  background-image: url(Images/sprites/machangoThin.png);
+  background-image: url(Images/sprites/machangoThin.gif);
   background-size: cover;
+  position: absolute;
 }
-
 .rebootnatorFat {
-  background-image: url(Images/sprites/machangoFat.png);
+  background-image: url(Images/sprites/machangoFat.gif);
   background-size: cover;
-
+  position: absolute;
 }
-
-
 .handsUp {
   position: absolute;
   background-image: url(Images/hand.png);
   background-size: cover;
 }
-
 .goodies {
   position: absolute;
   background-color: rgb(24, 121, 21);
 }
-
 .speedCoffee {
   position: absolute;
   background-image: url(Images/goodies/coffee-cupCircle.png);
   background-size: cover;
 }
-
 .slimSalad {
   position: absolute;
   background-image: url(Images/goodies/brecolCircle.png);
   background-size: cover;
 }
-
 .flatEgg {
   position: absolute;
   background-image: url(Images/enemies/burger.png);
-  background-size: contain;
+  background-size: cover;
 }
-
 .thickBurger {
   position: absolute;
-  background-image: url(Images/enemies/burgerCircle.png);
+  background-image: url(Images/goodies/burgerCircle.png);
+  background-size: cover;
 }
-
 #lives {
   color: black;
   font-size: large;
 }
-
 #score {
   color: black;
   display: inline-block;
 }
-
 #health {
   color: black;
   display: inline-block;
 }
-
 .js {
   position: absolute;
   background-image: url(Images/enemies/js.png);
   background-size: cover;
 }
-
 .html {
   position: absolute;
   background-image: url(Images/enemies/html.png);
   background-size: cover;
 }
-
 .css {
   position: absolute;
   background-image: url(Images/enemies/css.png);
   background-size: cover;
 }
-
 #scoreBoard {
   position: absolute;
   margin-top: -50px;
@@ -130,7 +159,6 @@ body {
   height: 50px;
   width: 700px;
 }
-
 .scoreText {
   position: absolute;
   color: white;
@@ -138,7 +166,6 @@ body {
   margin-left: 20px;
   margin-top: 5px;
 }
-
 .scoreNumber {
   position: absolute;
   color: rgb(245, 167, 0);
@@ -146,55 +173,44 @@ body {
   margin-left: 110px;
   margin-top: 2px;
 }
-
 .live1 {
   width: 35px;
   display: inline-block;
 }
-
 .live2 {
   width: 35px;
   display: inline-block;
 }
-
 .live3 {
   width: 35px;
   display: inline-block;
 }
-
 #livesContainer {
   display: inline-block;
   margin-left: 560px;
   margin-top: 8px;
 }
-
-/* START GAME SCREEN*/
-
 .startScreenContainer {
   position: relative;
   height: 800px;
   width: 700px;
   background-image: url(Images/backgrounds/pixelatedBackgroundStart.png);
   margin: 0 auto;
-  margin-top: 110px;
+  margin-top: 80px;
   background-size: cover;
   background-position: -50px;
   border: 4px solid white;
   display: block;
 }
-
 .insertCoin {
   width: 250px;
   margin-left: 450px;
 }
-
 .logoStart {
-  margin-top: 100px;
+  margin-top: 60px;
   margin-left: 65px;
   animation: blink 1.7s steps(4, start) infinite
 }
-
-
 @keyframes blink {
     0% {
         visibility: visible;
@@ -202,8 +218,7 @@ body {
     100% {
         visibility: hidden;
     }
-  }
-
+}
 .startButton {
   width: 250px;
   height: 70px;
@@ -211,27 +226,24 @@ body {
   font-family: "VT323", monospace;
   font-weight: bold;
   border: 8px solid rgba(2, 150, 150, 0.733);
-  margin-top: 90px;
+  margin-top: 60px;
   margin-left: 215px;
   cursor: url("./Images/cursor.png"), auto;
   /* cursor: url('https://res.cloudinary.com/dvkugaw3b/image/upload/v1641562028/cursor_ad12rf.png'), auto;  */
   cursor: pointer;
 }
-
 .startButton:hover {
   scale: 110%;
   border: 8px solid rgb(160, 38, 1);
   color: white;
   background-color: rgb(243, 69, 0);
 }
-
 .creditsButton:hover {
   scale: 110%;
   border: 8px solid rgb(160, 38, 1);
   color: white;
   background-color: rgb(243, 69, 0);
 }
-
 .creditsButton {
   width: 250px;
   height: 70px;
@@ -243,45 +255,37 @@ body {
   margin-left: 215px;
   cursor: pointer
 }
-
-/* GAME OVER SCREEN*/
-
 .gameOverScreenContainer {
   position: relative;
   height: 800px;
   width: 700px;
   background-image: url(Images/backgrounds/pixelatedBackgroundStart.png);
   margin: 0 auto;
-  margin-top: 110px;
+  margin-top: 80px;
   background-size: cover;
   background-position: -50px;
   border: 4px solid white;
   display: none;
 }
-
 .laptop {
-  height: 180px;
-  margin-left: 260px;
-  margin-top: 50px;
+  height: 270px;
+  margin-left: 200px;
+  margin-top: 10px;
   opacity: 0.8;
 }
-
 .gameOverTitle {
   width: 700px;
-  margin-top: -207px;
+  margin-top: -242px;
   margin-left: 0px;
 }
-
 .lang {
   width: 40px;
   margin-right: 20px;
 }
-
 .gameOverPicContainer {
   margin-left: 240px;
   margin-top: -180px;
 }
-
 .gameOverSentence {
   margin-top: -130px;
   color: rgb(9, 229, 236);
@@ -292,13 +296,11 @@ body {
   font-size: 50px;
   font-stretch: ultra-expanded;
 }
-
 .logoGameOver {
   width: 500px;
   margin-left: 100px;
   margin-top: -30px;
 }
-
 .restartButton {
   width: 250px;
   height: 70px;
@@ -310,36 +312,28 @@ body {
   margin-left: 215px;
   cursor: pointer
 }
-
 .restartButton:hover {
   scale: 110%;
   border: 8px solid rgb(160, 38, 1);
   color: white;
   background-color: rgb(243, 69, 0);
 }
-
-/* LOADING SCREEN  */
-
 .loadingScreenContainer {
   position: relative;
   height: 800px;
   width: 700px;
   background-image: url(Images/backgrounds/wholeClassBackgroundextended.png);
   margin: 0 auto;
-  margin-top: 110px;
+  margin-top: 80px;
   background-size: cover;
   background-position: -50px;
   display: none;
 }
-
 .loadingGif {
   width: 300px;
   margin-top: 60px;
   margin-left: 195px;
 }
-
-/* WINNER SCREEN  */
-
 .winScreenContainer {
   position: relative;
   height: 800px;
@@ -352,13 +346,11 @@ body {
   border: 4px solid white;
   display: none;
 }
-
 .winTitle {
   width: 500px;
   margin-left: 100px;
   margin-top: 100px;
 }
-
 .winSentence {
   margin-top: 80px;
   color: rgb(255, 255, 255);
@@ -369,7 +361,6 @@ body {
   font-size: 50px;
   font-stretch: ultra-expanded;
 }
-
 .winSentence2 {
   margin-top: 10px;
   color: rgb(255, 255, 255);
@@ -380,24 +371,20 @@ body {
   font-size: 50px;
   font-stretch: ultra-expanded;
 }
-
 .edukami {
   margin-top: -30px;
   width: 350px;
   margin-left: 170px;
 }
-
 .logosContainer {
   margin-left: 230px;
 }
-
 .study {
   margin-top: 30px;
   margin-left: 10px;
   width: 50px;
   animation: logosMoving 2s ease infinite;
 }
-
 @keyframes logosMoving {
   0% {
     transform: rotate(-40deg);
@@ -410,8 +397,7 @@ body {
   100% {
     transform: rotate(-40deg);
   }
-}
-
+} 
 @keyframes enemiesMoving {
   0% {
 
@@ -420,7 +406,6 @@ body {
 
   15% {
     transform: translateX(30px);
-
   }
 
   25% {
@@ -469,19 +454,15 @@ body {
 }
 
 @keyframes punishMoving {
-   
   from {
     transform: rotate(0deg) translate(-100px) rotate(0deg);
   }
-
   to {
     transform: rotate(360deg) translate(-100px) rotate(-360deg);
   }
 }
 
-
 @keyframes goodiesMoving {}
-
 
 .continueButton {
   position:absolute;
@@ -502,81 +483,23 @@ body {
   color: white;
   background-color: rgb(243, 69, 0);
 }
-
-
-/* KAHOOT SPEECH BALLOON  */
-
-#speechBalloonContainer {
-  position: relative;
-}
-
-.speechBalloonContainer {
-  position: absolute;
-  background-image: url(Images/8bit-retro-game-pixel-speech-bubble-balloon-icon-sticker-memo-keyword-planner-text-box-banner-flat-transparent-element-design-png.webp);
-  width: 700px;
-  height: 500px;
-  background-size: cover;
-  margin-left: 125px;
-  margin-top: 50px;
-  display: none;
-}
-
-.kahootLogo {
-  width: 250px;
-  margin-top: 60px;
-  margin-left: 220px;
-}
-
-.kahootQuestion {
-  font-size: 30px;
-  margin-left: 0px;
-  text-align: CENTER;
-}
-
-.answerTrue {
-  background-color: rgb(55, 55, 245);
-  border: 0px solid;
-  font-family: "VT323", monospace;
-  width: 300px;
-  height: 70px;
-  font-size: 30px;
-  color: white;
-  margin-left: 45px;
-  cursor: pointer
-}
-
-.answerFalse {
-  background-color: rgb(243, 20, 57);
-  border: 0px solid;
-  font-family: "VT323", monospace;
-  width: 300px;
-  height: 70px;
-  font-size: 30px;
-  color: white;
-  cursor: pointer
-}
-
-/* CREDITS SCREEN */
-
 .creditsScreenContainer{
   position: relative;
   height: 800px;
   width: 700px;
   background-image: url(Images/backgrounds/pixelatedBackgroundStart.png);
   margin: 0 auto;
-  margin-top: 110px;
+  margin-top: 80px;
   background-size: cover;
   background-position: -50px;
   border: 4px solid white;
   display: none;
 }
-
 .creditsTitle {
   width: 600px;
   margin-left: 42px;
   margin-top: 30px;
 }
-
 .team{
   color:white;
   font-size: 70px;
@@ -585,7 +508,6 @@ body {
   color: #5bc6dc;
   margin-top: -25px;
 }
-
 .menuButton {
   width: 250px;
   height: 70px;
@@ -597,14 +519,12 @@ body {
   margin-left: 215px;
   cursor: pointer
 }
-
 .menuButton:hover {
   scale: 110%;
   border: 8px solid rgb(160, 38, 1);
   color: white;
   background-color: rgb(243, 69, 0);
 }
-
 .flexImage{
   display: flex;
   margin-top: -7px;
@@ -622,59 +542,153 @@ body {
   font-size: 30px;
   margin-left: 50px;
 }
-
 .enemies {
   position: absolute;
   background-color: blue;
 }
-
 .jsEnemy {
   position: absolute;
   background-image: url(Images/enemies/jsCircle.png);
   background-size: cover;
   animation: enemiesMoving 2s ease infinite;
 }
-
-
 .htmlEnemy {
   position: absolute;
   background-image: url(Images/enemies/htmlCircle.png);
   background-size: cover;
   animation: enemiesMoving 2s ease infinite;
-
 }
-
 .cssEnemy {
   position: absolute;
   background-image: url(Images/enemies/cssCircle.png);
   background-size: cover;
   animation: enemiesMoving2 2s ease infinite;
 }
-
 .airconEnemy {
   position: absolute;
   background-image: url(Images/enemies/airconCircle.png);
   background-size: cover;
   animation: enemiesMoving2 2s ease infinite;
 }
-
 .gamechairEnemy {
   position: absolute;
   background-image: url(Images/enemies/gamechairCircle.png);
   background-size: cover;
   animation: enemiesMoving 2s ease infinite;
 }
-
 .playstationEnemy {
   position: absolute;
   background-image: url(Images/enemies/remoteCircle.png);
   background-size: cover;
   animation: enemiesMoving2 2s ease infinite;
 }
-
 .skullEnemy {
   position: absolute;
   background-image: url(Images/enemies/punisherCircle.png);
   background-size: cover;
-  animation: punishMoving 4s infinite linear;
+  animation: enemiesMoving 2s ease infinite;
+}
+.howToPlayScreenContainer {
+  position: relative;
+  height: 800px;
+  width: 700px;
+  background-image: url(Images/backgrounds/pixelatedBackgroundStart.png);
+  margin: 0 auto;
+  margin-top: 80px;
+  background-size: cover;
+  background-position: -50px;
+  border: 4px solid white;
+  display: none;
+}
+.howToPlayTittle{
+  color:white;
+  font-size: 80px;
+  font-weight: 500;
+  margin-left:170px;
+  margin-top: 25px;
+}
+.howRebootnator{
+  position: absolute;
+  width: 250px;
+  top:0;
+  z-index: 1;
+  margin-top: 163px;
+  margin-left: 140px;
+}
+.titleGoal{
+  color: #5bc6dc;
+  font-size: 40px;
+  margin-left: 50px;
+  margin-top: -45px
+}
+.textGoal{
+  color: white;
+  margin-left: 50px;
+  width: 600px;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: -14px;
+  z-index: 0;
+}
+.enemiesGroup {
+  margin-top: -30px;
+  margin-left: 150px;
+}
+.textGoodies{
+  color: white;
+  margin-left: 50px;
+  width: 600px;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 20px;
+  z-index: 0;
+}
+.titleControl{
+  color: #5bc6dc;
+  font-size: 40px;
+  margin-left: 50px;
+  margin-top: 10px
+}
+.flexImageControls{
+  display:flex;
+  margin-left: 100px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+.arrowKeys{
+  height: 60px;
+}
+.move {
+  color: white;
+  margin-left:20px;
+  font-size: 30px;
+  font-weight: 100;
+}
+.shoot {
+  color:white;
+  font-size: 30px;
+  font-weight: 100;
+  margin-left: 20px;
+}
+.spaceKey {
+  height: 30px;
+  margin-left: 60px;
+  margin-top:30px
+}
+.controlsButton {
+  width: 250px;
+  height: 70px;
+  font-size: 55px;
+  font-family: "VT323", monospace;
+  font-weight: bold;
+  border: 8px solid rgba(2, 150, 150, 0.733);
+  margin-top: 20px;
+  margin-left: 215px;
+  cursor: url("./Images/cursor.png"), auto;
+}
+.controlsButton:hover {
+  scale: 110%;
+  border: 8px solid rgb(160, 38, 1);
+  color: white;
+  background-color: rgb(243, 69, 0);
 }
