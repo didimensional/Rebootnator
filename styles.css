@@ -4,13 +4,11 @@ body {
   background-position: center;
   font-family: "VT323", system-ui;
 }
-  
 .vt323-regular {
   font-family: "VT323", monospace;
   font-weight: 400;
   font-style: normal;
-}
-  
+} 
 #boardGame {
   position: relative;
   height: 800px;
@@ -23,7 +21,7 @@ body {
   display: none;
 }    
 #speechBalloonContainer {
-    position: absolute;
+  position: absolute;
 } 
 .speechBalloonContainer {
   position: absolute !important;
@@ -40,14 +38,12 @@ body {
   width: 250px;
   margin-top: 60px;
   margin-left: 220px;
-}
-  
+} 
 .kahootQuestion {
   font-size: 30px;
   margin-left: 0px;
   text-align: CENTER;
 }
-  
 .answerTrue {
   background-color: rgb(55, 55, 245);
   border: 0px solid;
@@ -58,8 +54,7 @@ body {
   color: white;
   margin-left: 32px;
   cursor: pointer
-}
-  
+} 
 .answerFalse {
   background-color: rgb(243, 20, 57);
   border: 0px solid;
@@ -229,7 +224,6 @@ body {
   margin-top: 60px;
   margin-left: 215px;
   cursor: url("./Images/cursor.png"), auto;
-  /* cursor: url('https://res.cloudinary.com/dvkugaw3b/image/upload/v1641562028/cursor_ad12rf.png'), auto;  */
   cursor: pointer;
 }
 .startButton:hover {
@@ -430,7 +424,6 @@ body {
     transform: translateX(-20px);
   }
 }
-
 @keyframes enemiesMoving2 {
   0% {
 
@@ -452,7 +445,6 @@ body {
 
   }
 }
-
 @keyframes punishMoving {
   from {
     transform: rotate(0deg) translate(-100px) rotate(0deg);
@@ -461,9 +453,6 @@ body {
     transform: rotate(360deg) translate(-100px) rotate(-360deg);
   }
 }
-
-@keyframes goodiesMoving {}
-
 .continueButton {
   position:absolute;
   width: 250px;
@@ -476,7 +465,6 @@ body {
   margin-left: 215px;
   cursor: pointer
 }
-
 .continueButton:hover {
   scale: 110%;
   border: 8px solid rgb(160, 38, 1);
@@ -535,7 +523,6 @@ body {
   width: 100px;
   margin-bottom: 20px;
 }
-
 .nickname {
   display:inline;
   color: white;
