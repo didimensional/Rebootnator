@@ -17,10 +17,11 @@ body {
   width: 700px;
   background-image: url(Images/backgrounds/wholeClassBackgroundextended.png);
   margin: 0 auto;
-  margin-top: 110px;
+  margin-top: 80px;
   background-size: cover;
   background-position: -50px;
   display: none;
+  z-index: 0;
 }    
 #speechBalloonContainer {
     position: absolute;
@@ -153,11 +154,12 @@ body {
 }
 #scoreBoard {
   position: absolute;
-  margin-top: -50px;
+  margin-top: -0px;
   position: absolute;
   background-color: black;
   height: 50px;
   width: 700px;
+  z-index: 1;
 }
 .scoreText {
   position: absolute;
